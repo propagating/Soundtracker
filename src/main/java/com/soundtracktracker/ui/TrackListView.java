@@ -46,12 +46,12 @@ class TrackListView extends JPanel
 		setBackground(ColorScheme.DARK_GRAY_COLOR);
 	}
 
-	void setTracks(List<Track> tracks)
+	void setTracks(List<Track> tracks, String emptyMessage)
 	{
 		removeAll();
 		if (tracks.isEmpty())
 		{
-			JLabel none = Sections.smallLabel("No tracks match.", ColorScheme.LIGHT_GRAY_COLOR);
+			JLabel none = Sections.smallLabel(emptyMessage, ColorScheme.LIGHT_GRAY_COLOR);
 			none.setBorder(new EmptyBorder(8, 8, 8, 8));
 			add(none);
 		}

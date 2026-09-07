@@ -145,9 +145,12 @@ public class SoundtrackTrackerPanel extends PluginPanel
 		if (detailTrack != null)
 		{
 			Track fresh = null;
+			// the midi id is stable and unique; the display name is not guaranteed to be,
+			// so only fall back to matching by name for tracks that have no midi id
+			boolean byMidi = detailTrack.getMidiId() != -1;
 			for (Track t : tracks)
 			{
-				if (t.getName().equals(detailTrack.getName()))
+				if (byMidi ? t.getMidiId() == detailTrack.getMidiId() : t.getName().equals(detailTrack.getName()))
 				{
 					fresh = t;
 					break;
@@ -170,11 +173,24 @@ public class SoundtrackTrackerPanel extends PluginPanel
 		rebuild();
 	}
 
+	/**
+	 * Stops the pending debounce timer; call before this panel is discarded.
+	 *
+	 * <p>Public, not package-private, because the plugin (a different package) must call this
+	 * from {@code shutDown()} to stop the timer before the panel is dropped.
+	 */
+	public void dispose()
+	{
+		debounce.stop();
+	}
+
 	private void rebuild()
 	{
-		list.setTracks(TrackFilter.apply(tracks, search.getText(),
+		List<Track> filtered = TrackFilter.apply(tracks, search.getText(),
 			(LockFilter) lockFilter.getSelectedItem(), (SortMode) sortMode.getSelectedItem(),
-			config.showHolidayTracks()));
+			config.showHolidayTracks());
+		String emptyMessage = tracks.isEmpty() ? "Log in to load your tracks." : "No tracks match.";
+		list.setTracks(filtered, emptyMessage);
 	}
 
 	void showDetail(Track track)

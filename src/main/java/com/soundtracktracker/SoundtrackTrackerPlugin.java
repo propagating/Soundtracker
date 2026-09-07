@@ -75,14 +75,15 @@ public class SoundtrackTrackerPlugin extends Plugin
 	@Inject
 	private WorldMapPointManager worldMapPointManager;
 
-	private EnrichmentStore enrichmentStore;
-	private TrackCatalog catalog;
-	private SoundtrackTrackerPanel panel;
+	// written on the EDT in startUp/shutDown, read on the client thread (event subscribers)
+	private volatile EnrichmentStore enrichmentStore;
+	private volatile TrackCatalog catalog;
+	private volatile SoundtrackTrackerPanel panel;
 	private NavigationButton navButton;
-	private TrackMapMarker mapMarker;
+	private volatile TrackMapMarker mapMarker;
 	// set on the client thread once tracks.json is parsed; the catalog must not read rows
 	// before then or every track would be joined to an empty enrichment for the whole run
-	private boolean dataReady;
+	private volatile boolean dataReady;
 
 	private final TrackCatalog.Listener toPanel = tracks ->
 		SwingUtilities.invokeLater(() ->
@@ -167,7 +168,13 @@ public class SoundtrackTrackerPlugin extends Plugin
 			clientToolbar.removeNavigation(navButton);
 			navButton = null;
 		}
-		panel = null;
+		if (panel != null)
+		{
+			// RuneLite calls shutDown() on the EDT, same as startUp(), so this can call
+			// straight into the panel rather than hopping back through invokeLater
+			panel.dispose();
+			panel = null;
+		}
 		enrichmentStore = null;
 		dataReady = false;
 	}
