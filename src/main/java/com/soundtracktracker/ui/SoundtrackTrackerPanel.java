@@ -102,11 +102,8 @@ public class SoundtrackTrackerPanel extends PluginPanel
 		top.add(header, BorderLayout.NORTH);
 		top.add(controls, BorderLayout.SOUTH);
 
-		// BorderLayout.NORTH inside the viewport keeps rows at their preferred height
-		JPanel listWrapper = new JPanel(new BorderLayout());
-		listWrapper.setBackground(ColorScheme.DARK_GRAY_COLOR);
-		listWrapper.add(list, BorderLayout.NORTH);
-		listScroll = new JScrollPane(listWrapper);
+		// the JList is Scrollable, so it follows the viewport width and sizes rows itself
+		listScroll = new JScrollPane(list);
 		listScroll.setBorder(null);
 		listScroll.getVerticalScrollBar().setUnitIncrement(16);
 		listScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
