@@ -41,5 +41,3 @@ toolbar icon, `panel_icon.png`.
   count toward the music cape.
 - **Start on locked tracks** (default: off) - open the panel with the filter
   already set to locked tracks only.
-
-See `AGENTS.md` for the Plugin Hub rules this code follows.
