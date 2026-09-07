@@ -124,7 +124,7 @@ public class SoundtrackTrackerPlugin extends Plugin
 		navButton = NavigationButton.builder()
 			.tooltip("Soundtrack Tracker")
 			.icon(icon)
-			.priority(8)
+			.priority(99) // beside Item Search and Lost Item Locator, which sit at 99 too
 			.panel(panel)
 			.build();
 		clientToolbar.addNavigation(navButton);
