@@ -1,7 +1,7 @@
 # Soundtrack Tracker — Design
 
 Date: 2026-09-06
-Status: approved design, awaiting spec review
+Status: implemented 2026-09-06 (see docs/superpowers/plans/2026-09-06-soundtrack-tracker.md)
 
 ## Purpose
 
