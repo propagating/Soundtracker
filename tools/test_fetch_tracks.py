@@ -38,6 +38,17 @@ class MarkupTest(unittest.TestCase):
             ft.strip_markup("[[Port Sarim]], [[Prifddinas|Prif]] docks<ref>x</ref> '''bold''' {{sic}}<br>more"),
             "Port Sarim, Prif docks bold, more")
 
+    def test_strip_markup_debullets_an_embedded_list(self):
+        self.assertEqual(
+            ft.strip_markup("Unlocked in the\n* [[Wilderness Slayer Cave]]\n* [[Callisto's Den]]"),
+            "Unlocked in the Wilderness Slayer Cave, Callisto's Den")
+
+    def test_debullet_leading_bullet_has_no_sentence_head(self):
+        self.assertEqual(ft.debullet("* A\n* B\n* C"), "A, B, C")
+
+    def test_debullet_no_bullets_is_unchanged(self):
+        self.assertEqual(ft.debullet("Plain text."), "Plain text.")
+
     def test_strip_none(self):
         self.assertIsNone(ft.strip_markup(None))
         self.assertIsNone(ft.strip_markup("  "))
@@ -72,6 +83,31 @@ class MapTest(unittest.TestCase):
         self.assertIsNone(ft.parse_map("No"))
         self.assertIsNone(ft.parse_map(None))
         self.assertIsNone(ft.parse_map("{{Map|plane=0}}"))
+
+
+class InstanceTemplateTest(unittest.TestCase):
+    """{{Map}} points inside a raid/lair's unrendered template zone must come back None
+    even though the template itself parses cleanly and carries mapID=-1, same as a real,
+    renderable point. See the comment above `_INSTANCE_TEMPLATE_BOXES` in fetch_tracks.py
+    for the raw-wikitext evidence."""
+
+    def test_theatre_of_blood_room_instance_is_none(self):
+        # The Maiden's Sorrow's actual {{Map}} value.
+        self.assertIsNone(ft.parse_map(
+            "{{Map|3136,4416|3136,4480|3264,4480|3264,4416|plane=0|mapID=-1|mtype=polygon|bucket=yes}}"))
+
+    def test_tombs_of_amascut_room_instance_is_none(self):
+        # Amascut's Promise's actual {{Map}} value.
+        self.assertIsNone(ft.parse_map(
+            "{{Map|3776,5120|3776,5184|3840,5184|3840,5120|mapID=-1|mtype=polygon|bucket=yes|zoom=2}}"))
+
+    def test_cerberus_lair_is_none(self):
+        self.assertIsNone(ft.parse_map("{{Map|1248,1248|plane=0}}"))
+
+    def test_real_surface_point_outside_template_zones_is_kept(self):
+        # Welcome to the Theatre (the Theatre of Blood's non-instanced lobby) is well
+        # outside every template box and must still resolve.
+        self.assertEqual(ft.parse_map("{{Map|3673,3220|plane=0}}"), {"x": 3673, "y": 3220, "plane": 0})
 
 
 class RecordTest(unittest.TestCase):

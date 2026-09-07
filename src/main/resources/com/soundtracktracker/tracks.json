@@ -31,7 +31,7 @@
   "location": "Wilderness Slayer Cave, Callisto's Den, Hunter's End, Skeletal Tomb, Vet'ion's Rest, Silk Chasm, Web Chasm, Escape Caves",
   "region": "Wilderness Slayer Cave",
   "quest": null,
-  "unlockdetail": "Unlocked in the * Wilderness Slayer Cave * Callisto's Den * Hunter's End * the Skeletal Tomb * Vet'ion's Rest * the Silk Chasm * the Web Chasm * the Escape Caves.",
+  "unlockdetail": "Unlocked in the Wilderness Slayer Cave, Callisto's Den, Hunter's End, the Skeletal Tomb, Vet'ion's Rest, the Silk Chasm, the Web Chasm, the Escape Caves.",
   "members": true,
   "map": {
    "x": 3392,
@@ -225,11 +225,7 @@
   "quest": null,
   "unlockdetail": "Unlocked during the fight with Kephri in the Tombs of Amascut.",
   "members": true,
-  "map": {
-   "x": 3552,
-   "y": 5408,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/A_Mother%27s_Curse"
  },
  {
@@ -596,11 +592,7 @@
   "quest": null,
   "unlockdetail": "Unlocked during the fight with Tumeken's Warden and Elidinis' Warden in the Tombs of Amascut.",
   "members": true,
-  "map": {
-   "x": 3808,
-   "y": 5152,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/Amascut%27s_Promise"
  },
  {
@@ -696,11 +688,7 @@
   "quest": null,
   "unlockdetail": "Unlocked during the fight with Ba-Ba in the Tombs of Amascut.",
   "members": true,
-  "map": {
-   "x": 3808,
-   "y": 5408,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/Ape-ex_Predator"
  },
  {
@@ -771,11 +759,7 @@
   "quest": null,
   "unlockdetail": "Unlocked during the fight in the Nylocas lair within the Theatre of Blood.",
   "members": true,
-  "map": {
-   "x": 3296,
-   "y": 4256,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/Arachnids_of_Vampyrium_%28music_track%29"
  },
  {
@@ -1075,7 +1059,7 @@
   "location": "Gu'Tanoth Ogre Enclave",
   "region": "Gu'Tanoth",
   "quest": "Watchtower or The Ribbiting Tale of a Lily Pad Labour Dispute",
-  "unlockdetail": "Unlocked in the Ogre Enclave lair. * During The Ribbiting Tale of a Lily Pad Labour Dispute, when the player fights Cuthbert, Lord of Dread.",
+  "unlockdetail": "Unlocked in the Ogre Enclave lair. During The Ribbiting Tale of a Lily Pad Labour Dispute, when the player fights Cuthbert, Lord of Dread.",
   "members": true,
   "map": {
    "x": 2592,
@@ -1512,11 +1496,7 @@
   "quest": null,
   "unlockdetail": "Unlocked in the Tombs of Amascut's Nexus.",
   "members": true,
-  "map": {
-   "x": 3552,
-   "y": 5152,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/Beneath_Cursed_Sands_%28music_track%29"
  },
  {
@@ -3029,11 +3009,7 @@
   "quest": null,
   "unlockdetail": "Unlocked upon entering the Nylocas lair in the Theatre of Blood.",
   "members": true,
-  "map": {
-   "x": 3296,
-   "y": 4256,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/Dance_of_the_Nylocas"
  },
  {
@@ -4614,11 +4590,7 @@
   "quest": null,
   "unlockdetail": "Unlocked upon entering the lowest floor of the Chambers of Xeric, before fighting the Great Olm.",
   "members": true,
-  "map": {
-   "x": 3232,
-   "y": 5728,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/Fire_in_the_Deep"
  },
  {
@@ -6367,11 +6339,7 @@
   "quest": null,
   "unlockdetail": "Unlocked in the Tombs of Amascut.",
   "members": true,
-  "map": {
-   "x": 3360,
-   "y": 9120,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/Into_the_Tombs_%28music_track%29"
  },
  {
@@ -6498,11 +6466,7 @@
   "quest": null,
   "unlockdetail": "Unlocked during upon entering Lady Verzik Vitur's room in the Theatre of Blood.",
   "members": true,
-  "map": {
-   "x": 3168,
-   "y": 4320,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/It%27s_not_over_%27til..."
  },
  {
@@ -6550,11 +6514,7 @@
   "quest": null,
   "unlockdetail": "Unlocked during the fight with Zebak in the Tombs of Amascut.",
   "members": true,
-  "map": {
-   "x": 3936,
-   "y": 5408,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/Jaws_of_Gluttony"
  },
  {
@@ -6923,11 +6883,7 @@
   "quest": null,
   "unlockdetail": "Unlocked in Osmumten's burial chamber within the Tombs of Amascut.",
   "members": true,
-  "map": {
-   "x": 3680,
-   "y": 5152,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/Laid_to_Rest"
  },
  {
@@ -7095,11 +7051,7 @@
   "quest": null,
   "unlockdetail": "Unlocked during the fight with Xarpus in the Theatre of Blood.",
   "members": true,
-  "map": {
-   "x": 3168,
-   "y": 4384,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/Last_King_of_the_Yarasa"
  },
  {
@@ -7461,11 +7413,7 @@
   "quest": null,
   "unlockdetail": "Unlocked in the second level of the Chambers of Xeric or in the Quidamortem Cave during Tale of the Righteous.",
   "members": true,
-  "map": {
-   "x": 3312,
-   "y": 5728,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/Lower_Depths"
  },
  {
@@ -7871,11 +7819,7 @@
   "quest": null,
   "unlockdetail": "Unlocked at Cerberus' Lair.",
   "members": true,
-  "map": {
-   "x": 1248,
-   "y": 1248,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/Maws_Jaws_%26_Claws"
  },
  {
@@ -9483,11 +9427,7 @@
   "quest": null,
   "unlockdetail": "Unlocked during the fight with the Sotetseg in the Theatre of Blood.",
   "members": true,
-  "map": {
-   "x": 3296,
-   "y": 4320,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/Power_of_the_Shadow_Realm"
  },
  {
@@ -9520,11 +9460,7 @@
   "quest": null,
   "unlockdetail": "Unlocked upon entering Xarpus's room in the Theatre of Blood.",
   "members": true,
-  "map": {
-   "x": 3168,
-   "y": 4384,
-   "plane": 1
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/Predator_Xarpus"
  },
  {
@@ -9771,7 +9707,7 @@
  {
   "cacheid": null,
   "name": "Rat Beats Cat (Rat Pits)",
-  "location": "* Varrock * Ardougne * Keldagrim * Port Sarim",
+  "location": "Varrock, Ardougne, Keldagrim, Port Sarim",
   "region": "Varrock",
   "quest": null,
   "unlockdetail": null,
@@ -9782,7 +9718,7 @@
  {
   "cacheid": null,
   "name": "Rat Goes Splat (Rat Pits)",
-  "location": "* Varrock * Ardougne * Keldagrim * Port Sarim",
+  "location": "Varrock, Ardougne, Keldagrim, Port Sarim",
   "region": "Varrock",
   "quest": null,
   "unlockdetail": null,
@@ -10247,7 +10183,7 @@
   "location": "Varies",
   "region": null,
   "quest": null,
-  "unlockdetail": "Unlocked at several locations throughout Great Kourend, specifically: *Between Kourend Castle and Shayzien/Lovakengj *The path leading to The Forsaken Tower *The path south of the Lizardman Settlement leading to Mount Quidamortem *Next to the Jellies in the Catacombs of Kourend",
+  "unlockdetail": "Unlocked at several locations throughout Great Kourend, specifically: Between Kourend Castle and Shayzien/Lovakengj, The path leading to The Forsaken Tower, The path south of the Lizardman Settlement leading to Mount Quidamortem, Next to the Jellies in the Catacombs of Kourend",
   "members": true,
   "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/Rugged_Terrain"
@@ -10478,11 +10414,7 @@
   "quest": null,
   "unlockdetail": "Unlocked during the fight with Akkha in the Tombs of Amascut.",
   "members": true,
-  "map": {
-   "x": 3680,
-   "y": 5408,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/Sands_of_Time"
  },
  {
@@ -11606,7 +11538,7 @@
   "location": "First level of the Abandoned Mine",
   "region": "Abandoned Mine",
   "quest": "Haunted Mine",
-  "unlockdetail": "Unlocked during Haunted Mine on the first level of the Abandoned Mine or *in the bar basement in Burgh de Rott *in the Isle of Souls Dungeon.",
+  "unlockdetail": "Unlocked during Haunted Mine on the first level of the Abandoned Mine or in the bar basement in Burgh de Rott, in the Isle of Souls Dungeon.",
   "members": true,
   "map": {
    "x": 3456,
@@ -12437,11 +12369,7 @@
   "quest": null,
   "unlockdetail": "Unlocked at Cerberus's Lair.",
   "members": true,
-  "map": {
-   "x": 1312,
-   "y": 1248,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/That_Sullen_Hall"
  },
  {
@@ -12667,11 +12595,7 @@
   "quest": null,
   "unlockdetail": "Unlocked in Verzik Vitur's treasure vault after defeating her in the Theatre of Blood.",
   "members": true,
-  "map": {
-   "x": 3232,
-   "y": 4320,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Curtain_Closes"
  },
  {
@@ -12682,11 +12606,7 @@
   "quest": null,
   "unlockdetail": "Unlocked upon entering Sotetseg's room in the Theatre of Blood.",
   "members": true,
-  "map": {
-   "x": 3296,
-   "y": 4320,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Dark_Beast_Sotetseg"
  },
  {
@@ -12980,11 +12900,7 @@
   "quest": null,
   "unlockdetail": "Unlocked during the fight with Lady Verzik Vitur in the Theatre of Blood.",
   "members": true,
-  "map": {
-   "x": 3168,
-   "y": 4320,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Fat_Lady_Sings"
  },
  {
@@ -13487,11 +13403,7 @@
   "quest": null,
   "unlockdetail": "Unlocked during the fight with the The Maiden of Sugadinti in the Theatre of Blood.",
   "members": true,
-  "map": {
-   "x": 3200,
-   "y": 4448,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Maiden%27s_Anger"
  },
  {
@@ -13502,11 +13414,7 @@
   "quest": null,
   "unlockdetail": "Unlocked upon entering The Maiden of Sugadinti's room in the Theatre of Blood.",
   "members": true,
-  "map": {
-   "x": 3200,
-   "y": 4448,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Maiden%27s_Sorrow"
  },
  {
@@ -13607,11 +13515,7 @@
   "quest": null,
   "unlockdetail": "Unlocked during the fight with the Pestilent Bloat in the Theatre of Blood.",
   "members": true,
-  "map": {
-   "x": 3296,
-   "y": 4448,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Nightmare_Continues"
  },
  {
@@ -14880,7 +14784,7 @@
   "location": "Wilderness, Entrana Dungeon, Taverley Dungeon, Deepfin Mine",
   "region": "Wilderness",
   "quest": null,
-  "unlockdetail": "Unlocked in various locations around Gielinor: *Wilderness *Wilderness Agility Course Dungeon *Entrana Dungeon *Deepfin Mine *Area of Taverley Dungeon containing Black Demons.",
+  "unlockdetail": "Unlocked in various locations around Gielinor: Wilderness, Wilderness Agility Course Dungeon, Entrana Dungeon, Deepfin Mine, Area of Taverley Dungeon containing Black Demons.",
   "members": false,
   "map": {
    "x": 2848,
@@ -15002,11 +14906,7 @@
   "quest": null,
   "unlockdetail": "Unlocked upon entering the Chambers of Xeric.",
   "members": true,
-  "map": {
-   "x": 3312,
-   "y": 5296,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/Upper_Depths"
  },
  {
@@ -15468,11 +15368,7 @@
   "quest": null,
   "unlockdetail": "Unlocked upon entering the Pestilent Bloat's room in the Theatre of Blood.",
   "members": true,
-  "map": {
-   "x": 3296,
-   "y": 4448,
-   "plane": 0
-  },
+  "map": null,
   "wikiUrl": "https://oldschool.runescape.wiki/w/Welcome_to_my_Nightmare"
  },
  {

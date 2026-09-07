@@ -96,6 +96,19 @@ def remove_templates(s):
     return "".join(out)
 
 
+def debullet(s):
+    """Turn a MediaWiki bullet list embedded in a sentence into flowing prose: the first
+    bullet just continues the sentence (dropped), later ones read as a comma-separated
+    list. Handles a bullet at the very start of the string as well as one after a newline.
+    """
+    parts = re.split(r"(?:\A[ \t]*|\n[ \t]*)\*+[ \t]*", s)
+    if len(parts) == 1:
+        return s
+    head = parts[0].strip()
+    rest = ", ".join(parts[1:])
+    return (head + " " + rest) if head else rest
+
+
 def strip_markup(s):
     if s is None:
         return None
@@ -103,6 +116,7 @@ def strip_markup(s):
     s = re.sub(r"<ref[^>]*/>", "", s)
     s = re.sub(r"<ref[^>]*>.*?</ref>", "", s, flags=re.S)
     s = re.sub(r"<br\s*/?>", ", ", s, flags=re.I)
+    s = debullet(s)
     s = remove_templates(s)
     s = re.sub(r"\[\[(?:[^\]|]*\|)?([^\]]*)\]\]", r"\1", s)
     s = re.sub(r"'{2,}", "", s)
@@ -138,9 +152,60 @@ def yes_no(s):
 
 _POINT = re.compile(r"^(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)$")
 
+# Raid dungeons (Theatre of Blood, Tombs of Amascut, Chambers of Xeric) and some boss
+# lairs (Cerberus) are instanced: the world map cannot render them, so a marker placed
+# there snaps to the map's edge instead of pointing at real ground.
+#
+# The {{Map}} template's `mapID` parameter looked like the signal to use here (the plugin
+# already needs -1, "use the default surface map", to mean "renderable"), but checking it
+# does not hold: raw wikitext fetched directly from the wiki (2026-09-06) for every
+# Theatre of Blood room track (The Maiden's Sorrow, The Dark Beast Sotetseg, Predator
+# Xarpus, Power of the Shadow Realm) and two Tombs of Amascut room tracks (Amascut's
+# Promise, Into the Tombs) all carry `mapID=-1`, same as the non-instanced Sea Shanty 2
+# and Tempest (Slayer Tower rooftop) fixtures. mapID cannot tell them apart.
+#
+# What does: every room/boss track inside one of these instances - despite representing
+# physically distinct spaces if the raid were real, walkable terrain - collapses onto the
+# same tiny few-region coordinate block, because Jagex reuses a handful of unrendered
+# "template" chunks for instanced content rather than authoring real terrain for each
+# room. That clustering, cross-checked against the wiki's raw {{Map}} values above and the
+# previously generated tracks.json for every other track sharing this raid, is the
+# evidence for the boxes below (min/max padded out to the nearest region boundary, i.e.
+# multiples of 64):
+#   Theatre of Blood room instance: x 3136-3391, y 4224-4479 (Maiden's Sorrow, Maiden's
+#       Anger, Dance of the Nylocas, Arachnids of Vampyrium, Dark Beast Sotetseg, Power of
+#       the Shadow Realm, Predator Xarpus, Last King of the Yarasa, It's not over 'til...,
+#       The Fat Lady Sings, The Curtain Closes, Welcome to my Nightmare, The Nightmare
+#       Continues all land here; the real, non-instanced Theatre of Blood lobby track
+#       "Welcome to the Theatre" instead maps to x=3673, y=3220, well outside this box)
+#   Tombs of Amascut room instance (path rooms): x 3552-3967, y 5120-5439 (Amascut's
+#       Promise, Beneath Cursed Sands, Ape-ex Predator, Jaws of Gluttony, Laid to Rest,
+#       Sands of Time, A Mother's Curse)
+#   Tombs of Amascut room instance (Into the Tombs cutscene): x 3328-3391, y 9088-9151
+#   Chambers of Xeric room instance: x 3200-3391, y 5264-5759 (Fire in the Deep, Upper
+#       Depths, Lower Depths)
+#   Cerberus's Lair: x 1216-1343, y 1216-1279 (Maws Jaws & Claws, That Sullen Hall); this
+#       also sits below Gielinor's southern edge on the real surface map
+_INSTANCE_TEMPLATE_BOXES = (
+    (3136, 3391, 4224, 4479),
+    (3552, 3967, 5120, 5439),
+    (3328, 3391, 9088, 9151),
+    (3200, 3391, 5264, 5759),
+    (1216, 1343, 1216, 1279),
+)
+
+
+def _in_instance_template(x, y):
+    return any(x0 <= x <= x1 and y0 <= y <= y1 for x0, x1, y0, y1 in _INSTANCE_TEMPLATE_BOXES)
+
 
 def parse_map(value):
-    """{x, y, plane} for the first {{Map}}: centroid of a polygon's vertices, else the pin."""
+    """{x, y, plane} for the first {{Map}}: centroid of a polygon's vertices, else the pin.
+
+    None for a point that falls inside a known instanced-region template block (see
+    `_INSTANCE_TEMPLATE_BOXES`) even if the template itself parses cleanly - the world map
+    cannot render those coordinates.
+    """
     if not value:
         return None
     body = find_template(value, "Map")
@@ -173,7 +238,10 @@ def parse_map(value):
         y = sum(p[1] for p in points) / len(points)
     else:
         x, y = points[0]
-    return {"x": int(round(x)), "y": int(round(y)), "plane": plane}
+    x, y = int(round(x)), int(round(y))
+    if _in_instance_template(x, y):
+        return None
+    return {"x": x, "y": y, "plane": plane}
 
 
 # ---------- {{Map:PageName}} transclusion ----------
@@ -364,7 +432,7 @@ def main(argv):
     rows = dedupe_cacheids(rows)
 
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(rows, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    out.write_text(json.dumps(rows, indent=1, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
     with_cache = sum(1 for r in rows if r["cacheid"] is not None)
     with_map = sum(1 for r in rows if r["map"])
     no_loc = sum(1 for r in rows if not r["location"])
