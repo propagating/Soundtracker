@@ -1,0 +1,24 @@
+[
+  {
+    "cacheid": 35,
+    "name": "Sea Shanty 2",
+    "location": "Port Sarim, Prifddinas docks, Tempoross Cove",
+    "region": "Port Sarim",
+    "quest": null,
+    "unlockdetail": "Unlocked in Port Sarim.",
+    "members": false,
+    "map": {"x": 3035, "y": 3225, "plane": 0},
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Sea_Shanty_2"
+  },
+  {
+    "cacheid": null,
+    "name": "Nameless Track",
+    "location": "Somewhere",
+    "region": "Somewhere",
+    "quest": "Some Quest",
+    "unlockdetail": null,
+    "members": true,
+    "map": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Nameless_Track"
+  }
+]
