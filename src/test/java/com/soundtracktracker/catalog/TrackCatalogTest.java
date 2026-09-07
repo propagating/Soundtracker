@@ -163,6 +163,14 @@ public class TrackCatalogTest
 	}
 
 	@Test
+	public void loadTwiceWithUnchangedVarpsPublishesOnce()
+	{
+		catalog.load();
+		catalog.load();
+		assertEquals(1, published.size());
+	}
+
+	@Test
 	public void resetPublishesEmptyAndLoadRestores()
 	{
 		catalog.load();

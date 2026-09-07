@@ -138,6 +138,13 @@ public class TrackCatalog
 
 	private void publish(List<Track> next)
 	{
+		// GameState.LOGGED_IN fires after every LOADING transition (teleport, dungeon, hop,
+		// not just actual logins), so load() re-runs and would otherwise republish an
+		// unchanged snapshot on each one, forcing the panel to rebuild ~1200 Swing rows.
+		if (next.equals(tracks))
+		{
+			return;
+		}
 		tracks = Collections.unmodifiableList(next);
 		for (Listener listener : listeners)
 		{
@@ -150,6 +157,8 @@ public class TrackCatalog
 		List<Track> out = new ArrayList<>();
 		indexesByVarp.clear();
 		int skipped = 0;
+		int missingMidi = 0;
+		int enriched = 0;
 		for (int row : client.getDBTableRows(DBTableID.Music.ID))
 		{
 			String name = string(row, DBTableID.Music.COL_DISPLAYNAME);
@@ -165,8 +174,17 @@ public class TrackCatalog
 			String sortName = string(row, DBTableID.Music.COL_SORTNAME);
 			String hint = string(row, DBTableID.Music.COL_UNLOCKHINT);
 			int midi = integer(row, DBTableID.Music.COL_MIDI, 0);
+			if (midi < 0)
+			{
+				missingMidi++;
+			}
 			int varp = integer(row, DBTableID.Music.COL_VARIABLE, 0);
 			int bit = integer(row, DBTableID.Music.COL_VARIABLE, 1);
+			TrackEnrichment trackEnrichment = enrichment.find(midi, name);
+			if (!TrackEnrichment.EMPTY.equals(trackEnrichment))
+			{
+				enriched++;
+			}
 			Track track = Track.builder()
 				.name(name)
 				.sortName(sortName == null ? name : sortName)
@@ -177,7 +195,7 @@ public class TrackCatalog
 				.unlocked(false)
 				.holiday(bool(row, DBTableID.Music.COL_HOLIDAY))
 				.automatic(bool(row, DBTableID.Music.COL_AUTOMATIC_UNLOCK))
-				.enrichment(enrichment.find(midi, name))
+				.enrichment(trackEnrichment)
 				.build();
 			if (varp >= 0 && bit >= 0)
 			{
@@ -186,8 +204,9 @@ public class TrackCatalog
 			out.add(track);
 		}
 		rows = out;
-		log.debug("soundtracktracker: read {} tracks across {} varps, skipped {} rows without a name",
-			out.size(), indexesByVarp.size(), skipped);
+		log.debug("soundtracktracker: read {} tracks across {} varps, skipped {} without a name, "
+				+ "{} without a midi id, enriched {}",
+			out.size(), indexesByVarp.size(), skipped, missingMidi, enriched);
 	}
 
 	private boolean isUnlocked(Track track)
