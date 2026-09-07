@@ -38,13 +38,16 @@ import net.runelite.api.events.VarbitChanged;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
+import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.ui.ClientToolbar;
 import net.runelite.client.ui.NavigationButton;
+import net.runelite.client.ui.overlay.worldmap.WorldMapPointManager;
 import net.runelite.client.util.ImageUtil;
 import com.soundtracktracker.catalog.EnrichmentStore;
 import com.soundtracktracker.catalog.TrackCatalog;
+import com.soundtracktracker.map.TrackMapMarker;
 import com.soundtracktracker.ui.SoundtrackTrackerPanel;
 
 @Slf4j
@@ -69,11 +72,14 @@ public class SoundtrackTrackerPlugin extends Plugin
 	private ScheduledExecutorService executor;
 	@Inject
 	private SoundtrackTrackerConfig config;
+	@Inject
+	private WorldMapPointManager worldMapPointManager;
 
 	private EnrichmentStore enrichmentStore;
 	private TrackCatalog catalog;
 	private SoundtrackTrackerPanel panel;
 	private NavigationButton navButton;
+	private TrackMapMarker mapMarker;
 	// set on the client thread once tracks.json is parsed; the catalog must not read rows
 	// before then or every track would be joined to an empty enrichment for the whole run
 	private boolean dataReady;
@@ -101,7 +107,18 @@ public class SoundtrackTrackerPlugin extends Plugin
 		catalog = new TrackCatalog(client, enrichmentStore);
 		catalog.addListener(toPanel);
 
-		panel = new SoundtrackTrackerPanel(config);
+		BufferedImage markerIcon;
+		try
+		{
+			markerIcon = ImageUtil.loadImageResource(getClass(), "map_marker.png");
+		}
+		catch (Exception e)
+		{
+			log.warn("soundtracktracker: failed to load map marker icon", e);
+			markerIcon = null;
+		}
+		mapMarker = new TrackMapMarker(client, clientThread, worldMapPointManager, markerIcon);
+		panel = new SoundtrackTrackerPanel(config, mapMarker);
 		final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "panel_icon.png");
 		navButton = NavigationButton.builder()
 			.tooltip("Soundtrack Tracker")
@@ -140,6 +157,11 @@ public class SoundtrackTrackerPlugin extends Plugin
 			catalog.removeListener(toPanel);
 			catalog = null;
 		}
+		if (mapMarker != null)
+		{
+			mapMarker.clear();
+			mapMarker = null;
+		}
 		if (navButton != null)
 		{
 			clientToolbar.removeNavigation(navButton);
@@ -174,5 +196,21 @@ public class SoundtrackTrackerPlugin extends Plugin
 		{
 			catalog.onVarpChanged(event.getVarpId());
 		}
+	}
+
+	@Subscribe
+	public void onConfigChanged(ConfigChanged event)
+	{
+		if (!SoundtrackTrackerConfig.GROUP.equals(event.getGroup()))
+		{
+			return;
+		}
+		SwingUtilities.invokeLater(() ->
+		{
+			if (panel != null)
+			{
+				panel.refreshFromConfig();
+			}
+		});
 	}
 }
