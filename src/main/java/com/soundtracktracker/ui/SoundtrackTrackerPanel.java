@@ -38,7 +38,6 @@ import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import lombok.extern.slf4j.Slf4j;
 import com.soundtracktracker.SoundtrackTrackerConfig;
 import com.soundtracktracker.catalog.CapeProgress;
 import com.soundtracktracker.catalog.Track;
@@ -50,7 +49,6 @@ import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.PluginPanel;
 
 /** The side panel: progress, controls and the list, swapping to a detail page on click. Swing thread only. */
-@Slf4j
 public class SoundtrackTrackerPanel extends PluginPanel
 {
 	private final SoundtrackTrackerConfig config;
@@ -67,6 +65,8 @@ public class SoundtrackTrackerPanel extends PluginPanel
 	private final Timer debounce;
 
 	private List<Track> tracks = Collections.emptyList();
+	// the track whose detail page is open, so a new snapshot (e.g. it just unlocked) redraws it
+	private Track detailTrack;
 
 	public SoundtrackTrackerPanel(SoundtrackTrackerConfig config, TrackMapMarker mapMarker)
 	{
@@ -142,6 +142,26 @@ public class SoundtrackTrackerPanel extends PluginPanel
 		this.tracks = tracks;
 		header.update(CapeProgress.of(tracks));
 		rebuild();
+		if (detailTrack != null)
+		{
+			Track fresh = null;
+			for (Track t : tracks)
+			{
+				if (t.getName().equals(detailTrack.getName()))
+				{
+					fresh = t;
+					break;
+				}
+			}
+			if (fresh == null)
+			{
+				showList(0); // logged out: the detail no longer describes this player
+			}
+			else if (fresh.isUnlocked() != detailTrack.isUnlocked())
+			{
+				showDetail(fresh);
+			}
+		}
 	}
 
 	/** A config item changed; re-apply the holiday visibility. */
@@ -159,11 +179,17 @@ public class SoundtrackTrackerPanel extends PluginPanel
 
 	void showDetail(Track track)
 	{
-		log.debug("soundtracktracker: detail for {}", track.getName());
+		detailTrack = track;
+		final int scroll = listScrollValue();
+		removeAll();
+		add(new TrackDetailView(track, mapMarker, () -> showList(scroll)), BorderLayout.CENTER);
+		revalidate();
+		repaint();
 	}
 
 	void showList(int scrollValue)
 	{
+		detailTrack = null;
 		removeAll();
 		add(listPage, BorderLayout.CENTER);
 		revalidate();
