@@ -21,7 +21,8 @@ python -m unittest discover -s tools
 ```
 
 The script needs only the Python standard library and prints a summary; commit
-the regenerated `tracks.json`.
+the regenerated `tracks.json`. `tools/make_icon.py` regenerates the panel's
+toolbar icon, `panel_icon.png`.
 
 ## Developing
 
@@ -29,5 +30,12 @@ the regenerated `tracks.json`.
 ./gradlew test      # unit tests
 ./gradlew run       # dev client with the plugin loaded
 ```
+
+## Configuration
+
+- **Show holiday tracks** (default: on) - list holiday event tracks, which never
+  count toward the music cape.
+- **Start on locked tracks** (default: off) - open the panel with the filter
+  already set to locked tracks only.
 
 See `AGENTS.md` for the Plugin Hub rules this code follows.
