@@ -144,5 +144,55 @@ class MapReferenceTest(unittest.TestCase):
         self.assertIsNone(rec["map"])
 
 
+def _row(name, cacheid, **kwargs):
+    row = {
+        "cacheid": cacheid,
+        "name": name,
+        "location": None,
+        "region": None,
+        "quest": None,
+        "unlockdetail": None,
+        "members": None,
+        "map": None,
+        "wikiUrl": "https://oldschool.runescape.wiki/w/" + name.replace(" ", "_"),
+    }
+    row.update(kwargs)
+    return row
+
+
+class DedupeCacheidsTest(unittest.TestCase):
+    def test_richer_row_wins_regardless_of_sort_order(self):
+        empty = _row("A Forgettable Puzzle... (Forgettable Tale...)", 12)
+        rich = _row(
+            "Long Way Home", 12,
+            location="Varrock", region="Varrock", quest="No",
+            unlockdetail="Unlocked in Varrock.", members=False, map={"x": 1, "y": 2, "plane": 0})
+        for rows in ([empty, rich], [rich, empty]):
+            by_name = {r["name"]: r for r in ft.dedupe_cacheids(rows)}
+            self.assertEqual(by_name["Long Way Home"]["cacheid"], 12)
+            self.assertIsNone(by_name["A Forgettable Puzzle... (Forgettable Tale...)"]["cacheid"])
+
+    def test_equal_richness_prefers_non_parenthesised_name(self):
+        parenthesised = _row("Some Track (Remix)", 7, location="X")
+        plain = _row("Some Track", 7, location="Y")
+        by_name = {r["name"]: r for r in ft.dedupe_cacheids([parenthesised, plain])}
+        self.assertEqual(by_name["Some Track"]["cacheid"], 7)
+        self.assertIsNone(by_name["Some Track (Remix)"]["cacheid"])
+
+    def test_losers_keep_their_record_with_cacheid_none(self):
+        loser = _row("Alpha", 3)
+        winner = _row("Beta", 3, location="Somewhere")
+        by_name = {r["name"]: r for r in ft.dedupe_cacheids([loser, winner])}
+        self.assertIsNone(by_name["Alpha"]["cacheid"])
+        self.assertEqual(by_name["Alpha"]["name"], "Alpha")
+        self.assertEqual(by_name["Alpha"]["wikiUrl"], loser["wikiUrl"])
+
+    def test_rows_with_null_cacheid_are_untouched(self):
+        rows = [_row("No Cache", None, location="Somewhere")]
+        result = ft.dedupe_cacheids(rows)
+        self.assertIsNone(result[0]["cacheid"])
+        self.assertEqual(result[0]["location"], "Somewhere")
+
+
 if __name__ == "__main__":
     unittest.main()

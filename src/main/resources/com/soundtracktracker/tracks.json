@@ -15,7 +15,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/7th_Realm"
  },
  {
-  "cacheid": 290,
+  "cacheid": null,
   "name": "A Christmas Deed (Christmas 2021)",
   "location": "Falador",
   "region": "Falador",
@@ -52,7 +52,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/A_Desolate_Past"
  },
  {
-  "cacheid": 1,
+  "cacheid": null,
   "name": "A Diving Sail (Recipe for Disaster - Freeing Pirate Pete)",
   "location": "Port Khazard",
   "region": "Port Khazard",
@@ -93,7 +93,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/A_Festive_Party"
  },
  {
-  "cacheid": 12,
+  "cacheid": null,
   "name": "A Forgettable Puzzle... (Forgettable Tale...)",
   "location": null,
   "region": null,
@@ -119,7 +119,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/A_Forgotten_Religion"
  },
  {
-  "cacheid": 263,
+  "cacheid": null,
   "name": "A Grim Tale (Grim Tales)",
   "location": "Witch's house",
   "region": "Witch's house (location)",
@@ -130,7 +130,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/A_Grim_Tale_%28Grim_Tales%29"
  },
  {
-  "cacheid": 9,
+  "cacheid": null,
   "name": "A Healthy Cactus",
   "location": null,
   "region": null,
@@ -152,7 +152,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/A_Hopping_Easter_%28Easter_2013%29"
  },
  {
-  "cacheid": 118,
+  "cacheid": null,
   "name": "A Hot Air Journey (Enlightened Journey)",
   "location": null,
   "region": null,
@@ -163,7 +163,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/A_Hot_Air_Journey_%28Enlightened_Journey%29"
  },
  {
-  "cacheid": 2,
+  "cacheid": null,
   "name": "A Light Flight (Tears of Guthix)",
   "location": null,
   "region": null,
@@ -174,7 +174,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/A_Light_Flight_%28Tears_of_Guthix%29"
  },
  {
-  "cacheid": 169,
+  "cacheid": null,
   "name": "A Long Royal Plan (Royal Trouble)",
   "location": null,
   "region": null,
@@ -196,7 +196,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/A_Matter_of_Intrigue"
  },
  {
-  "cacheid": 297,
+  "cacheid": null,
   "name": "A Merry Christmas (Christmas 2022)",
   "location": null,
   "region": null,
@@ -207,7 +207,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/A_Merry_Christmas_%28Christmas_2022%29"
  },
  {
-  "cacheid": 184,
+  "cacheid": null,
   "name": "A Monster (A Soul's Bane)",
   "location": "Tolna's rift",
   "region": "Tolna's rift",
@@ -233,7 +233,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/A_Mother%27s_Curse"
  },
  {
-  "cacheid": 85,
+  "cacheid": null,
   "name": "A New Champion! (Champion's Challenge)",
   "location": "Champions' Guild",
   "region": "Champions' Guild",
@@ -244,7 +244,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/A_New_Champion%21_%28Champion%27s_Challenge%29"
  },
  {
-  "cacheid": 170,
+  "cacheid": null,
   "name": "A Royal Plan (Royal Trouble)",
   "location": "Miscellania",
   "region": "Miscellania",
@@ -270,7 +270,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/A_Sailor%27s_Dream"
  },
  {
-  "cacheid": 224,
+  "cacheid": null,
   "name": "A Shadow Passes (The Eyes of Glouphrie)",
   "location": "Tree gnome stronghold",
   "region": "Tree gnome stronghold",
@@ -281,7 +281,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/A_Shadow_Passes_%28The_Eyes_of_Glouphrie%29"
  },
  {
-  "cacheid": 267,
+  "cacheid": null,
   "name": "A Slayer's Feat (Dragon Slayer)",
   "location": "Crandor and Karamja Dungeon",
   "region": "Crandor and Karamja Dungeon",
@@ -292,7 +292,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/A_Slayer%27s_Feat_%28Dragon_Slayer%29"
  },
  {
-  "cacheid": 106,
+  "cacheid": null,
   "name": "A Tale... (Forgettable Tale...)",
   "location": "Keldagrim",
   "region": "Keldagrim",
@@ -318,7 +318,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/A_Taste_of_Hope_%28music_track%29"
  },
  {
-  "cacheid": 125,
+  "cacheid": null,
   "name": "A Temple For My Lord (Enakhra's Lament)",
   "location": "enakhra's Temple",
   "region": "enakhra's Temple",
@@ -329,7 +329,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/A_Temple_For_My_Lord_%28Enakhra%27s_Lament%29"
  },
  {
-  "cacheid": 201,
+  "cacheid": null,
   "name": "A Thing Under the Bed!",
   "location": "Draynor",
   "region": "Draynor",
@@ -392,7 +392,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Adventure"
  },
  {
-  "cacheid": 232,
+  "cacheid": null,
   "name": "Adventurer Stew (My Arm's Big Adventure)",
   "location": "Troll kitchen",
   "region": "Troll kitchen",
@@ -403,7 +403,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Adventurer_Stew_%28My_Arm%27s_Big_Adventure%29"
  },
  {
-  "cacheid": 28,
+  "cacheid": null,
   "name": "Agility Level Up!",
   "location": null,
   "region": null,
@@ -414,7 +414,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Agility_Level_Up%21"
  },
  {
-  "cacheid": 249,
+  "cacheid": null,
   "name": "Air Guitar",
   "location": null,
   "region": null,
@@ -425,7 +425,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Air_Guitar_%28jingle%29"
  },
  {
-  "cacheid": 130,
+  "cacheid": null,
   "name": "Akthanakos Freed (Enakhra's Lament)",
   "location": "Enakhra's Temple",
   "region": "Enakhra's Temple",
@@ -481,7 +481,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/All_Aboard"
  },
  {
-  "cacheid": 252,
+  "cacheid": null,
   "name": "All Easy Tasks (Karamja Diary)",
   "location": null,
   "region": null,
@@ -492,7 +492,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/All_Easy_Tasks_%28Karamja_Diary%29"
  },
  {
-  "cacheid": 253,
+  "cacheid": null,
   "name": "All Hard Tasks (Karamja Diary)",
   "location": null,
   "region": null,
@@ -503,7 +503,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/All_Hard_Tasks_%28Karamja_Diary%29"
  },
  {
-  "cacheid": 251,
+  "cacheid": null,
   "name": "All Medium Tasks (Karamja Diary)",
   "location": null,
   "region": null,
@@ -652,7 +652,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Ambient_Jungle"
  },
  {
-  "cacheid": 138,
+  "cacheid": null,
   "name": "An Ogre Sail",
   "location": null,
   "region": null,
@@ -663,7 +663,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/An_Ogre_Sail"
  },
  {
-  "cacheid": 180,
+  "cacheid": null,
   "name": "Angry (A Soul's Bane)",
   "location": "Tolna's rift",
   "region": "Tolna's rift",
@@ -839,7 +839,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Are_You_Not_Entertained%3F"
  },
  {
-  "cacheid": 226,
+  "cacheid": null,
   "name": "Argento (The Eyes of Glouphrie)",
   "location": null,
   "region": null,
@@ -936,7 +936,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Ascent"
  },
  {
-  "cacheid": 298,
+  "cacheid": null,
   "name": "Assassin Altercation (Secrets of the North)",
   "location": null,
   "region": null,
@@ -947,7 +947,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Assassin_Altercation_%28Secrets_of_the_North%29"
  },
  {
-  "cacheid": 306,
+  "cacheid": null,
   "name": "Assassin Ambush! (While Guthix Sleeps)",
   "location": "Taverley",
   "region": "Taverley",
@@ -958,7 +958,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Assassin_Ambush%21_%28While_Guthix_Sleeps%29"
  },
  {
-  "cacheid": 92,
+  "cacheid": null,
   "name": "Assassin Attack! (Devious Minds)",
   "location": "Entrana",
   "region": "Entrana",
@@ -1085,7 +1085,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Attack_6"
  },
  {
-  "cacheid": 29,
+  "cacheid": null,
   "name": "Attack Level Up!",
   "location": null,
   "region": null,
@@ -1096,7 +1096,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Attack_Level_Up%21"
  },
  {
-  "cacheid": 30,
+  "cacheid": null,
   "name": "Attack Level Up! (Unlocks)",
   "location": null,
   "region": null,
@@ -1122,7 +1122,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Attention"
  },
  {
-  "cacheid": 7,
+  "cacheid": null,
   "name": "Audience of Nature",
   "location": null,
   "region": null,
@@ -1230,7 +1230,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Background"
  },
  {
-  "cacheid": 93,
+  "cacheid": null,
   "name": "Bad Roll (Death Plateau)",
   "location": "Burthorpe",
   "region": "Burthorpe",
@@ -1278,7 +1278,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Ballad_of_the_Basilisk_%28music_track%29"
  },
  {
-  "cacheid": 165,
+  "cacheid": null,
   "name": "Ballad Opening (Fremennik Trials)",
   "location": "Rellekka",
   "region": "Rellekka",
@@ -1289,7 +1289,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Ballad_Opening_%28Fremennik_Trials%29"
  },
  {
-  "cacheid": 164,
+  "cacheid": null,
   "name": "Ballad Refrain (Fremennik Trials)",
   "location": "Rellekka",
   "region": "Rellekka",
@@ -1360,7 +1360,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Barb_Wire"
  },
  {
-  "cacheid": 268,
+  "cacheid": null,
   "name": "Barbarian Funeral",
   "location": "Between Barbarian Outpost and Otto's Grotto",
   "region": "Barbarian Outpost",
@@ -1442,7 +1442,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Barren_Land"
  },
  {
-  "cacheid": 21,
+  "cacheid": null,
   "name": "Basic Stone Entrance (POH)",
   "location": "Player-owned house",
   "region": "Player-owned house",
@@ -1453,7 +1453,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Basic_Stone_Entrance_%28POH%29"
  },
  {
-  "cacheid": 20,
+  "cacheid": null,
   "name": "Basic Wood Entrance (POH)",
   "location": "Player-owned house",
   "region": "Player-owned house",
@@ -1464,7 +1464,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Basic_Wood_Entrance_%28POH%29"
  },
  {
-  "cacheid": 104,
+  "cacheid": null,
   "name": "Beer & Kebabs... (Forgettable Tale...)",
   "location": "Laughing Miner Pub",
   "region": "Laughing Miner Pub",
@@ -1550,7 +1550,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Beneath_the_Stronghold"
  },
  {
-  "cacheid": 114,
+  "cacheid": null,
   "name": "Bert's Lovely Sand (Hand in the Sand)",
   "location": "Yanille",
   "region": "Yanille",
@@ -1606,7 +1606,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Big_Chords"
  },
  {
-  "cacheid": 26,
+  "cacheid": null,
   "name": "Billy & Bob (Garden of Tranquillity)",
   "location": "Falador",
   "region": "Falador",
@@ -1795,7 +1795,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Bone_Dry"
  },
  {
-  "cacheid": 240,
+  "cacheid": null,
   "name": "Bongos (Cold War)",
   "location": null,
   "region": null,
@@ -1821,7 +1821,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Book_of_Spells"
  },
  {
-  "cacheid": 281,
+  "cacheid": null,
   "name": "Border Broken (Leagues)",
   "location": null,
   "region": null,
@@ -1884,7 +1884,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Box_of_Delights"
  },
  {
-  "cacheid": 177,
+  "cacheid": null,
   "name": "Box of Health (Stronghold of Security)",
   "location": "Stronghold of Security",
   "region": "Stronghold of Security",
@@ -1992,7 +1992,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Burning_Desire"
  },
  {
-  "cacheid": 116,
+  "cacheid": null,
   "name": "Burning Experiments (Enlightened Journey)",
   "location": "Entrana",
   "region": "Entrana",
@@ -2033,7 +2033,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Cabin_Fever_%28music_track%29"
  },
  {
-  "cacheid": 120,
+  "cacheid": null,
   "name": "Cadava Potion (Romeo & Juliet)",
   "location": "Varrock crypt",
   "region": "Varrock crypt",
@@ -2085,7 +2085,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Camelot_%28music_track%29"
  },
  {
-  "cacheid": 307,
+  "cacheid": null,
   "name": "Canifis Entrance (POH)",
   "location": "Player-owned house",
   "region": "Player-owned house",
@@ -2111,7 +2111,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Cannonballin%27"
  },
  {
-  "cacheid": 231,
+  "cacheid": null,
   "name": "Cape of Accomplishment",
   "location": null,
   "region": null,
@@ -2122,7 +2122,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Cape_of_Accomplishment_%28jingle%29"
  },
  {
-  "cacheid": 79,
+  "cacheid": null,
   "name": "Captain Braindeath (Rum Deal)",
   "location": "Braindeath Island",
   "region": "Braindeath Island",
@@ -2133,7 +2133,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Captain_Braindeath_%28Rum_Deal%29"
  },
  {
-  "cacheid": 272,
+  "cacheid": null,
   "name": "Case Closed (King's Ransom)",
   "location": "Seers' Village courthouse",
   "region": "Seers' Village courthouse",
@@ -2170,7 +2170,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Castle_Wars_%28music_track%29"
  },
  {
-  "cacheid": 198,
+  "cacheid": null,
   "name": "Cat gets Lazy",
   "location": null,
   "region": null,
@@ -2181,7 +2181,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Cat_gets_Lazy"
  },
  {
-  "cacheid": 199,
+  "cacheid": null,
   "name": "Cat gets Wily",
   "location": null,
   "region": null,
@@ -2364,7 +2364,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Chef_Surprise"
  },
  {
-  "cacheid": 236,
+  "cacheid": null,
   "name": "Chicken Grabbed (Animal Magnetism)",
   "location": "Alice's Farm",
   "region": "Alice's Farm",
@@ -2442,7 +2442,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/City_of_the_Dead"
  },
  {
-  "cacheid": 308,
+  "cacheid": null,
   "name": "Civitas Entrance (POH)",
   "location": "Player-owned house",
   "region": "Player-owned house",
@@ -2498,7 +2498,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Claustrophobia"
  },
  {
-  "cacheid": 237,
+  "cacheid": null,
   "name": "Claws' Shanty (Christmas 2013)",
   "location": "Musa Point",
   "region": "Musa Point",
@@ -2509,7 +2509,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Claws%27_Shanty_%28Christmas_2013%29"
  },
  {
-  "cacheid": 276,
+  "cacheid": null,
   "name": "Clearing the Gauntlet",
   "location": "Prifddinas",
   "region": "Prifddinas",
@@ -2561,7 +2561,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Colossus_of_the_Deep"
  },
  {
-  "cacheid": 299,
+  "cacheid": null,
   "name": "Combat Level Up!",
   "location": null,
   "region": null,
@@ -2572,7 +2572,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Combat_Level_Up%21"
  },
  {
-  "cacheid": 97,
+  "cacheid": null,
   "name": "Commence The Fight! (Duel Arena)",
   "location": null,
   "region": null,
@@ -2624,7 +2624,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Confrontation"
  },
  {
-  "cacheid": 181,
+  "cacheid": null,
   "name": "Confused (A Soul's Bane)",
   "location": "Tolna's rift",
   "region": "Tolna's rift",
@@ -2650,7 +2650,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Conspiracy"
  },
  {
-  "cacheid": 31,
+  "cacheid": null,
   "name": "Construction Level Up!",
   "location": null,
   "region": null,
@@ -2661,7 +2661,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Construction_Level_Up%21"
  },
  {
-  "cacheid": 32,
+  "cacheid": null,
   "name": "Construction Level Up! (Every 10th)",
   "location": null,
   "region": null,
@@ -2687,7 +2687,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Contest"
  },
  {
-  "cacheid": 33,
+  "cacheid": null,
   "name": "Cooking Level Up!",
   "location": null,
   "region": null,
@@ -2698,7 +2698,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Cooking_Level_Up%21"
  },
  {
-  "cacheid": 34,
+  "cacheid": null,
   "name": "Cooking Level Up! (Unlocks)",
   "location": null,
   "region": null,
@@ -2724,7 +2724,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Corporal_Punishment"
  },
  {
-  "cacheid": 113,
+  "cacheid": null,
   "name": "Correct! (Recipe for Disaster - Lumbridge Guide)",
   "location": "Wizards' Tower",
   "region": "Wizards' Tower",
@@ -2780,7 +2780,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Courage"
  },
  {
-  "cacheid": 241,
+  "cacheid": null,
   "name": "Cowbells (Cold War)",
   "location": null,
   "region": null,
@@ -2791,7 +2791,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Cowbells_%28Cold_War%29"
  },
  {
-  "cacheid": 158,
+  "cacheid": null,
   "name": "Cradle of Life (Stronghold of Security)",
   "location": "Stronhold of security",
   "region": "Stronhold of security",
@@ -2802,7 +2802,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Cradle_of_Life_%28Stronghold_of_Security%29"
  },
  {
-  "cacheid": 35,
+  "cacheid": null,
   "name": "Crafting Level Up!",
   "location": null,
   "region": null,
@@ -2813,7 +2813,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Crafting_Level_Up%21"
  },
  {
-  "cacheid": 36,
+  "cacheid": null,
   "name": "Crafting Level Up! (Unlocks)",
   "location": null,
   "region": null,
@@ -3052,7 +3052,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Dance_of_the_Undead"
  },
  {
-  "cacheid": 196,
+  "cacheid": null,
   "name": "Danger Evaded (Temple Trekking)",
   "location": "Paterdomus & Burgh de Rott",
   "region": "Paterdomus",
@@ -3119,7 +3119,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Dangerous_Way"
  },
  {
-  "cacheid": 195,
+  "cacheid": null,
   "name": "Dangers of Morytania (Temple Trekking)",
   "location": "Paterdomus & Burgh de Rott",
   "region": "Paterdomus",
@@ -3253,7 +3253,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Deadlands"
  },
  {
-  "cacheid": 112,
+  "cacheid": null,
   "name": "Deathly Mansion Entrance (POH)",
   "location": null,
   "region": null,
@@ -3290,7 +3290,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Deep_Wildy"
  },
  {
-  "cacheid": 109,
+  "cacheid": null,
   "name": "Defeat... (Burthorpe Games Room)",
   "location": "Burthorpe Castle",
   "region": "Burthorpe Castle",
@@ -3301,7 +3301,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Defeat..._%28Burthorpe_Games_Room%29"
  },
  {
-  "cacheid": 284,
+  "cacheid": null,
   "name": "Defeated! (Soul Wars)",
   "location": "Isle of Souls",
   "region": "Isle of Souls",
@@ -3312,7 +3312,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Defeated%21_%28Soul_Wars%29"
  },
  {
-  "cacheid": 37,
+  "cacheid": null,
   "name": "Defence Level Up!",
   "location": null,
   "region": null,
@@ -3323,7 +3323,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Defence_Level_Up%21"
  },
  {
-  "cacheid": 38,
+  "cacheid": null,
   "name": "Defence Level Up! (Unlocks)",
   "location": null,
   "region": null,
@@ -3494,7 +3494,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Domain_of_the_Vampyres"
  },
  {
-  "cacheid": 14,
+  "cacheid": null,
   "name": "Domain of the Vampyres (Darkness of Hallowvale)",
   "location": "Meiyerditch",
   "region": "Meiyerditch",
@@ -3531,7 +3531,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Doorways"
  },
  {
-  "cacheid": 246,
+  "cacheid": null,
   "name": "Dorgesh-Kaan Nursery",
   "location": "Dorgesh-Kaan",
   "region": "Dorgesh-Kaan",
@@ -3669,7 +3669,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Dragontooth_Island_%28music_track%29"
  },
  {
-  "cacheid": 108,
+  "cacheid": null,
   "name": "Draw (Burthorpe Games Room)",
   "location": "Burthorpe Castle",
   "region": "Burthorpe Castle",
@@ -3680,7 +3680,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Draw_%28Burthorpe_Games_Room%29"
  },
  {
-  "cacheid": 80,
+  "cacheid": null,
   "name": "Draw. (Castle Wars)",
   "location": "Castle Wars",
   "region": "Castle Wars",
@@ -3706,7 +3706,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Dream_%28music_track%29"
  },
  {
-  "cacheid": 96,
+  "cacheid": null,
   "name": "Dream World (Lunar Diplomacy)",
   "location": "Dream World",
   "region": "Dream World",
@@ -3743,7 +3743,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Drunken_Dwarf_%28music_track%29"
  },
  {
-  "cacheid": 302,
+  "cacheid": null,
   "name": "Dumpling no More (Path of Glouphrie)",
   "location": "Tree Gnome Village",
   "region": "Tree Gnome Village",
@@ -3870,7 +3870,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Easter_Jig"
  },
  {
-  "cacheid": 254,
+  "cacheid": null,
   "name": "Easy Task (Karamja Diary)",
   "location": null,
   "region": null,
@@ -3881,7 +3881,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Easy_Task_%28Karamja_Diary%29"
  },
  {
-  "cacheid": 166,
+  "cacheid": null,
   "name": "Echo of Beauty (Mountain Daughter)",
   "location": "Lake near Mountain Camp",
   "region": null,
@@ -3937,7 +3937,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Elder_Wisdom"
  },
  {
-  "cacheid": 100,
+  "cacheid": null,
   "name": "Elf Singing",
   "location": null,
   "region": null,
@@ -4038,7 +4038,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Emperor"
  },
  {
-  "cacheid": 129,
+  "cacheid": null,
   "name": "Entrapment (Enakhra's Lament)",
   "location": "Enakhra's Temple",
   "region": "Enakhra's Temple",
@@ -4161,7 +4161,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Evil_Bob%27s_Island"
  },
  {
-  "cacheid": 91,
+  "cacheid": null,
   "name": "Evil Introduction (Shadow of the Storm)",
   "location": "Thammaron's throne room",
   "region": "Thammaron's throne room",
@@ -4172,7 +4172,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Evil_Introduction_%28Shadow_of_the_Storm%29"
  },
  {
-  "cacheid": 101,
+  "cacheid": null,
   "name": "Evil Twin Caught!",
   "location": "Evil twin",
   "region": "Evil twin",
@@ -4243,7 +4243,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Exposed"
  },
  {
-  "cacheid": 216,
+  "cacheid": null,
   "name": "Expulsion (The Eyes of Glouphrie)",
   "location": "Atarisundri",
   "region": null,
@@ -4306,7 +4306,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Faerie"
  },
  {
-  "cacheid": 270,
+  "cacheid": null,
   "name": "Fail (Surprise Exam)",
   "location": "Surprise Exam",
   "region": "Surprise Exam",
@@ -4317,7 +4317,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Fail_%28Surprise_Exam%29"
  },
  {
-  "cacheid": 126,
+  "cacheid": null,
   "name": "Failed Weapons (Enakhra's Lament)",
   "location": "Enakhra's Temple",
   "region": "Enakhra's Temple",
@@ -4328,7 +4328,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Failed_Weapons_%28Enakhra%27s_Lament%29"
  },
  {
-  "cacheid": 205,
+  "cacheid": null,
   "name": "Fairy Queen Awakens! (A Fairy Tale Part II)",
   "location": "Fairy Resistance Hideout",
   "region": "Fairy Resistance Hideout",
@@ -4365,7 +4365,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Faithless"
  },
  {
-  "cacheid": 22,
+  "cacheid": null,
   "name": "Fancy Stone Entrance (POH)",
   "location": "Player-owned house",
   "region": "Player-owned house",
@@ -4451,7 +4451,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Far_Away"
  },
  {
-  "cacheid": 10,
+  "cacheid": null,
   "name": "Farming Level Up!",
   "location": null,
   "region": null,
@@ -4462,7 +4462,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Farming_Level_Up%21"
  },
  {
-  "cacheid": 11,
+  "cacheid": null,
   "name": "Farming Level Up! (Unlocks)",
   "location": null,
   "region": null,
@@ -4473,7 +4473,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Farming_Level_Up%21_%28Unlocks%29"
  },
  {
-  "cacheid": 186,
+  "cacheid": null,
   "name": "Faster Than Gnome! (Speedy Gnome)",
   "location": null,
   "region": null,
@@ -4499,7 +4499,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Fe_Fi_Fo_Fum"
  },
  {
-  "cacheid": 182,
+  "cacheid": null,
   "name": "Fear (A Soul's Bane)",
   "location": "Tolna's rift",
   "region": "Tolna's rift",
@@ -4540,7 +4540,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Fenkenstrain%27s_Refrain"
  },
  {
-  "cacheid": 286,
+  "cacheid": null,
   "name": "Festive Entrance (POH)",
   "location": "Player-owned house",
   "region": "Player-owned house",
@@ -4622,7 +4622,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Fire_in_the_Deep"
  },
  {
-  "cacheid": 88,
+  "cacheid": null,
   "name": "Fire! (Contact!)",
   "location": "Sophanem",
   "region": "Sophanem",
@@ -4633,7 +4633,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Fire%21_%28Contact%21%29"
  },
  {
-  "cacheid": 39,
+  "cacheid": null,
   "name": "Firemaking Level Up!",
   "location": null,
   "region": null,
@@ -4644,7 +4644,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Firemaking_Level_Up%21"
  },
  {
-  "cacheid": 40,
+  "cacheid": null,
   "name": "Firemaking Level Up! (Unlocks)",
   "location": null,
   "region": null,
@@ -4655,7 +4655,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Firemaking_Level_Up%21_%28Unlocks%29"
  },
  {
-  "cacheid": 103,
+  "cacheid": null,
   "name": "First Sunshine (Death to the Dorgeshuun)",
   "location": "Lumbridge",
   "region": "Lumbridge",
@@ -4681,7 +4681,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Fishing_%28music_track%29"
  },
  {
-  "cacheid": 41,
+  "cacheid": null,
   "name": "Fishing Level Up!",
   "location": null,
   "region": null,
@@ -4692,7 +4692,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Fishing_Level_Up%21"
  },
  {
-  "cacheid": 42,
+  "cacheid": null,
   "name": "Fishing Level Up! (Unlocks)",
   "location": null,
   "region": null,
@@ -4703,7 +4703,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Fishing_Level_Up%21_%28Unlocks%29"
  },
  {
-  "cacheid": 191,
+  "cacheid": null,
   "name": "Flamtaer Restored",
   "location": null,
   "region": null,
@@ -4714,7 +4714,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Flamtaer_Restored"
  },
  {
-  "cacheid": 43,
+  "cacheid": null,
   "name": "Fletching Level Up!",
   "location": null,
   "region": null,
@@ -4725,7 +4725,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Fletching_Level_Up%21"
  },
  {
-  "cacheid": 44,
+  "cacheid": null,
   "name": "Fletching Level Up! (Unlocks)",
   "location": null,
   "region": null,
@@ -4863,7 +4863,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Fossilised"
  },
  {
-  "cacheid": 150,
+  "cacheid": null,
   "name": "Freedom at Last! (Prison Pete)",
   "location": "ScapeRune#Prison",
   "region": "ScapeRune",
@@ -4874,7 +4874,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Freedom_at_Last%21_%28Prison_Pete%29"
  },
  {
-  "cacheid": 19,
+  "cacheid": null,
   "name": "Fremennik-Style Wood Entrance (POH)",
   "location": "Player-owned house",
   "region": "Player-owned house",
@@ -4956,7 +4956,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Funny_Bunnies"
  },
  {
-  "cacheid": 107,
+  "cacheid": null,
   "name": "Gadderanks... (In Aid of the Myreque)",
   "location": "Burgh de Rott",
   "region": "Burgh de Rott",
@@ -5068,7 +5068,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Garden_of_Winter"
  },
  {
-  "cacheid": 8,
+  "cacheid": null,
   "name": "Garden Tour (Garden of Tranquillity)",
   "location": "Varrock Palace",
   "region": "Varrock Palace",
@@ -5105,7 +5105,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Getting_Down_to_Business"
  },
  {
-  "cacheid": 157,
+  "cacheid": null,
   "name": "Gift of Peace (Stronghold of Security)",
   "location": "Stronghold of Security",
   "region": "Stronghold of Security",
@@ -5127,7 +5127,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Gilbert%27s_Glade_%28Music_Track%29"
  },
  {
-  "cacheid": 294,
+  "cacheid": null,
   "name": "Gilbert's Glade (Pride 2022)",
   "location": "South-east of Barbarian Village",
   "region": "Barbarian Village",
@@ -5153,7 +5153,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Gill_Bill"
  },
  {
-  "cacheid": 305,
+  "cacheid": null,
   "name": "Glorious Champion (Fortis Colosseum)",
   "location": "Fortis Colosseum",
   "region": "Fortis Colosseum",
@@ -5164,7 +5164,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Glorious_Champion_%28Fortis_Colosseum%29"
  },
  {
-  "cacheid": 215,
+  "cacheid": null,
   "name": "Glouphrie's Watching (The Eyes of Glouphrie)",
   "location": "Tree Gnome Stronghold",
   "region": "Tree Gnome Stronghold",
@@ -5175,7 +5175,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Glouphrie%27s_Watching_%28The_Eyes_of_Glouphrie%29"
  },
  {
-  "cacheid": 111,
+  "cacheid": null,
   "name": "Gnome Delivery (Gnome Restaurant)",
   "location": null,
   "region": null,
@@ -5201,7 +5201,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Gnome_King"
  },
  {
-  "cacheid": 223,
+  "cacheid": null,
   "name": "Gnome Sabotage (The Eyes of Glouphrie)",
   "location": null,
   "region": null,
@@ -5268,7 +5268,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Gnomeball_%28music_track%29"
  },
  {
-  "cacheid": 3,
+  "cacheid": null,
   "name": "Gnomeball GOAL!",
   "location": "Tree Gnome Stronghold",
   "region": "Tree Gnome Stronghold",
@@ -5305,7 +5305,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Goblin_Game"
  },
  {
-  "cacheid": 209,
+  "cacheid": null,
   "name": "Goblin Retreat (The Eyes of Glouphrie)",
   "location": "Atarisundri",
   "region": null,
@@ -5346,7 +5346,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Golden_Touch"
  },
  {
-  "cacheid": 179,
+  "cacheid": null,
   "name": "Grain of Plenty (Stronghold of Security)",
   "location": "Stronghold of Security",
   "region": "Stronghold of Security",
@@ -5357,7 +5357,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Grain_of_Plenty_%28Stronghold_of_Security%29"
  },
  {
-  "cacheid": 86,
+  "cacheid": null,
   "name": "Grand Transaction",
   "location": null,
   "region": null,
@@ -5368,7 +5368,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Grand_Transaction"
  },
  {
-  "cacheid": 77,
+  "cacheid": null,
   "name": "Grave Robber (Barrows)",
   "location": "East of Mort'ton",
   "region": "Mort'ton",
@@ -5394,7 +5394,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Greatness"
  },
  {
-  "cacheid": 264,
+  "cacheid": null,
   "name": "Grimgnash's Bedtime (Grim Tales)",
   "location": "White Wolf Mountain",
   "region": "White Wolf Mountain",
@@ -5472,7 +5472,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Grumpy"
  },
  {
-  "cacheid": 291,
+  "cacheid": null,
   "name": "Guardian Falls (Guardians of the Rift)",
   "location": "Temple of the Eye",
   "region": "Temple of the Eye (location)",
@@ -5543,7 +5543,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/H.A.M._Fisted"
  },
  {
-  "cacheid": 72,
+  "cacheid": null,
   "name": "Happy Organ",
   "location": "Player-owned house",
   "region": "Player-owned house",
@@ -5554,7 +5554,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Happy_Organ"
  },
  {
-  "cacheid": 255,
+  "cacheid": null,
   "name": "Hard Task (Karamja Diary)",
   "location": null,
   "region": null,
@@ -5640,7 +5640,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Have_an_Ice_Day"
  },
  {
-  "cacheid": 115,
+  "cacheid": null,
   "name": "Hawaii 5 Ogre (Recipe for Disaster - Skrach Uglogwee)",
   "location": "Karamja",
   "region": "Karamja",
@@ -5677,7 +5677,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Healin%27_Feelin%27"
  },
  {
-  "cacheid": 214,
+  "cacheid": null,
   "name": "Healthorg's Rule (The Eyes of Glouphrie)",
   "location": "Tree Gnome Stronghold",
   "region": "Tree Gnome Stronghold",
@@ -5729,7 +5729,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Hells_Bells"
  },
  {
-  "cacheid": 45,
+  "cacheid": null,
   "name": "Herblore Level Up!",
   "location": null,
   "region": null,
@@ -5740,7 +5740,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Herblore_Level_Up%21"
  },
  {
-  "cacheid": 46,
+  "cacheid": null,
   "name": "Herblore Level Up! (Unlocks)",
   "location": null,
   "region": null,
@@ -5751,7 +5751,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Herblore_Level_Up%21_%28Unlocks%29"
  },
  {
-  "cacheid": 235,
+  "cacheid": null,
   "name": "Here Chicky Chicky! (Animal Magnetism)",
   "location": "Alice's Farm",
   "region": "Alice's Farm",
@@ -5814,7 +5814,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/His_Faithful_Servants_%28music_track%29"
  },
  {
-  "cacheid": 47,
+  "cacheid": null,
   "name": "Hitpoints Level Up! (2-49)",
   "location": null,
   "region": null,
@@ -5825,7 +5825,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Hitpoints_Level_Up%21_%282-49%29"
  },
  {
-  "cacheid": 48,
+  "cacheid": null,
   "name": "Hitpoints Level Up! (50-99)",
   "location": null,
   "region": null,
@@ -5903,7 +5903,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Honkytonky_Sea_Shanty_2"
  },
  {
-  "cacheid": 142,
+  "cacheid": null,
   "name": "Honourable Victory! (Barbarian Assault)",
   "location": "Barbarian Outpost",
   "region": "Barbarian Outpost",
@@ -5914,7 +5914,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Honourable_Victory%21_%28Barbarian_Assault%29"
  },
  {
-  "cacheid": 183,
+  "cacheid": null,
   "name": "Hopeless (A Soul's Bane)",
   "location": "Tolna's rift",
   "region": "Tolna's rift",
@@ -5940,7 +5940,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Horizon"
  },
  {
-  "cacheid": 279,
+  "cacheid": null,
   "name": "Hosidius Entrance (POH)",
   "location": "player-owned house",
   "region": "player-owned house",
@@ -6006,7 +6006,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Hunted_%28Impending_Doom%29"
  },
  {
-  "cacheid": 49,
+  "cacheid": null,
   "name": "Hunter Level Up! (Even)",
   "location": null,
   "region": null,
@@ -6017,7 +6017,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Hunter_Level_Up%21_%28Even%29"
  },
  {
-  "cacheid": 50,
+  "cacheid": null,
   "name": "Hunter Level Up! (Odd)",
   "location": null,
   "region": null,
@@ -6099,7 +6099,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Ice_Melody"
  },
  {
-  "cacheid": 192,
+  "cacheid": null,
   "name": "Icthlarin's Little Puzzle",
   "location": "Klenter's Pyramid",
   "region": "Klenter's Pyramid",
@@ -6140,7 +6140,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Impetuous"
  },
  {
-  "cacheid": 131,
+  "cacheid": null,
   "name": "Improvisation (Recruitment Drive)",
   "location": "Temple Knight Training Grounds",
   "region": "Temple Knight",
@@ -6405,7 +6405,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Invader"
  },
  {
-  "cacheid": 208,
+  "cacheid": null,
   "name": "Invincible Army (The Eyes of Glouphrie)",
   "location": "Atarisundri",
   "region": null,
@@ -6506,7 +6506,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/It%27s_not_over_%27til..."
  },
  {
-  "cacheid": 148,
+  "cacheid": null,
   "name": "It's Pete! (Postie Pete)",
   "location": null,
   "region": null,
@@ -6532,7 +6532,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Itsy_Bitsy..."
  },
  {
-  "cacheid": 219,
+  "cacheid": null,
   "name": "Izzie no More (The Eyes of Glouphrie)",
   "location": "Brimstail's cave",
   "region": "Brimstail's cave",
@@ -6767,7 +6767,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Karamja_Jam"
  },
  {
-  "cacheid": 105,
+  "cacheid": null,
   "name": "Kebabsh... (Forgettable Tale...)",
   "location": "Red Axe base",
   "region": null,
@@ -6778,7 +6778,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Kebabsh..._%28Forgettable_Tale...%29"
  },
  {
-  "cacheid": 271,
+  "cacheid": null,
   "name": "King has Come (King's Ransom)",
   "location": "Black Knights' Fortress",
   "region": "Black Knights' Fortress (location)",
@@ -6800,7 +6800,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/King_of_the_Trolls"
  },
  {
-  "cacheid": 123,
+  "cacheid": null,
   "name": "King Rat Is Dead! (Ratcatchers)",
   "location": "Varrock",
   "region": "Varrock",
@@ -7118,7 +7118,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Last_Man_Standing_%28music_track%29"
  },
  {
-  "cacheid": 75,
+  "cacheid": null,
   "name": "Last Man Standing! (Fight Pits)",
   "location": "Mor Ul Rek",
   "region": "Mor Ul Rek",
@@ -7290,7 +7290,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Little_Cave_of_Horrors"
  },
  {
-  "cacheid": 155,
+  "cacheid": null,
   "name": "Logic (Recruitment Drive)",
   "location": "Temple Knight Training Grounds",
   "region": "Temple Knight",
@@ -7331,7 +7331,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Long_Ago"
  },
  {
-  "cacheid": 124,
+  "cacheid": null,
   "name": "Long Live The Rat King (Ratcatchers)",
   "location": "Varrock",
   "region": "Varrock",
@@ -7413,7 +7413,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Lore_and_Order"
  },
  {
-  "cacheid": 121,
+  "cacheid": null,
   "name": "Loss (Keldagrim Trading)",
   "location": null,
   "region": null,
@@ -7499,7 +7499,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Lucid_Nightmare"
  },
  {
-  "cacheid": 94,
+  "cacheid": null,
   "name": "Lucky Win (Death Plateau)",
   "location": "Burthorpe",
   "region": "Burthorpe",
@@ -7540,7 +7540,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Lumbering"
  },
  {
-  "cacheid": 23,
+  "cacheid": null,
   "name": "Lumbridge Entrance (POH)",
   "location": "Player-owned house",
   "region": "Player-owned house",
@@ -7566,7 +7566,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Lurking_Threats"
  },
  {
-  "cacheid": 218,
+  "cacheid": null,
   "name": "Machine Fixed (The Eyes of Glouphrie)",
   "location": "Brimstail's cave",
   "region": "Brimstail's cave",
@@ -7607,7 +7607,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Mage_Arena_%28music_track%29"
  },
  {
-  "cacheid": 132,
+  "cacheid": null,
   "name": "Magic Carpet Ride",
   "location": null,
   "region": null,
@@ -7633,7 +7633,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Magic_Dance"
  },
  {
-  "cacheid": 51,
+  "cacheid": null,
   "name": "Magic Level Up!",
   "location": null,
   "region": null,
@@ -7644,7 +7644,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Magic_Level_Up%21"
  },
  {
-  "cacheid": 52,
+  "cacheid": null,
   "name": "Magic Level Up! (Unlocks)",
   "location": null,
   "region": null,
@@ -7700,7 +7700,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Major_Miner"
  },
  {
-  "cacheid": 87,
+  "cacheid": null,
   "name": "Making Sense of Dwarven Schematics (Between a Rock)",
   "location": null,
   "region": null,
@@ -7879,7 +7879,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Maws_Jaws_%26_Claws"
  },
  {
-  "cacheid": 117,
+  "cacheid": null,
   "name": "Maze Centre",
   "location": "Maze",
   "region": "Maze",
@@ -7890,7 +7890,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Maze_Centre"
  },
  {
-  "cacheid": 135,
+  "cacheid": null,
   "name": "Meanwhile. (Monkey Madness)",
   "location": null,
   "region": null,
@@ -7927,7 +7927,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Medieval"
  },
  {
-  "cacheid": 256,
+  "cacheid": null,
   "name": "Medium Task (Karamja Diary)",
   "location": null,
   "region": null,
@@ -7979,7 +7979,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Memories_of_the_Myreque"
  },
  {
-  "cacheid": 156,
+  "cacheid": null,
   "name": "Memory (Recruitment Drive)",
   "location": "Temple Knight Training Grounds",
   "region": "Temple Knight",
@@ -8076,7 +8076,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Mined_Out"
  },
  {
-  "cacheid": 53,
+  "cacheid": null,
   "name": "Mining Level Up!",
   "location": null,
   "region": null,
@@ -8087,7 +8087,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Mining_Level_Up%21"
  },
  {
-  "cacheid": 54,
+  "cacheid": null,
   "name": "Mining Level Up! (Unlocks)",
   "location": null,
   "region": null,
@@ -8143,7 +8143,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Miscellania_%28music_track%29"
  },
  {
-  "cacheid": 134,
+  "cacheid": null,
   "name": "Mission Over (Monkey Madness)",
   "location": "Banana plantation",
   "region": "Banana plantation",
@@ -8169,7 +8169,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Mistrock_%28music_track%29"
  },
  {
-  "cacheid": 133,
+  "cacheid": null,
   "name": "Mizgog's Beads (Imp Catcher)",
   "location": "Wizards Tower",
   "region": "Wizards Tower",
@@ -8292,7 +8292,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Moody"
  },
  {
-  "cacheid": 73,
+  "cacheid": null,
   "name": "Moody Organ",
   "location": null,
   "region": null,
@@ -8359,7 +8359,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Morytanian_Mystery"
  },
  {
-  "cacheid": 227,
+  "cacheid": null,
   "name": "Morytanian Mystery (Darkness of Hallowvale)",
   "location": "Silvarea",
   "region": "Silvarea",
@@ -8370,7 +8370,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Morytanian_Mystery_%28Darkness_of_Hallowvale%29"
  },
  {
-  "cacheid": 230,
+  "cacheid": null,
   "name": "Mother Mallum (The Slug Menace)",
   "location": "Witchaven Dungeon",
   "region": "Witchaven Dungeon",
@@ -8452,7 +8452,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Mutant_Medley"
  },
  {
-  "cacheid": 275,
+  "cacheid": null,
   "name": "My Arm & Snowflake Forever (Making Friends with My Arm)",
   "location": "Weiss",
   "region": "Weiss",
@@ -8463,7 +8463,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/My_Arm_%26_Snowflake_Forever_%28Making_Friends_with_My_Arm%29"
  },
  {
-  "cacheid": 273,
+  "cacheid": null,
   "name": "My Arm's First Love (Making Friends with My Arm)",
   "location": "Weiss",
   "region": "Weiss",
@@ -8594,7 +8594,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Neverland"
  },
  {
-  "cacheid": 136,
+  "cacheid": null,
   "name": "New Chapter (Monkey Madness)",
   "location": null,
   "region": null,
@@ -8710,7 +8710,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Nomad_%28music_track%29"
  },
  {
-  "cacheid": 261,
+  "cacheid": null,
   "name": "Nora's Broken Record (Grim Tales)",
   "location": "Witch's house",
   "region": "Witch's house",
@@ -8721,7 +8721,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Nora%27s_Broken_Record_%28Grim_Tales%29"
  },
  {
-  "cacheid": 262,
+  "cacheid": null,
   "name": "Nora's Melody (Grim Tales)",
   "location": "Witch's house",
   "region": "Witch's house",
@@ -8732,7 +8732,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Nora%27s_Melody_%28Grim_Tales%29"
  },
  {
-  "cacheid": 260,
+  "cacheid": null,
   "name": "Nora's Record (Grim Tales)",
   "location": "Witch's house",
   "region": "Witch's house",
@@ -8836,7 +8836,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Oaknock_Calls_%28The_Eyes_of_Glouphrie%29"
  },
  {
-  "cacheid": 220,
+  "cacheid": null,
   "name": "Oaknock's Machine (The Eyes of Glouphrie)",
   "location": null,
   "region": null,
@@ -8847,7 +8847,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Oaknock%27s_Machine_%28The_Eyes_of_Glouphrie%29"
  },
  {
-  "cacheid": 159,
+  "cacheid": null,
   "name": "Observation (Recruitment Drive)",
   "location": "Temple Knight Training Grounds",
   "region": "Temple Knight",
@@ -8873,7 +8873,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Ocean_Depths"
  },
  {
-  "cacheid": 212,
+  "cacheid": null,
   "name": "Of Glouphrie (The Eyes of Glouphrie)",
   "location": "Tree Gnome Stronghold",
   "region": "Tree Gnome Stronghold",
@@ -9018,7 +9018,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Oncoming_Foe"
  },
  {
-  "cacheid": 160,
+  "cacheid": null,
   "name": "Order (Recruitment Drive)",
   "location": "Temple Knight Training Grounds",
   "region": "Temple Knight",
@@ -9066,7 +9066,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Oriental"
  },
  {
-  "cacheid": 140,
+  "cacheid": null,
   "name": "Osman The Spymaster (Contact!)",
   "location": "Sophanem",
   "region": "Sophanem",
@@ -9227,7 +9227,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Pathways"
  },
  {
-  "cacheid": 161,
+  "cacheid": null,
   "name": "Patience (Recruitment Drive)",
   "location": "Temple Knight Training Grounds",
   "region": "Temple Knight",
@@ -9264,7 +9264,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Penguin_Plots"
  },
  {
-  "cacheid": 163,
+  "cacheid": null,
   "name": "Perfectly Tuned (Fremennik Trials)",
   "location": null,
   "region": null,
@@ -9290,7 +9290,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Pest_Control_%28music_track%29"
  },
  {
-  "cacheid": 145,
+  "cacheid": null,
   "name": "Pest Controlled (Pest Control)",
   "location": "Void Knights' Outpost",
   "region": "Void Knights' Outpost",
@@ -9301,7 +9301,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Pest_Controlled_%28Pest_Control%29"
  },
  {
-  "cacheid": 146,
+  "cacheid": null,
   "name": "Petra Freed (One Small Favour)",
   "location": null,
   "region": null,
@@ -9323,7 +9323,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Petrification_of_the_Basilisk_%28Music_Track%29"
  },
  {
-  "cacheid": 277,
+  "cacheid": null,
   "name": "Petrification of the Basilisk (The Fremennik Exiles)",
   "location": "Jormungand's Prison",
   "region": "Jormungand's Prison",
@@ -9491,7 +9491,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Power_of_the_Shadow_Realm"
  },
  {
-  "cacheid": 55,
+  "cacheid": null,
   "name": "Prayer Level Up!",
   "location": null,
   "region": null,
@@ -9502,7 +9502,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Prayer_Level_Up%21"
  },
  {
-  "cacheid": 56,
+  "cacheid": null,
   "name": "Prayer Level Up! (Unlocks)",
   "location": null,
   "region": null,
@@ -9621,7 +9621,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Prison_Break_%28music_track%29"
  },
  {
-  "cacheid": 122,
+  "cacheid": null,
   "name": "Profit (Keldagrim Trading)",
   "location": null,
   "region": null,
@@ -9662,7 +9662,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Quest_%28music_track%29"
  },
  {
-  "cacheid": 152,
+  "cacheid": null,
   "name": "Quest Complete 1",
   "location": null,
   "region": null,
@@ -9673,7 +9673,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Quest_Complete_1"
  },
  {
-  "cacheid": 153,
+  "cacheid": null,
   "name": "Quest Complete 2",
   "location": null,
   "region": null,
@@ -9684,7 +9684,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Quest_Complete_2"
  },
  {
-  "cacheid": 154,
+  "cacheid": null,
   "name": "Quest Complete 3",
   "location": null,
   "region": null,
@@ -9695,7 +9695,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Quest_Complete_3"
  },
  {
-  "cacheid": 171,
+  "cacheid": null,
   "name": "Quick Sail",
   "location": null,
   "region": null,
@@ -9721,7 +9721,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Race_Against_the_Clock"
  },
  {
-  "cacheid": 289,
+  "cacheid": null,
   "name": "Raging Storm (Tempoross)",
   "location": "Tempoross Cove",
   "region": "Tempoross Cove",
@@ -9732,7 +9732,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Raging_Storm_%28Tempoross%29"
  },
  {
-  "cacheid": 57,
+  "cacheid": null,
   "name": "Ranged Level Up!",
   "location": null,
   "region": null,
@@ -9743,7 +9743,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Ranged_Level_Up%21"
  },
  {
-  "cacheid": 58,
+  "cacheid": null,
   "name": "Ranged Level Up! (Unlocks)",
   "location": null,
   "region": null,
@@ -9769,7 +9769,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Rat_a_Tat_Tat"
  },
  {
-  "cacheid": 83,
+  "cacheid": null,
   "name": "Rat Beats Cat (Rat Pits)",
   "location": "* Varrock * Ardougne * Keldagrim * Port Sarim",
   "region": "Varrock",
@@ -9780,7 +9780,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Rat_Beats_Cat_%28Rat_Pits%29"
  },
  {
-  "cacheid": 84,
+  "cacheid": null,
   "name": "Rat Goes Splat (Rat Pits)",
   "location": "* Varrock * Ardougne * Keldagrim * Port Sarim",
   "region": "Varrock",
@@ -9836,7 +9836,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Ready_for_the_Hunt"
  },
  {
-  "cacheid": 167,
+  "cacheid": null,
   "name": "Ready to Fire! (Between a Rock)",
   "location": "Keldagrim south-west mine",
   "region": "Keldagrim south-west mine",
@@ -9847,7 +9847,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Ready_to_Fire%21_%28Between_a_Rock%29"
  },
  {
-  "cacheid": 95,
+  "cacheid": null,
   "name": "Reflection (Lunar Diplomacy)",
   "location": "Dream World",
   "region": "Dream World",
@@ -9899,7 +9899,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Reggae"
  },
  {
-  "cacheid": 89,
+  "cacheid": null,
   "name": "Reggae 2",
   "location": "East of Karamja Jungle",
   "region": null,
@@ -9925,7 +9925,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Reign_of_the_Basilisk"
  },
  {
-  "cacheid": 274,
+  "cacheid": null,
   "name": "Rejection (Making Friends with My Arm)",
   "location": "Weiss",
   "region": "Weiss",
@@ -9936,7 +9936,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Rejection_%28Making_Friends_with_My_Arm%29"
  },
  {
-  "cacheid": 282,
+  "cacheid": null,
   "name": "Relic of Power (Leagues)",
   "location": null,
   "region": null,
@@ -10048,7 +10048,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Rhapsody"
  },
  {
-  "cacheid": 292,
+  "cacheid": null,
   "name": "Rift Closed (Guardians of the Rift)",
   "location": "Temple of the Eye",
   "region": "Temple of the Eye (location)",
@@ -10160,7 +10160,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Romancing_the_Crone"
  },
  {
-  "cacheid": 168,
+  "cacheid": null,
   "name": "Romeo Falls in Love (Romeo & Juliet)",
   "location": "Varrock crypt",
   "region": "Varrock crypt",
@@ -10253,7 +10253,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Rugged_Terrain"
  },
  {
-  "cacheid": 5,
+  "cacheid": null,
   "name": "Ruined Potion (Black Knights' Fortress)",
   "location": "Black Knights' Fortress",
   "region": "Black Knights' Fortress (location)",
@@ -10279,7 +10279,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Ruins_of_Isolation"
  },
  {
-  "cacheid": 203,
+  "cacheid": null,
   "name": "Rum for the Dumb (Rum Deal)",
   "location": "Braindeath Island",
   "region": "Braindeath Island",
@@ -10290,7 +10290,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Rum_for_the_Dumb_%28Rum_Deal%29"
  },
  {
-  "cacheid": 233,
+  "cacheid": null,
   "name": "Rumble in da Jungle (My Arm's Big Adventure)",
   "location": "Tai Bwo Wannai",
   "region": "Tai Bwo Wannai",
@@ -10301,7 +10301,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Rumble_in_da_Jungle_%28My_Arm%27s_Big_Adventure%29"
  },
  {
-  "cacheid": 25,
+  "cacheid": null,
   "name": "Rune Casket Open! (Rogue Trader)",
   "location": "Al Kharid",
   "region": "Al Kharid",
@@ -10327,7 +10327,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Rune_Essence_%28music_track%29"
  },
  {
-  "cacheid": 59,
+  "cacheid": null,
   "name": "Runecraft Level Up!",
   "location": null,
   "region": null,
@@ -10338,7 +10338,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Runecraft_Level_Up%21"
  },
  {
-  "cacheid": 60,
+  "cacheid": null,
   "name": "Runecraft Level Up! (Unlocks)",
   "location": null,
   "region": null,
@@ -10349,7 +10349,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Runecraft_Level_Up%21_%28Unlocks%29"
  },
  {
-  "cacheid": 258,
+  "cacheid": null,
   "name": "Rupert's Ascent (Grim Tales)",
   "location": "Tower between Captured Temple and Ice Mountain",
   "region": "Captured Temple",
@@ -10360,7 +10360,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Rupert%27s_Ascent_%28Grim_Tales%29"
  },
  {
-  "cacheid": 257,
+  "cacheid": null,
   "name": "Rupert's Decent (Grim Tales)",
   "location": "Tower between Captured Temple and Ice Mountain",
   "region": "Captured Temple",
@@ -10371,7 +10371,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Rupert%27s_Decent_%28Grim_Tales%29"
  },
  {
-  "cacheid": 259,
+  "cacheid": null,
   "name": "Rupert's Second Decent (Grim Tales)",
   "location": "Tower between Captured Temple and Ice Mountain",
   "region": "Captured Temple",
@@ -10397,7 +10397,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Sad_Meadow"
  },
  {
-  "cacheid": 24,
+  "cacheid": null,
   "name": "Safe Cracked (Rogues' Den)",
   "location": null,
   "region": null,
@@ -10438,7 +10438,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Saga"
  },
  {
-  "cacheid": 172,
+  "cacheid": null,
   "name": "Sailing Journey",
   "location": null,
   "region": null,
@@ -10601,7 +10601,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Scape_Home"
  },
  {
-  "cacheid": 207,
+  "cacheid": null,
   "name": "Scape Hunter",
   "location": null,
   "region": null,
@@ -10612,7 +10612,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Scape_Hunter"
  },
  {
-  "cacheid": 280,
+  "cacheid": null,
   "name": "Scape Jingle",
   "location": null,
   "region": null,
@@ -10693,7 +10693,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Scape_Scared"
  },
  {
-  "cacheid": 99,
+  "cacheid": null,
   "name": "Scape Scrambled (Easter 2005)",
   "location": null,
   "region": null,
@@ -10857,7 +10857,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Sea_Shanty_2"
  },
  {
-  "cacheid": 210,
+  "cacheid": null,
   "name": "Sea Shanty Xmas",
   "location": "2013 Christmas event",
   "region": null,
@@ -10879,7 +10879,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Seaslug_Sailing_Journey"
  },
  {
-  "cacheid": 213,
+  "cacheid": null,
   "name": "Secrets (The Eyes of Glouphrie)",
   "location": "Tree Gnome Stronghold",
   "region": "Tree Gnome Stronghold",
@@ -11107,7 +11107,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Showdown"
  },
  {
-  "cacheid": 13,
+  "cacheid": null,
   "name": "Sigmund's Plan (Death to the Dorgeshuun)",
   "location": "Chasm of Tears",
   "region": "Chasm of Tears",
@@ -11148,7 +11148,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Sign_Here"
  },
  {
-  "cacheid": 266,
+  "cacheid": null,
   "name": "Silence (1 Second)",
   "location": null,
   "region": null,
@@ -11159,7 +11159,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Silence_%281_Second%29"
  },
  {
-  "cacheid": 173,
+  "cacheid": null,
   "name": "Silence (25 Seconds)",
   "location": null,
   "region": null,
@@ -11170,7 +11170,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Silence_%2825_Seconds%29"
  },
  {
-  "cacheid": 147,
+  "cacheid": null,
   "name": "Silence (5 Seconds)",
   "location": null,
   "region": null,
@@ -11181,7 +11181,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Silence_%285_Seconds%29"
  },
  {
-  "cacheid": 245,
+  "cacheid": null,
   "name": "Silence (6 Seconds)",
   "location": null,
   "region": null,
@@ -11192,7 +11192,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Silence_%286_Seconds%29"
  },
  {
-  "cacheid": 174,
+  "cacheid": null,
   "name": "Skullball Goal!",
   "location": "Werewolf Skullball",
   "region": "Werewolf Skullball",
@@ -11203,7 +11203,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Skullball_Goal%21"
  },
  {
-  "cacheid": 81,
+  "cacheid": null,
   "name": "Slaughtered... (Castle Wars)",
   "location": "Castle Wars",
   "region": "Castle Wars",
@@ -11214,7 +11214,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Slaughtered..._%28Castle_Wars%29"
  },
  {
-  "cacheid": 61,
+  "cacheid": null,
   "name": "Slayer Level Up!",
   "location": null,
   "region": null,
@@ -11225,7 +11225,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Slayer_Level_Up%21"
  },
  {
-  "cacheid": 62,
+  "cacheid": null,
   "name": "Slayer Level Up! (Unlocks)",
   "location": null,
   "region": null,
@@ -11236,7 +11236,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Slayer_Level_Up%21_%28Unlocks%29"
  },
  {
-  "cacheid": 243,
+  "cacheid": null,
   "name": "Sleepy...",
   "location": "Harmony island",
   "region": "Harmony island",
@@ -11277,7 +11277,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Slice_of_Station"
  },
  {
-  "cacheid": 300,
+  "cacheid": null,
   "name": "Sliske... (Desert Treasure II)",
   "location": "Ancient Vault",
   "region": "Ancient Vault",
@@ -11318,7 +11318,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Slug_a_Bug_Ball"
  },
  {
-  "cacheid": 63,
+  "cacheid": null,
   "name": "Smithing Level Up!",
   "location": null,
   "region": null,
@@ -11329,7 +11329,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Smithing_Level_Up%21"
  },
  {
-  "cacheid": 64,
+  "cacheid": null,
   "name": "Smithing Level Up! (Unlocks)",
   "location": null,
   "region": null,
@@ -11340,7 +11340,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Smithing_Level_Up%21_%28Unlocks%29"
  },
  {
-  "cacheid": 175,
+  "cacheid": null,
   "name": "Snake Charming (Pyramid Plunder)",
   "location": null,
   "region": null,
@@ -11351,7 +11351,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Snake_Charming_%28Pyramid_Plunder%29"
  },
  {
-  "cacheid": 176,
+  "cacheid": null,
   "name": "Snake Charming (The Feud)",
   "location": null,
   "region": null,
@@ -11429,7 +11429,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Song_of_the_Silent_Choir"
  },
  {
-  "cacheid": 244,
+  "cacheid": null,
   "name": "Soothing Kitten Music (Great Brain Robbery)",
   "location": "Harmony Island",
   "region": "Harmony Island",
@@ -11631,7 +11631,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Spooky_Jungle"
  },
  {
-  "cacheid": 74,
+  "cacheid": null,
   "name": "Spooky Organ",
   "location": null,
   "region": null,
@@ -11694,7 +11694,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Stand_Up_and_Be_Counted"
  },
  {
-  "cacheid": 287,
+  "cacheid": null,
   "name": "Star of Your Own (Shooting Stars)",
   "location": null,
   "region": null,
@@ -11735,7 +11735,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Start"
  },
  {
-  "cacheid": 204,
+  "cacheid": null,
   "name": "Stealing from the Godfather (A Fairy Tale Part II)",
   "location": "Zanaris",
   "region": "Zanaris",
@@ -11821,7 +11821,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Storm_Brew"
  },
  {
-  "cacheid": 221,
+  "cacheid": null,
   "name": "Story for Brimstal (The Eyes of Glouphrie)",
   "location": "Brimstail's cave",
   "region": "Brimstail's cave",
@@ -11892,7 +11892,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Stratosphere"
  },
  {
-  "cacheid": 65,
+  "cacheid": null,
   "name": "Strength Level Up! (2-49)",
   "location": null,
   "region": null,
@@ -11903,7 +11903,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Strength_Level_Up%21_%282-49%29"
  },
  {
-  "cacheid": 66,
+  "cacheid": null,
   "name": "Strength Level Up! (50-99)",
   "location": null,
   "region": null,
@@ -11944,7 +11944,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Stuck_in_the_Mire"
  },
  {
-  "cacheid": 265,
+  "cacheid": null,
   "name": "Stupid Human Story (Grim Tales)",
   "location": "White Wolf Mountain",
   "region": "White Wolf Mountain",
@@ -11970,7 +11970,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Subterranea"
  },
  {
-  "cacheid": 225,
+  "cacheid": null,
   "name": "Sudden Cry (The Eyes of Glouphrie)",
   "location": "Tree Gnome Stronghold",
   "region": "Tree Gnome Stronghold",
@@ -12026,7 +12026,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Superstition"
  },
  {
-  "cacheid": 247,
+  "cacheid": null,
   "name": "Surok Dance (What Lies Below)",
   "location": "Tunnel of Chaos north-east of Varrock",
   "region": "Tunnel of Chaos",
@@ -12037,7 +12037,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Surok_Dance_%28What_Lies_Below%29"
  },
  {
-  "cacheid": 248,
+  "cacheid": null,
   "name": "Surok Rock (What Lies Below)",
   "location": "Tunnel of Chaos north-east of Varrock",
   "region": "Tunnel of Chaos",
@@ -12074,7 +12074,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Suspicious"
  },
  {
-  "cacheid": 293,
+  "cacheid": null,
   "name": "Sword Good. Hand Over. (Giants' Foundry)",
   "location": "Giants' Foundry",
   "region": "Giants' Foundry",
@@ -12085,7 +12085,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Sword_Good._Hand_Over._%28Giants%27_Foundry%29"
  },
  {
-  "cacheid": 71,
+  "cacheid": null,
   "name": "Tagged a Ticket! (Brimhaven Agility Arena)",
   "location": "Brimhaven",
   "region": "Brimhaven",
@@ -12111,7 +12111,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Tale_of_Keldagrim"
  },
  {
-  "cacheid": 187,
+  "cacheid": null,
   "name": "Tale of the Wise Old Man (Swan Song)",
   "location": "Piscatoris Fishing Colony",
   "region": "Piscatoris Fishing Colony",
@@ -12137,7 +12137,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Talking_Forest"
  },
  {
-  "cacheid": 190,
+  "cacheid": null,
   "name": "Tamayu Slays the Shaikahan (Tai Bwo Wannai Trio)",
   "location": "Karamja",
   "region": "Karamja",
@@ -12148,7 +12148,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Tamayu_Slays_the_Shaikahan_%28Tai_Bwo_Wannai_Trio%29"
  },
  {
-  "cacheid": 238,
+  "cacheid": null,
   "name": "Tarn (Lair of Tarn Razorlor)",
   "location": "Tarn's Lair",
   "region": "Tarn's Lair",
@@ -12170,7 +12170,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Tarn_Razorlor_%28music_track%29"
  },
  {
-  "cacheid": 283,
+  "cacheid": null,
   "name": "Task Mastered (Leagues)",
   "location": null,
   "region": null,
@@ -12331,7 +12331,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Tempor_of_the_Storm"
  },
  {
-  "cacheid": 288,
+  "cacheid": null,
   "name": "Tempor Subdued! (Tempoross)",
   "location": "Tempoross Cove",
   "region": "Tempoross Cove",
@@ -12353,7 +12353,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Terrorbird_Tussle"
  },
  {
-  "cacheid": 301,
+  "cacheid": null,
   "name": "Terrorbird Tussle (Jingle)",
   "location": null,
   "region": null,
@@ -12386,7 +12386,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Test_of_Isolation"
  },
  {
-  "cacheid": 295,
+  "cacheid": null,
   "name": "Test of Nobility (Tombs of Amascut)",
   "location": "Tombs of Amascut",
   "region": "Tombs of Amascut",
@@ -12486,7 +12486,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Angel%27s_Fury"
  },
  {
-  "cacheid": 127,
+  "cacheid": null,
   "name": "The Avarrockians (Enakhra's Lament)",
   "location": "Enakhra's Temple",
   "region": "Enakhra's Temple",
@@ -12512,7 +12512,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Bane_of_Ashihama"
  },
  {
-  "cacheid": 4,
+  "cacheid": null,
   "name": "The Banquet (Recipe for Disaster)",
   "location": "Lumbridge",
   "region": "Lumbridge",
@@ -12523,7 +12523,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Banquet_%28Recipe_for_Disaster%29"
  },
  {
-  "cacheid": 206,
+  "cacheid": null,
   "name": "The Battle of Atarisundri (The Eyes of Glouphrie)",
   "location": null,
   "region": null,
@@ -12604,7 +12604,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Cellar_Dwellers"
  },
  {
-  "cacheid": 139,
+  "cacheid": null,
   "name": "The Chest of Light (Mourning's End Part II)",
   "location": "Temple of Light",
   "region": "Temple of Light",
@@ -12888,7 +12888,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Evil_Within"
  },
  {
-  "cacheid": 217,
+  "cacheid": null,
   "name": "The Expulsion of Glouphrie (The Eyes of Glouphrie)",
   "location": null,
   "region": null,
@@ -12899,7 +12899,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Expulsion_of_Glouphrie_%28The_Eyes_of_Glouphrie%29"
  },
  {
-  "cacheid": 6,
+  "cacheid": null,
   "name": "The Face of a King (The Giant Dwarf)",
   "location": "Keldagrim",
   "region": "Keldagrim",
@@ -12921,7 +12921,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Fairy_Dragon"
  },
  {
-  "cacheid": 102,
+  "cacheid": null,
   "name": "The Fairy Dragon Appears! (Recipe for Disaster - Sir Amik Varze)",
   "location": "Evil Chicken's Lair",
   "region": "Evil Chicken's Lair",
@@ -12947,7 +12947,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Fallen_Empire_%28music_track%29"
  },
  {
-  "cacheid": 278,
+  "cacheid": null,
   "name": "The Fallen Myreque",
   "location": "Darkmeyer",
   "region": "Darkmeyer",
@@ -13003,7 +13003,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Feathered_Serpent"
  },
  {
-  "cacheid": 76,
+  "cacheid": null,
   "name": "The Fight Continues (Fight Cave)",
   "location": "Mor Ul Rek",
   "region": "Mor Ul Rek",
@@ -13216,7 +13216,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Golem_%28music_track%29"
  },
  {
-  "cacheid": 78,
+  "cacheid": null,
   "name": "The Grand Opening (Another Slice of H.A.M.)",
   "location": "Dorgesh-Kaan–Keldagrim train system",
   "region": "Dorgesh-Kaan–Keldagrim train system",
@@ -13335,7 +13335,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Houses_of_Kourend"
  },
  {
-  "cacheid": 211,
+  "cacheid": null,
   "name": "The Illusion... (The Eyes of Glouphrie)",
   "location": "Tree Gnome Stronghold",
   "region": "Tree Gnome Stronghold",
@@ -13368,7 +13368,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Kin_%28Meanwhile%29"
  },
  {
-  "cacheid": 137,
+  "cacheid": null,
   "name": "The Last Sail (In Search of the Myreque)",
   "location": null,
   "region": null,
@@ -13454,7 +13454,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Lunar_Isle"
  },
  {
-  "cacheid": 222,
+  "cacheid": null,
   "name": "The Machine is Broken... (The Eyes of Glouphrie)",
   "location": "Brimstail's cave",
   "region": "Brimstail's cave",
@@ -13667,7 +13667,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Other_Side"
  },
  {
-  "cacheid": 141,
+  "cacheid": null,
   "name": "The Outpost (Making History)",
   "location": "Outpost",
   "region": "Outpost",
@@ -13693,7 +13693,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Part_Where_You_Die"
  },
  {
-  "cacheid": 143,
+  "cacheid": null,
   "name": "The Penance Queen! (Barbarian Assault)",
   "location": null,
   "region": null,
@@ -13819,7 +13819,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Route_of_the_Problem"
  },
  {
-  "cacheid": 242,
+  "cacheid": null,
   "name": "The Royal Decree (The Fremennik Isles)",
   "location": "Jatizso",
   "region": "Jatizso",
@@ -13912,7 +13912,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Slayer"
  },
  {
-  "cacheid": 229,
+  "cacheid": null,
   "name": "The Slug Prince (The Slug Menace)",
   "location": "Witchaven Dungeon",
   "region": "Witchaven Dungeon",
@@ -14027,7 +14027,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Terrible_Tunnels"
  },
  {
-  "cacheid": 303,
+  "cacheid": null,
   "name": "The Terrorbirds (Path of Glouphrie)",
   "location": null,
   "region": null,
@@ -14098,7 +14098,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Trade_Parade"
  },
  {
-  "cacheid": 239,
+  "cacheid": null,
   "name": "The Transformation (Lair of Tarn Razorlor)",
   "location": "Tarn's Lair",
   "region": "Tarn's Lair",
@@ -14169,7 +14169,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/The_Walking_Dead"
  },
  {
-  "cacheid": 234,
+  "cacheid": null,
   "name": "The Watchtower Shield",
   "location": "Watchtower (building)",
   "region": "Watchtower (building)",
@@ -14210,7 +14210,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Theme"
  },
  {
-  "cacheid": 67,
+  "cacheid": null,
   "name": "Thieving Level Up!",
   "location": null,
   "region": null,
@@ -14221,7 +14221,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Thieving_Level_Up%21"
  },
  {
-  "cacheid": 68,
+  "cacheid": null,
   "name": "Thieving Level Up! (Unlocks)",
   "location": null,
   "region": null,
@@ -14273,7 +14273,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Throne_of_the_Demon"
  },
  {
-  "cacheid": 189,
+  "cacheid": null,
   "name": "Tiadeche Thankful (Tai Bwo Wannai Trio)",
   "location": "South across the water from Musa Point",
   "region": "Musa Point",
@@ -14391,7 +14391,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Time_to_Mine"
  },
  {
-  "cacheid": 188,
+  "cacheid": null,
   "name": "Tinsay Satisfied (Tai Bwo Wannai Trio)",
   "location": "Cairn Isle",
   "region": "Cairn Isle",
@@ -14432,7 +14432,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Title_Fight"
  },
  {
-  "cacheid": 178,
+  "cacheid": null,
   "name": "Tolna Leaves (A Soul's Bane)",
   "location": "Varrock",
   "region": "Varrock",
@@ -14443,7 +14443,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Tolna_Leaves_%28A_Soul%27s_Bane%29"
  },
  {
-  "cacheid": 296,
+  "cacheid": null,
   "name": "Tomb Cleared (Tombs of Amascut)",
   "location": "Tombs of Amascut",
   "region": "Tombs of Amascut",
@@ -14499,7 +14499,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Too_Many_Cooks..."
  },
  {
-  "cacheid": 185,
+  "cacheid": null,
   "name": "Too Slow! (Speedy Gnome)",
   "location": null,
   "region": null,
@@ -14510,7 +14510,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Too_Slow%21_%28Speedy_Gnome%29"
  },
  {
-  "cacheid": 269,
+  "cacheid": null,
   "name": "Top of the Class (Surprise Exam)",
   "location": "Surprise Exam",
   "region": "Surprise Exam",
@@ -14521,7 +14521,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Top_of_the_Class_%28Surprise_Exam%29"
  },
  {
-  "cacheid": 151,
+  "cacheid": null,
   "name": "Top of the Pyramid!",
   "location": "Agility Pyramid",
   "region": "Agility Pyramid",
@@ -14592,7 +14592,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Trawler_Minor"
  },
  {
-  "cacheid": 193,
+  "cacheid": null,
   "name": "Treasure! (Treasure Trails)",
   "location": null,
   "region": null,
@@ -14618,7 +14618,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Tree_Spirits"
  },
  {
-  "cacheid": 197,
+  "cacheid": null,
   "name": "Trek Continues (Temple Trekking)",
   "location": "Paterdomus & Burgh de Rott",
   "region": "Paterdomus",
@@ -14629,7 +14629,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Trek_Continues_%28Temple_Trekking%29"
  },
  {
-  "cacheid": 194,
+  "cacheid": null,
   "name": "Trek Destination (Temple Trekking)",
   "location": "Paterdomus & Burgh de Rott",
   "region": "Paterdomus",
@@ -14730,7 +14730,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Troll_Shuffle"
  },
  {
-  "cacheid": 16,
+  "cacheid": null,
   "name": "Tropical Wood Entrance (POH)",
   "location": "Player-owned house",
   "region": "Player-owned house",
@@ -15021,7 +15021,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Vampyre_Assault"
  },
  {
-  "cacheid": 200,
+  "cacheid": null,
   "name": "Vampyre Assault (In Aid of the Myreque)",
   "location": "Burgh de Rott",
   "region": "Burgh de Rott",
@@ -15043,7 +15043,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Vanescula_%28music_track%29"
  },
  {
-  "cacheid": 15,
+  "cacheid": null,
   "name": "Vanstrom! (Darkness of Hallowvale)",
   "location": "Meiyerditch",
   "region": "Meiyerditch",
@@ -15110,7 +15110,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Venture_2"
  },
  {
-  "cacheid": 250,
+  "cacheid": null,
   "name": "Verzik's Defeat",
   "location": "Theatre of Blood",
   "region": "Theatre of Blood",
@@ -15121,7 +15121,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Verzik%27s_Defeat"
  },
  {
-  "cacheid": 285,
+  "cacheid": null,
   "name": "Victorious! (Soul Wars)",
   "location": "Isle of Souls",
   "region": "Isle of Souls",
@@ -15147,7 +15147,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Victory_is_Mine"
  },
  {
-  "cacheid": 110,
+  "cacheid": null,
   "name": "Victory! (Burthorpe Games Room)",
   "location": "Burthorpe Castle",
   "region": "Burthorpe Castle",
@@ -15158,7 +15158,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Victory%21_%28Burthorpe_Games_Room%29"
  },
  {
-  "cacheid": 82,
+  "cacheid": null,
   "name": "Victory! (Castle Wars)",
   "location": "Castle Wars",
   "region": "Castle Wars",
@@ -15199,7 +15199,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Vision"
  },
  {
-  "cacheid": 144,
+  "cacheid": null,
   "name": "Void Knight Defeated... (Pest Control)",
   "location": "Void Knights' Outpost",
   "region": "Void Knights' Outpost",
@@ -15476,7 +15476,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Welcome_to_my_Nightmare"
  },
  {
-  "cacheid": 228,
+  "cacheid": null,
   "name": "Welcome to the Family (The Slug Menace)",
   "location": "Witchaven",
   "region": "Witchaven",
@@ -15487,7 +15487,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Welcome_to_the_Family_%28The_Slug_Menace%29"
  },
  {
-  "cacheid": 119,
+  "cacheid": null,
   "name": "Welcome to the Moon Clan (Lunar Diplomacy)",
   "location": "Lunar Isle",
   "region": "Lunar Isle",
@@ -15603,7 +15603,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Whispering_Wind"
  },
  {
-  "cacheid": 18,
+  "cacheid": null,
   "name": "Whitewashed Stone Entrance (POH)",
   "location": "Player-owned house",
   "region": "Player-owned house",
@@ -15706,7 +15706,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Winter_Funfair"
  },
  {
-  "cacheid": 162,
+  "cacheid": null,
   "name": "Wisdom (Recruitment Drive)",
   "location": "Temple Knight Training Grounds",
   "region": "Temple Knight",
@@ -15773,7 +15773,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Wonderous"
  },
  {
-  "cacheid": 69,
+  "cacheid": null,
   "name": "Woodcutting Level Up!",
   "location": null,
   "region": null,
@@ -15784,7 +15784,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Woodcutting_Level_Up%21"
  },
  {
-  "cacheid": 70,
+  "cacheid": null,
   "name": "Woodcutting Level Up! (Unlocks)",
   "location": null,
   "region": null,
@@ -15855,7 +15855,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Wrath_and_Ruin"
  },
  {
-  "cacheid": 149,
+  "cacheid": null,
   "name": "Wrong Key! (Prison Pete)",
   "location": "ScapeRune#Prison",
   "region": "ScapeRune",
@@ -15881,7 +15881,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Xenophobe"
  },
  {
-  "cacheid": 309,
+  "cacheid": null,
   "name": "Yama's Horn",
   "location": null,
   "region": null,
@@ -15903,7 +15903,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Yama%27s_Jingle"
  },
  {
-  "cacheid": 310,
+  "cacheid": null,
   "name": "Yama's Soulflame Horn",
   "location": null,
   "region": null,
@@ -15944,7 +15944,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Yo_Ho_Ho%21"
  },
  {
-  "cacheid": 90,
+  "cacheid": null,
   "name": "You Are Dead!",
   "location": null,
   "region": null,
@@ -15955,7 +15955,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/You_Are_Dead%21"
  },
  {
-  "cacheid": 98,
+  "cacheid": null,
   "name": "You Are Victorious! (Emir's Arena)",
   "location": "Emir's Arena",
   "region": "Emir's Arena",
@@ -16025,7 +16025,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Zamorak_Zoo"
  },
  {
-  "cacheid": 128,
+  "cacheid": null,
   "name": "Zamorkian Lie (Enakhra's Lament)",
   "location": "Enakhra's Temple",
   "region": "Enakhra's Temple",
@@ -16036,7 +16036,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Zamorkian_Lie_%28Enakhra%27s_Lament%29"
  },
  {
-  "cacheid": 202,
+  "cacheid": null,
   "name": "Zanik Lives Again! (Death to the Dorgeshuun)",
   "location": "Chasm of Tears",
   "region": "Chasm of Tears",
@@ -16062,7 +16062,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Zanik%27s_Theme"
  },
  {
-  "cacheid": 27,
+  "cacheid": null,
   "name": "Zanik's Theme (Death to the Dorgeshuun)",
   "location": "Chasm of Tears",
   "region": "Chasm of Tears",
@@ -16103,7 +16103,7 @@
   "wikiUrl": "https://oldschool.runescape.wiki/w/Zealot_%28music_track%29"
  },
  {
-  "cacheid": 304,
+  "cacheid": null,
   "name": "Zemouregal's Theatre (Defender of Varrock)",
   "location": "Dream Theatre",
   "region": "Dream Theatre",

@@ -9,6 +9,7 @@ import sys
 import time
 import urllib.parse
 import urllib.request
+from collections import Counter
 from pathlib import Path
 
 API = "https://oldschool.runescape.wiki/api.php"
@@ -237,6 +238,41 @@ def build_record(title, wikitext, map_pages=None):
     }
 
 
+# ---------- cacheid collisions ----------
+# The wiki reuses a cacheid on more than one page (typically an old/renamed title
+# left behind alongside the current one, with most infobox fields blank). Only one
+# row per cacheid can win the cache-id lookup in EnrichmentStore, so pick the
+# richest row to hold it and null the cacheid on the rest (they stay matchable by
+# name).
+
+_RICHNESS_FIELDS = ("location", "region", "quest", "unlockdetail", "members", "map")
+
+
+def _richness(row):
+    return sum(1 for f in _RICHNESS_FIELDS if row.get(f) is not None)
+
+
+def _holder_key(row):
+    name = row["name"]
+    return (-_richness(row), " (" in name, len(name), name.lower())
+
+
+def dedupe_cacheids(rows):
+    """Rows sharing a cacheid keep it only on the richest row; the rest get cacheid=None."""
+    groups = {}
+    for r in rows:
+        if r["cacheid"] is not None:
+            groups.setdefault(r["cacheid"], []).append(r)
+    losers = set()
+    for group in groups.values():
+        if len(group) <= 1:
+            continue
+        ordered = sorted(group, key=_holder_key)
+        for r in ordered[1:]:
+            losers.add(id(r))
+    return [dict(r, cacheid=None) if id(r) in losers else r for r in rows]
+
+
 # ---------- wiki API ----------
 
 def fetch_pages():
@@ -322,12 +358,18 @@ def main(argv):
         records += 1
         rows.append(rec)
     rows.sort(key=lambda r: r["name"].lower())
+
+    cache_counts = Counter(r["cacheid"] for r in rows if r["cacheid"] is not None)
+    collisions = sum(1 for c in cache_counts.values() if c > 1)
+    rows = dedupe_cacheids(rows)
+
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(rows, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     with_cache = sum(1 for r in rows if r["cacheid"] is not None)
     with_map = sum(1 for r in rows if r["map"])
     no_loc = sum(1 for r in rows if not r["location"])
-    print(f"pages {pages}, records {records}, with cacheid {with_cache}, with map {with_map}, without location {no_loc}")
+    print(f"pages {pages}, records {records}, with cacheid {with_cache}, with map {with_map}, "
+          f"without location {no_loc}, cacheid collisions resolved {collisions}")
     print(f"wrote {out}")
 
 
