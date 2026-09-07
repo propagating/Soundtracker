@@ -35,7 +35,7 @@ import javax.swing.border.EmptyBorder;
 import com.soundtracktracker.catalog.CapeProgress;
 import net.runelite.client.ui.ColorScheme;
 
-/** "412 / 869 tracks" and a bar: how far the player is from the music cape. */
+/** "412 / 869 tracks" and a bar: how far the player is from the music cape (or from every clue track). */
 public class ProgressHeader extends JPanel
 {
 	static final String LOGGED_OUT = "Log in to load your tracks";
@@ -58,16 +58,22 @@ public class ProgressHeader extends JPanel
 		add(bar, BorderLayout.CENTER);
 	}
 
-	public void update(CapeProgress.Progress progress)
+	/**
+	 * @param clueMode show the Treasure Trails count instead of the cape count
+	 * @param loggedIn false while the catalog is empty because nobody is logged in
+	 */
+	public void update(CapeProgress.Progress progress, boolean clueMode, boolean loggedIn)
 	{
-		if (progress.getRequired() == 0)
+		if (!loggedIn || progress.getRequired() == 0)
 		{
-			label.setText(LOGGED_OUT);
+			label.setText(!loggedIn ? LOGGED_OUT : "No clue tracks are known");
 			bar.setMaximum(1);
 			bar.setValue(0);
+			bar.setForeground(ColorScheme.PROGRESS_INPROGRESS_COLOR);
 			return;
 		}
-		label.setText(progress.getUnlocked() + " / " + progress.getRequired() + " tracks for the cape");
+		label.setText(progress.getUnlocked() + " / " + progress.getRequired()
+			+ (clueMode ? " clue tracks unlocked" : " tracks for the cape"));
 		bar.setMaximum(progress.getRequired());
 		bar.setValue(progress.getUnlocked());
 		bar.setForeground(progress.isComplete()

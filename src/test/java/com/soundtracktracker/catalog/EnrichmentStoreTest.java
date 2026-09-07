@@ -56,6 +56,8 @@ public class EnrichmentStoreTest
 		assertEquals(3035, hit.getMap().getX());
 		assertEquals(0, hit.getMap().getPlane());
 		assertEquals(Boolean.FALSE, hit.getMembers());
+		assertEquals("hard", hit.getClueTier());
+		assertEquals("Requires completion of Bone Voyage.", hit.getClueNote());
 	}
 
 	@Test

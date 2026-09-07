@@ -86,14 +86,21 @@ public final class TrackFilter
 	{
 	}
 
+	/**
+	 * @param clueOnly keep only tracks a Treasure Trails step can ask for
+	 */
 	public static List<Track> apply(Collection<Track> tracks, String query, LockFilter lock,
-		SortMode sort, boolean showHoliday)
+		SortMode sort, boolean showHoliday, boolean clueOnly)
 	{
 		String q = query == null ? "" : lower(query.trim());
 		List<Track> out = new ArrayList<>();
 		for (Track t : tracks)
 		{
 			if (!showHoliday && t.isHoliday())
+			{
+				continue;
+			}
+			if (clueOnly && !t.isClueTrack())
 			{
 				continue;
 			}

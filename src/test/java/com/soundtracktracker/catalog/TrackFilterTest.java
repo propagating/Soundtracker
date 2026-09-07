@@ -36,8 +36,15 @@ public class TrackFilterTest
 {
 	private static Track track(String name, String sortName, boolean unlocked, boolean holiday, String region)
 	{
+		return track(name, sortName, unlocked, holiday, region, null);
+	}
+
+	private static Track track(String name, String sortName, boolean unlocked, boolean holiday, String region,
+		String clueTier)
+	{
 		TrackEnrichment e = new TrackEnrichment();
 		e.setRegion(region);
+		e.setClueTier(clueTier);
 		return Track.builder()
 			.name(name).sortName(sortName).hint("").midiId(1).varp(-1).bit(-1)
 			.unlocked(unlocked).holiday(holiday).automatic(false).enrichment(e)
@@ -47,7 +54,7 @@ public class TrackFilterTest
 	private final List<Track> tracks = Arrays.asList(
 		track("The Trade Parade", "Trade Parade, The", false, false, "Grand Exchange"),
 		track("Adventure", "Adventure", true, false, "Lumbridge"),
-		track("Sea Shanty 2", "Sea Shanty 2", false, false, "Port Sarim"),
+		track("Sea Shanty 2", "Sea Shanty 2", false, false, "Port Sarim", "hard"),
 		track("Scape Main", "Scape Main", true, false, null),
 		track("Jungle Bells", "Jungle Bells", false, true, "Karamja"));
 
@@ -59,14 +66,14 @@ public class TrackFilterTest
 	@Test
 	public void sortsByGameSortName()
 	{
-		List<Track> out = TrackFilter.apply(tracks, "", LockFilter.ALL, SortMode.NAME, true);
+		List<Track> out = TrackFilter.apply(tracks, "", LockFilter.ALL, SortMode.NAME, true, false);
 		assertEquals(Arrays.asList("Adventure", "Jungle Bells", "Scape Main", "Sea Shanty 2", "The Trade Parade"), names(out));
 	}
 
 	@Test
 	public void queryIsCaseInsensitiveSubstring()
 	{
-		List<Track> out = TrackFilter.apply(tracks, "  SHANTY ", LockFilter.ALL, SortMode.NAME, true);
+		List<Track> out = TrackFilter.apply(tracks, "  SHANTY ", LockFilter.ALL, SortMode.NAME, true, false);
 		assertEquals(Arrays.asList("Sea Shanty 2"), names(out));
 	}
 
@@ -74,28 +81,41 @@ public class TrackFilterTest
 	public void lockFilterKeepsOnlyMatchingState()
 	{
 		assertEquals(Arrays.asList("Jungle Bells", "Sea Shanty 2", "The Trade Parade"),
-			names(TrackFilter.apply(tracks, "", LockFilter.LOCKED, SortMode.NAME, true)));
+			names(TrackFilter.apply(tracks, "", LockFilter.LOCKED, SortMode.NAME, true, false)));
 		assertEquals(Arrays.asList("Adventure", "Scape Main"),
-			names(TrackFilter.apply(tracks, "", LockFilter.UNLOCKED, SortMode.NAME, true)));
+			names(TrackFilter.apply(tracks, "", LockFilter.UNLOCKED, SortMode.NAME, true, false)));
 	}
 
 	@Test
 	public void holidayTracksCanBeHidden()
 	{
-		List<Track> out = TrackFilter.apply(tracks, "", LockFilter.ALL, SortMode.NAME, false);
+		List<Track> out = TrackFilter.apply(tracks, "", LockFilter.ALL, SortMode.NAME, false, false);
 		assertEquals(Arrays.asList("Adventure", "Scape Main", "Sea Shanty 2", "The Trade Parade"), names(out));
 	}
 
 	@Test
 	public void locationSortGroupsByRegionWithUnknownLast()
 	{
-		List<Track> out = TrackFilter.apply(tracks, "", LockFilter.ALL, SortMode.LOCATION, true);
+		List<Track> out = TrackFilter.apply(tracks, "", LockFilter.ALL, SortMode.LOCATION, true, false);
 		assertEquals(Arrays.asList("The Trade Parade", "Jungle Bells", "Adventure", "Sea Shanty 2", "Scape Main"), names(out));
+	}
+
+	@Test
+	public void clueOnlyKeepsTracksWithAClueTier()
+	{
+		List<Track> out = TrackFilter.apply(tracks, "", LockFilter.ALL, SortMode.NAME, true, true);
+		assertEquals(Arrays.asList("Sea Shanty 2"), names(out));
+	}
+
+	@Test
+	public void clueOnlyCombinesWithTheLockFilter()
+	{
+		assertEquals(0, TrackFilter.apply(tracks, "", LockFilter.UNLOCKED, SortMode.NAME, true, true).size());
 	}
 
 	@Test
 	public void nullQueryMatchesEverything()
 	{
-		assertEquals(5, TrackFilter.apply(tracks, null, LockFilter.ALL, SortMode.NAME, true).size());
+		assertEquals(5, TrackFilter.apply(tracks, null, LockFilter.ALL, SortMode.NAME, true, false).size());
 	}
 }

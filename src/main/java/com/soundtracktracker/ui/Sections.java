@@ -29,6 +29,7 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
+import com.soundtracktracker.catalog.Track;
 import net.runelite.client.ui.ColorScheme;
 
 /** Small factories so every row and section in the panel reads the same. */
@@ -36,6 +37,17 @@ final class Sections
 {
 	private Sections()
 	{
+	}
+
+	/** "Clue: Hard" for a track Cecilia can ask for; the tier comes from the wiki in lower case. */
+	static String clueTag(Track track)
+	{
+		return "Clue: " + capitalise(track.getEnrichment().getClueTier());
+	}
+
+	static String capitalise(String s)
+	{
+		return s == null || s.isEmpty() ? "" : Character.toUpperCase(s.charAt(0)) + s.substring(1);
 	}
 
 	static JLabel smallLabel(String text, Color color)

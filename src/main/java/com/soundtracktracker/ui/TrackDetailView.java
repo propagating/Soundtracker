@@ -95,6 +95,16 @@ class TrackDetailView extends JPanel
 		{
 			body.add(section("Members", e.getMembers() ? "Yes" : "No"));
 		}
+		if (track.isClueTrack())
+		{
+			String clue = "Cecilia in Falador Park may ask you to play this track for a"
+				+ (e.getClueTier().startsWith("e") ? "n " : " ") + e.getClueTier() + " clue step.";
+			if (e.getClueNote() != null)
+			{
+				clue += "\n\n" + e.getClueNote();
+			}
+			body.add(section("Clue scroll", clue));
+		}
 		if (track.isHoliday())
 		{
 			body.add(section("Holiday track", "Not needed for the music cape."));

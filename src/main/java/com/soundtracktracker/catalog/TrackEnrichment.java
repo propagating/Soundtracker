@@ -45,6 +45,10 @@ public class TrackEnrichment
 	private Boolean members;
 	private MapPoint map;
 	private String wikiUrl;
+	/** Clue tier (easy, medium, hard, elite) whose Cecilia step can ask for this track; null otherwise. */
+	private String clueTier;
+	/** The wiki's note for that clue step, e.g. a quest requirement; null when there is none. */
+	private String clueNote;
 
 	@Data
 	public static class MapPoint

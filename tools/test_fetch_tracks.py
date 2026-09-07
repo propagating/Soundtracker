@@ -232,3 +232,86 @@ class DedupeCacheidsTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+CECILIA = """Cecilia is a bard in [[Falador Park]].
+
+==Music challenges==
+===Easy tracks===
+{| class="wikitable sortable lighttable"
+! Music Track
+! Unlock location
+|-
+| [[Alone]]
+| [[Ice Mountain]]
+|-
+| [[Vision]]
+| [[Wizards' Tower]]
+|}
+
+===Hard tracks===
+{| class="wikitable sortable lighttable"
+! Music Track
+! Unlock location
+! Notes
+|-
+| [[Complication]]
+| [[Chaos Altar]]
+| {{NA}}
+|-
+| [[Fossilised]]
+| [[Wyvern Cave]] on [[Fossil Island]]
+| Requires completion of [[Bone Voyage]].
+|}
+
+===Elite tracks===
+{| class="wikitable sortable lighttable"
+! Music Track
+! Unlock location
+! Notes
+|-
+| [[The Pharaoh (music track)|The Pharaoh]]
+| [[Sophanem]]
+| Requires completion of [[Beneath Cursed Sands]].
+|}
+
+==Dialogue==
+* [[Not a track]]
+"""
+
+
+class CeciliaTest(unittest.TestCase):
+    def test_parses_every_tier_table_keyed_by_lowercase_name(self):
+        clues = ft.parse_cecilia_tracks(CECILIA)
+        self.assertEqual(sorted(clues), ["alone", "complication", "fossilised", "the pharaoh", "vision"])
+        self.assertEqual(clues["alone"], {"tier": "easy", "note": None})
+        self.assertEqual(clues["fossilised"], {"tier": "hard", "note": "Requires completion of Bone Voyage."})
+
+    def test_na_note_becomes_none(self):
+        self.assertIsNone(ft.parse_cecilia_tracks(CECILIA)["complication"]["note"])
+
+    def test_piped_link_uses_display_name(self):
+        clues = ft.parse_cecilia_tracks(CECILIA)
+        self.assertEqual(clues["the pharaoh"], {"tier": "elite", "note": "Requires completion of Beneath Cursed Sands."})
+
+    def test_sections_outside_music_challenges_are_ignored(self):
+        self.assertNotIn("not a track", ft.parse_cecilia_tracks(CECILIA))
+
+    def test_attach_sets_fields_case_insensitively_and_reports_unmatched(self):
+        rows = [
+            {"name": "ALONE", "clueTier": None, "clueNote": None},
+            {"name": "Adventure", "clueTier": None, "clueNote": None},
+        ]
+        clues = {"alone": {"tier": "easy", "note": None}, "faerie": {"tier": "medium", "note": "Lost City"}}
+        out, unmatched = ft.attach_clue_tiers(rows, clues)
+        self.assertEqual(out[0]["clueTier"], "easy")
+        self.assertIsNone(out[0]["clueNote"])
+        self.assertIsNone(out[1]["clueTier"])
+        self.assertEqual(unmatched, ["faerie"])
+        self.assertIsNone(rows[0]["clueTier"], "attach must not mutate its input")
+
+    def test_build_record_carries_null_clue_fields(self):
+        rec = ft.build_record("Odd Track", "{{Infobox Music\n|location = [[Varrock]]\n}}")
+        self.assertIn("clueTier", rec)
+        self.assertIsNone(rec["clueTier"])
+        self.assertIsNone(rec["clueNote"])

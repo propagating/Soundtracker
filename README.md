@@ -12,6 +12,10 @@ link.
   music tab to be open.
 - Locations, quests, map points and wiki links come from the OSRS Wiki, bundled
   as `src/main/resources/com/soundtracktracker/tracks.json`.
+- The same file marks the tracks Cecilia in Falador Park can ask for during a
+  Treasure Trails step (taken from her wiki page). Tick "Clue tracks only" to
+  see just those, with their clue tier and any requirement note; the header
+  then counts how many of them you have unlocked.
 
 ## Refreshing the wiki data
 

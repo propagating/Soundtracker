@@ -60,7 +60,17 @@ class TrackRow extends JPanel
 
 		JLabel state = Sections.smallLabel(track.isUnlocked() ? "Unlocked" : "Locked",
 			track.isUnlocked() ? ColorScheme.PROGRESS_COMPLETE_COLOR : ColorScheme.PROGRESS_ERROR_COLOR);
-		add(state, BorderLayout.EAST);
+		state.setHorizontalAlignment(JLabel.RIGHT);
+		JPanel side = new JPanel(new BorderLayout());
+		side.setOpaque(false);
+		side.add(state, BorderLayout.NORTH);
+		if (track.isClueTrack())
+		{
+			JLabel clue = Sections.smallLabel(Sections.clueTag(track), ColorScheme.BRAND_ORANGE);
+			clue.setHorizontalAlignment(JLabel.RIGHT);
+			side.add(clue, BorderLayout.SOUTH);
+		}
+		add(side, BorderLayout.EAST);
 
 		setMaximumSize(new Dimension(Integer.MAX_VALUE, getPreferredSize().height));
 		setToolTipText(track.getHint().isEmpty() ? null : track.getHint());

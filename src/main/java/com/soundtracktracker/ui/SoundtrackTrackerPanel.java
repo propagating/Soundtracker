@@ -29,6 +29,7 @@ import java.awt.GridLayout;
 import java.util.Collections;
 import java.util.List;
 import javax.swing.BoxLayout;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -40,6 +41,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import com.soundtracktracker.SoundtrackTrackerConfig;
 import com.soundtracktracker.catalog.CapeProgress;
+import com.soundtracktracker.catalog.ClueProgress;
 import com.soundtracktracker.catalog.Track;
 import com.soundtracktracker.catalog.TrackFilter;
 import com.soundtracktracker.catalog.TrackFilter.LockFilter;
@@ -58,6 +60,8 @@ public class SoundtrackTrackerPanel extends PluginPanel
 	private final JTextField search = new JTextField();
 	private final JComboBox<LockFilter> lockFilter = new JComboBox<>(LockFilter.values());
 	private final JComboBox<SortMode> sortMode = new JComboBox<>(SortMode.values());
+	// Treasure Trails: Cecilia in Falador Park can ask for one of ~24 tracks
+	private final JCheckBox clueOnly = new JCheckBox("Clue tracks only");
 	private final TrackListView list = new TrackListView(this::showDetail);
 	private final JScrollPane listScroll;
 	private final JPanel listPage = new JPanel(new BorderLayout());
@@ -88,6 +92,10 @@ public class SoundtrackTrackerPanel extends PluginPanel
 		combos.add(lockFilter);
 		combos.add(sortMode);
 		controls.add(combos);
+		clueOnly.setOpaque(false);
+		clueOnly.setFocusable(false);
+		clueOnly.setToolTipText("Show only the tracks Cecilia can ask for during a clue step");
+		controls.add(clueOnly);
 
 		JPanel top = new JPanel(new BorderLayout());
 		top.setOpaque(false);
@@ -133,6 +141,7 @@ public class SoundtrackTrackerPanel extends PluginPanel
 		});
 		lockFilter.addActionListener(e -> rebuild());
 		sortMode.addActionListener(e -> rebuild());
+		clueOnly.addActionListener(e -> rebuild());
 		rebuild();
 	}
 
@@ -140,7 +149,6 @@ public class SoundtrackTrackerPanel extends PluginPanel
 	public void setTracks(List<Track> tracks)
 	{
 		this.tracks = tracks;
-		header.update(CapeProgress.of(tracks));
 		rebuild();
 		if (detailTrack != null)
 		{
@@ -186,9 +194,11 @@ public class SoundtrackTrackerPanel extends PluginPanel
 
 	private void rebuild()
 	{
+		boolean clue = clueOnly.isSelected();
+		header.update(clue ? ClueProgress.of(tracks) : CapeProgress.of(tracks), clue, !tracks.isEmpty());
 		List<Track> filtered = TrackFilter.apply(tracks, search.getText(),
 			(LockFilter) lockFilter.getSelectedItem(), (SortMode) sortMode.getSelectedItem(),
-			config.showHolidayTracks());
+			config.showHolidayTracks(), clue);
 		String emptyMessage = tracks.isEmpty() ? "Log in to load your tracks." : "No tracks match.";
 		list.setTracks(filtered, emptyMessage);
 	}

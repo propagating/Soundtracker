@@ -303,7 +303,77 @@ def build_record(title, wikitext, map_pages=None):
         "members": yes_no(p.get("members")),
         "map": m,
         "wikiUrl": WIKI + urllib.parse.quote(title.replace(" ", "_")),
+        "clueTier": None,
+        "clueNote": None,
     }
+
+
+# ---------- Treasure Trails (Cecilia) ----------
+# Cecilia in Falador Park is a clue step: the player must play one of a few dozen
+# tracks next to her. Her wiki page lists them in one table per clue tier under
+# "Music challenges"; we key them by lower-cased display name and attach the tier
+# and the table's notes column to the matching track rows.
+
+CECILIA_PAGE = "Cecilia"
+_CHALLENGES_HEADING = re.compile(r"^==\s*Music challenges\s*==\s*$", re.I | re.M)
+_LEVEL2_HEADING = re.compile(r"^==[^=].*$", re.M)
+_TIER_HEADING = re.compile(r"^=+\s*(Easy|Medium|Hard|Elite)\b[^=\n]*=+\s*$", re.I | re.M)
+
+
+def _table_rows(chunk):
+    """Cells of each data row of the first wikitable in chunk (header '!' rows are skipped)."""
+    start = chunk.find("{|")
+    if start < 0:
+        return []
+    end = chunk.find("|}", start)
+    table = chunk[start:end] if end >= 0 else chunk[start:]
+    rows = []
+    for block in table.split("\n|-")[1:]:
+        cells = []
+        for line in block.split("\n"):
+            line = line.strip()
+            if line.startswith("|") and not line.startswith("|+"):
+                cells.extend(c.strip() for c in line[1:].split("||"))
+        if cells:
+            rows.append(cells)
+    return rows
+
+
+def parse_cecilia_tracks(text):
+    """{lower-cased track name: {"tier": easy|medium|hard|elite, "note": str|None}}."""
+    m = _CHALLENGES_HEADING.search(text)
+    if not m:
+        return {}
+    section = text[m.end():]
+    nxt = _LEVEL2_HEADING.search(section)
+    if nxt:
+        section = section[:nxt.start()]
+    clues = {}
+    parts = _TIER_HEADING.split(section)  # [preamble, tier, chunk, tier, chunk, ...]
+    for i in range(1, len(parts) - 1, 2):
+        tier = parts[i].lower()
+        for row in _table_rows(parts[i + 1]):
+            name = strip_markup(row[0])
+            if not name:
+                continue
+            note = normalize_optional(strip_markup(row[2])) if len(row) > 2 else None
+            clues[name.lower()] = {"tier": tier, "note": note}
+    return clues
+
+
+def attach_clue_tiers(rows, clues):
+    """Copies of rows with clueTier/clueNote filled by name, plus the clue names no row matched."""
+    seen = set()
+    out = []
+    for r in rows:
+        key = r["name"].lower()
+        hit = clues.get(key)
+        if hit:
+            out.append(dict(r, clueTier=hit["tier"], clueNote=hit["note"]))
+            seen.add(key)
+        else:
+            out.append(r)
+    return out, sorted(n for n in clues if n not in seen)
 
 
 # ---------- cacheid collisions ----------
@@ -431,13 +501,20 @@ def main(argv):
     collisions = sum(1 for c in cache_counts.values() if c > 1)
     rows = dedupe_cacheids(rows)
 
+    clue_pages = dict(fetch_titles([CECILIA_PAGE]))
+    clues = parse_cecilia_tracks(next(iter(clue_pages.values()), ""))
+    rows, unmatched_clues = attach_clue_tiers(rows, clues)
+
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(rows, indent=1, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
     with_cache = sum(1 for r in rows if r["cacheid"] is not None)
     with_map = sum(1 for r in rows if r["map"])
     no_loc = sum(1 for r in rows if not r["location"])
     print(f"pages {pages}, records {records}, with cacheid {with_cache}, with map {with_map}, "
-          f"without location {no_loc}, cacheid collisions resolved {collisions}")
+          f"without location {no_loc}, cacheid collisions resolved {collisions}, "
+          f"clue tracks {len(clues) - len(unmatched_clues)} of {len(clues)}")
+    if unmatched_clues:
+        print("clue tracks with no matching row: " + ", ".join(unmatched_clues))
     print(f"wrote {out}")
 
 

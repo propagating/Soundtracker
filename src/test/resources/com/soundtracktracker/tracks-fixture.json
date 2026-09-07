@@ -8,7 +8,9 @@
     "unlockdetail": "Unlocked in Port Sarim.",
     "members": false,
     "map": {"x": 3035, "y": 3225, "plane": 0},
-    "wikiUrl": "https://oldschool.runescape.wiki/w/Sea_Shanty_2"
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Sea_Shanty_2",
+    "clueTier": "hard",
+    "clueNote": "Requires completion of Bone Voyage."
   },
   {
     "cacheid": null,
@@ -19,6 +21,8 @@
     "unlockdetail": null,
     "members": true,
     "map": null,
-    "wikiUrl": "https://oldschool.runescape.wiki/w/Nameless_Track"
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Nameless_Track",
+    "clueTier": null,
+    "clueNote": null
   }
 ]
