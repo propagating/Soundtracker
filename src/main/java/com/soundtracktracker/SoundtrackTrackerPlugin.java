@@ -24,11 +24,28 @@
  */
 package com.soundtracktracker;
 
+import com.google.gson.Gson;
 import com.google.inject.Provides;
+import java.awt.image.BufferedImage;
+import java.util.concurrent.ScheduledExecutorService;
+import javax.inject.Inject;
+import javax.swing.SwingUtilities;
 import lombok.extern.slf4j.Slf4j;
+import net.runelite.api.Client;
+import net.runelite.api.GameState;
+import net.runelite.api.events.GameStateChanged;
+import net.runelite.api.events.VarbitChanged;
+import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
+import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
+import net.runelite.client.ui.ClientToolbar;
+import net.runelite.client.ui.NavigationButton;
+import net.runelite.client.util.ImageUtil;
+import com.soundtracktracker.catalog.EnrichmentStore;
+import com.soundtracktracker.catalog.TrackCatalog;
+import com.soundtracktracker.ui.SoundtrackTrackerPanel;
 
 @Slf4j
 @PluginDescriptor(
@@ -38,6 +55,38 @@ import net.runelite.client.plugins.PluginDescriptor;
 )
 public class SoundtrackTrackerPlugin extends Plugin
 {
+	static final String TRACKS_RESOURCE = "/com/soundtracktracker/tracks.json";
+
+	@Inject
+	private Client client;
+	@Inject
+	private ClientThread clientThread;
+	@Inject
+	private ClientToolbar clientToolbar;
+	@Inject
+	private Gson gson;
+	@Inject
+	private ScheduledExecutorService executor;
+	@Inject
+	private SoundtrackTrackerConfig config;
+
+	private EnrichmentStore enrichmentStore;
+	private TrackCatalog catalog;
+	private SoundtrackTrackerPanel panel;
+	private NavigationButton navButton;
+	// set on the client thread once tracks.json is parsed; the catalog must not read rows
+	// before then or every track would be joined to an empty enrichment for the whole run
+	private boolean dataReady;
+
+	private final TrackCatalog.Listener toPanel = tracks ->
+		SwingUtilities.invokeLater(() ->
+		{
+			if (panel != null)
+			{
+				panel.setTracks(tracks);
+			}
+		});
+
 	@Provides
 	SoundtrackTrackerConfig provideConfig(ConfigManager configManager)
 	{
@@ -47,12 +96,83 @@ public class SoundtrackTrackerPlugin extends Plugin
 	@Override
 	protected void startUp()
 	{
-		log.info("Soundtrack Tracker started");
+		dataReady = false;
+		enrichmentStore = new EnrichmentStore(gson, TRACKS_RESOURCE);
+		catalog = new TrackCatalog(client, enrichmentStore);
+		catalog.addListener(toPanel);
+
+		panel = new SoundtrackTrackerPanel(config);
+		final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "panel_icon.png");
+		navButton = NavigationButton.builder()
+			.tooltip("Soundtrack Tracker")
+			.icon(icon)
+			.priority(8)
+			.panel(panel)
+			.build();
+		clientToolbar.addNavigation(navButton);
+
+		// parse the bundled JSON off the client thread, then load the catalog if already in game
+		final EnrichmentStore store = enrichmentStore;
+		final TrackCatalog cat = catalog;
+		executor.execute(() ->
+		{
+			store.load();
+			clientThread.invoke(() ->
+			{
+				if (catalog != cat)
+				{
+					return; // plugin was stopped while we were parsing
+				}
+				dataReady = true;
+				if (client.getGameState() == GameState.LOGGED_IN)
+				{
+					cat.load();
+				}
+			});
+		});
 	}
 
 	@Override
 	protected void shutDown()
 	{
-		log.info("Soundtrack Tracker stopped");
+		if (catalog != null)
+		{
+			catalog.removeListener(toPanel);
+			catalog = null;
+		}
+		if (navButton != null)
+		{
+			clientToolbar.removeNavigation(navButton);
+			navButton = null;
+		}
+		panel = null;
+		enrichmentStore = null;
+		dataReady = false;
+	}
+
+	@Subscribe
+	public void onGameStateChanged(GameStateChanged event)
+	{
+		if (catalog == null)
+		{
+			return;
+		}
+		if (event.getGameState() == GameState.LOGGED_IN && dataReady)
+		{
+			catalog.load();
+		}
+		else if (event.getGameState() == GameState.LOGIN_SCREEN)
+		{
+			catalog.reset();
+		}
+	}
+
+	@Subscribe
+	public void onVarbitChanged(VarbitChanged event)
+	{
+		if (catalog != null && event.getVarpId() >= 0)
+		{
+			catalog.onVarpChanged(event.getVarpId());
+		}
 	}
 }
