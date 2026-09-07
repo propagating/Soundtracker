@@ -7,8 +7,4 @@ build
 nbactions.xml
 nb-configuration.xml
 nbproject/
-.superpowers/
 __pycache__/
-AGENTS.md
-CLAUDE.md
-docs/superpowers/
