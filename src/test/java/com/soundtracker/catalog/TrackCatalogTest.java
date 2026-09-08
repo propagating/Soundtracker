@@ -31,6 +31,7 @@ import java.util.Arrays;
 import java.util.List;
 import net.runelite.api.Client;
 import net.runelite.api.gameval.DBTableID;
+import net.runelite.api.gameval.VarPlayerID;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertSame;
@@ -46,8 +47,11 @@ import org.mockito.junit.MockitoJUnitRunner;
 @RunWith(MockitoJUnitRunner.class)
 public class TrackCatalogTest
 {
-	private static final int VARP_A = 20;
-	private static final int VARP_B = 21;
+	// the table stores a 1-based slot into the MUSICMULTI varp series, not the varp id itself
+	private static final int SLOT_A = 1;
+	private static final int SLOT_B = 2;
+	private static final int VARP_A = VarPlayerID.MUSICMULTI_1;
+	private static final int VARP_B = VarPlayerID.MUSICMULTI_2;
 
 	@Mock
 	private Client client;
@@ -55,17 +59,17 @@ public class TrackCatalogTest
 	private TrackCatalog catalog;
 	private final List<List<Track>> published = new ArrayList<>();
 
-	/** Rows: 1 locked bit0/varpA, 2 unlocked bit3/varpA, 3 hidden, 4 holiday bit0/varpB, 5 automatic, 6 no name. */
+	/** Rows: 1 locked bit0/slotA, 2 unlocked bit3/slotA, 3 hidden, 4 holiday bit0/slotB, 5 automatic, 6 no name. */
 	@Before
 	public void setUp()
 	{
 		lenient().when(client.getDBTableRows(DBTableID.Music.ID)).thenReturn(Arrays.asList(1, 2, 3, 4, 5, 6));
-		row(1, "Sea Shanty 2", "Sea Shanty 2", "This track unlocks in Port Sarim.", 35, VARP_A, 0, false, false, false);
-		row(2, "The Trade Parade", "Trade Parade, The", "Grand Exchange.", 40, VARP_A, 3, false, false, false);
-		row(3, "Hidden One", "Hidden One", "", 41, VARP_A, 4, true, false, false);
-		row(4, "Jungle Bells", "Jungle Bells", "Christmas.", 42, VARP_B, 0, false, true, false);
+		row(1, "Sea Shanty 2", "Sea Shanty 2", "This track unlocks in Port Sarim.", 35, SLOT_A, 0, false, false, false);
+		row(2, "The Trade Parade", "Trade Parade, The", "Grand Exchange.", 40, SLOT_A, 3, false, false, false);
+		row(3, "Hidden One", "Hidden One", "", 41, SLOT_A, 4, true, false, false);
+		row(4, "Jungle Bells", "Jungle Bells", "Christmas.", 42, SLOT_B, 0, false, true, false);
 		row(5, "Scape Main", "Scape Main", "Automatic.", 43, -1, -1, false, false, true);
-		row(6, null, null, null, 44, VARP_A, 5, false, false, false);
+		row(6, null, null, null, 44, SLOT_A, 5, false, false, false);
 		lenient().when(client.getVarpValue(VARP_A)).thenReturn(1 << 3);
 		lenient().when(client.getVarpValue(VARP_B)).thenReturn(0);
 
@@ -75,7 +79,7 @@ public class TrackCatalogTest
 		catalog.addListener(published::add);
 	}
 
-	private void row(int id, String display, String sort, String hint, int midi, int varp, int bit,
+	private void row(int id, String display, String sort, String hint, int midi, int slot, int bit,
 		boolean hidden, boolean holiday, boolean automatic)
 	{
 		lenient().when(client.getDBTableField(id, DBTableID.Music.COL_DISPLAYNAME, 0))
@@ -86,7 +90,7 @@ public class TrackCatalogTest
 			.thenReturn(hint == null ? null : new Object[]{hint});
 		lenient().when(client.getDBTableField(id, DBTableID.Music.COL_MIDI, 0)).thenReturn(new Object[]{midi});
 		lenient().when(client.getDBTableField(id, DBTableID.Music.COL_VARIABLE, 0))
-			.thenReturn(varp < 0 ? new Object[0] : new Object[]{varp});
+			.thenReturn(slot < 0 ? new Object[0] : new Object[]{slot});
 		lenient().when(client.getDBTableField(id, DBTableID.Music.COL_VARIABLE, 1))
 			.thenReturn(bit < 0 ? new Object[0] : new Object[]{bit});
 		// booleans arrive as Integer from the cache on some rows and Boolean on others
@@ -136,6 +140,31 @@ public class TrackCatalogTest
 		assertFalse(byName(tracks, "Sea Shanty 2").isHoliday());
 		assertTrue(byName(tracks, "Sea Shanty 2").countsForCape());
 		assertTrue(byName(tracks, "Jungle Bells").isHoliday());
+	}
+
+	@Test
+	public void variableSlotResolvesToTheMusicmultiVarp()
+	{
+		catalog.load();
+		List<Track> tracks = catalog.snapshot();
+		assertEquals(VarPlayerID.MUSICMULTI_1, byName(tracks, "Sea Shanty 2").getVarp());
+		assertEquals(VarPlayerID.MUSICMULTI_2, byName(tracks, "Jungle Bells").getVarp());
+		// slot 27 is the last varp in the series today
+		lenient().when(client.getDBTableField(1, DBTableID.Music.COL_VARIABLE, 0)).thenReturn(new Object[]{27});
+		lenient().when(client.getVarpValue(VarPlayerID.MUSICMULTI_27)).thenReturn(1);
+		catalog = new TrackCatalog(client, new EnrichmentStore(new Gson(), "/unused.json"));
+		catalog.load();
+		assertTrue(byName(catalog.snapshot(), "Sea Shanty 2").isUnlocked());
+	}
+
+	@Test
+	public void unknownVariableSlotReadsAsLockedWithoutCrashing()
+	{
+		lenient().when(client.getDBTableField(1, DBTableID.Music.COL_VARIABLE, 0)).thenReturn(new Object[]{99});
+		catalog.load();
+		Track shanty = byName(catalog.snapshot(), "Sea Shanty 2");
+		assertEquals(-1, shanty.getVarp());
+		assertFalse(shanty.isUnlocked());
 	}
 
 	@Test

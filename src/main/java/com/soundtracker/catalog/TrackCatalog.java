@@ -33,6 +33,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.gameval.DBTableID;
+import net.runelite.api.gameval.VarPlayerID;
 
 /**
  * The game's own list of music tracks and which of them this player has unlocked.
@@ -49,6 +50,22 @@ public class TrackCatalog
 	{
 		void onTracks(List<Track> tracks);
 	}
+
+	/**
+	 * The music table's variable column does not hold a varp id: its first value is a 1-based
+	 * slot into this series of unlock varps, and its second the bit within that varp.
+	 */
+	static final int[] MUSIC_VARPS = {
+		VarPlayerID.MUSICMULTI_1, VarPlayerID.MUSICMULTI_2, VarPlayerID.MUSICMULTI_3,
+		VarPlayerID.MUSICMULTI_4, VarPlayerID.MUSICMULTI_5, VarPlayerID.MUSICMULTI_6,
+		VarPlayerID.MUSICMULTI_7, VarPlayerID.MUSICMULTI_8, VarPlayerID.MUSICMULTI_9,
+		VarPlayerID.MUSICMULTI_10, VarPlayerID.MUSICMULTI_11, VarPlayerID.MUSICMULTI_12,
+		VarPlayerID.MUSICMULTI_13, VarPlayerID.MUSICMULTI_14, VarPlayerID.MUSICMULTI_15,
+		VarPlayerID.MUSICMULTI_16, VarPlayerID.MUSICMULTI_17, VarPlayerID.MUSICMULTI_18,
+		VarPlayerID.MUSICMULTI_19, VarPlayerID.MUSICMULTI_20, VarPlayerID.MUSICMULTI_21,
+		VarPlayerID.MUSICMULTI_22, VarPlayerID.MUSICMULTI_23, VarPlayerID.MUSICMULTI_24,
+		VarPlayerID.MUSICMULTI_25, VarPlayerID.MUSICMULTI_26, VarPlayerID.MUSICMULTI_27,
+	};
 
 	private final Client client;
 	private final EnrichmentStore enrichment;
@@ -178,7 +195,13 @@ public class TrackCatalog
 			{
 				missingMidi++;
 			}
-			int varp = integer(row, DBTableID.Music.COL_VARIABLE, 0);
+			int slot = integer(row, DBTableID.Music.COL_VARIABLE, 0);
+			int varp = slot >= 1 && slot <= MUSIC_VARPS.length ? MUSIC_VARPS[slot - 1] : -1;
+			if (slot > MUSIC_VARPS.length)
+			{
+				// a new varp was added to the series; the track reads as locked until the list grows
+				log.warn("soundtracker: {} uses unlock varp slot {}, beyond the {} known", name, slot, MUSIC_VARPS.length);
+			}
 			int bit = integer(row, DBTableID.Music.COL_VARIABLE, 1);
 			TrackEnrichment trackEnrichment = enrichment.find(midi, name);
 			if (!TrackEnrichment.EMPTY.equals(trackEnrichment))
