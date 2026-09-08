@@ -44,6 +44,8 @@ public class TrackEnrichment
 	private String unlockdetail;
 	private Boolean members;
 	private MapPoint map;
+	/** Surface entrance to point at when {@link #map} lies underground; null otherwise. */
+	private Entrance entrance;
 	private String wikiUrl;
 	/** Clue tier (easy, medium, hard, elite) whose Cecilia step can ask for this track; null otherwise. */
 	private String clueTier;
@@ -56,5 +58,15 @@ public class TrackEnrichment
 		private int x;
 		private int y;
 		private int plane;
+	}
+
+	/** A dungeon entrance on the surface map, named as RuneLite's world map names it. */
+	@Data
+	public static class Entrance
+	{
+		private int x;
+		private int y;
+		private int plane;
+		private String name;
 	}
 }

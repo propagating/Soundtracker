@@ -305,7 +305,58 @@ def build_record(title, wikitext, map_pages=None):
         "wikiUrl": WIKI + urllib.parse.quote(title.replace(" ", "_")),
         "clueTier": None,
         "clueNote": None,
+        "entrance": None,
     }
+
+
+# ---------- Dungeon entrances ----------
+# The surface world map never shows a point that sits underground (y >= 6400), so a track that
+# plays in a dungeon gets a second point: the entrance RuneLite's own world map marks for that
+# dungeon (tools/dungeon_entrances.json, dumped by tools/DumpDungeonEntrances.java). A dungeon
+# named in the track's location text wins outright; otherwise the entrance nearest the point's
+# surface projection is used when it is within ENTRANCE_RADIUS tiles.
+
+ENTRANCES_FILE = Path(__file__).resolve().parent / "dungeon_entrances.json"
+UNDERGROUND_Y = 6400
+ENTRANCE_RADIUS = 64
+
+
+def _tile_distance(ax, ay, bx, by):
+    return max(abs(ax - bx), abs(ay - by))
+
+
+def find_entrance(row, entrances):
+    """{x, y, plane, name} of the surface entrance for an underground track, else None."""
+    m = row.get("map")
+    if not m or m["y"] < UNDERGROUND_Y:
+        return None
+    surface = [e for e in entrances if e["y"] < UNDERGROUND_Y]
+    sx, sy = m["x"], m["y"] - UNDERGROUND_Y
+    location = (row.get("location") or "").lower()
+    named = None
+    for e in surface:
+        if e["name"].lower() in location and (named is None or len(e["name"]) > len(named)):
+            named = e["name"]
+    candidates = [e for e in surface if e["name"] == named] if named else surface
+    best = None
+    for e in candidates:
+        d = _tile_distance(sx, sy, e["x"], e["y"])
+        if best is None or d < best[0]:
+            best = (d, e)
+    if best is None or (named is None and best[0] > ENTRANCE_RADIUS):
+        return None
+    e = best[1]
+    return {"x": e["x"], "y": e["y"], "plane": e["plane"], "name": e["name"]}
+
+
+def attach_entrances(rows, entrances):
+    """Adds an "entrance" field to every row (None when there is nothing to point at)."""
+    matched = 0
+    for row in rows:
+        row["entrance"] = find_entrance(row, entrances)
+        if row["entrance"]:
+            matched += 1
+    return rows, matched
 
 
 # ---------- Treasure Trails (Cecilia) ----------
@@ -505,6 +556,10 @@ def main(argv):
     clues = parse_cecilia_tracks(next(iter(clue_pages.values()), ""))
     rows, unmatched_clues = attach_clue_tiers(rows, clues)
 
+    entrances = json.loads(ENTRANCES_FILE.read_text(encoding="utf-8"))
+    rows, with_entrance = attach_entrances(rows, entrances)
+    underground = sum(1 for r in rows if r["map"] and r["map"]["y"] >= UNDERGROUND_Y)
+
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(rows, indent=1, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
     with_cache = sum(1 for r in rows if r["cacheid"] is not None)
@@ -512,7 +567,8 @@ def main(argv):
     no_loc = sum(1 for r in rows if not r["location"])
     print(f"pages {pages}, records {records}, with cacheid {with_cache}, with map {with_map}, "
           f"without location {no_loc}, cacheid collisions resolved {collisions}, "
-          f"clue tracks {len(clues) - len(unmatched_clues)} of {len(clues)}")
+          f"clue tracks {len(clues) - len(unmatched_clues)} of {len(clues)}, "
+          f"entrances for {with_entrance} of {underground} underground tracks")
     if unmatched_clues:
         print("clue tracks with no matching row: " + ", ".join(unmatched_clues))
     print(f"wrote {out}")

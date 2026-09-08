@@ -75,6 +75,18 @@ public class TrackMapMarkerTest
 			.unlocked(false).holiday(false).automatic(false).enrichment(e).build();
 	}
 
+	private static Track underground(String name, int x, int y, int ex, int ey, String entranceName)
+	{
+		Track t = track(name, x, y, 0);
+		TrackEnrichment.Entrance entrance = new TrackEnrichment.Entrance();
+		entrance.setX(ex);
+		entrance.setY(ey);
+		entrance.setPlane(0);
+		entrance.setName(entranceName);
+		t.getEnrichment().setEntrance(entrance);
+		return t;
+	}
+
 	@Before
 	public void setUp()
 	{
@@ -97,6 +109,28 @@ public class TrackMapMarkerTest
 		assertEquals(new WorldPoint(3035, 3225, 0), point.getValue().getWorldPoint());
 		assertEquals("Sea Shanty 2", point.getValue().getName());
 		verify(worldMap).setWorldMapPositionTarget(new WorldPoint(3035, 3225, 0));
+	}
+
+	@Test
+	public void undergroundTrackMarksTheEntranceAndPansThere()
+	{
+		marker.show(underground("Arabique", 2816, 9824, 2884, 3397, "Taverley Dungeon"));
+		ArgumentCaptor<WorldMapPoint> points = ArgumentCaptor.forClass(WorldMapPoint.class);
+		verify(manager, org.mockito.Mockito.times(2)).add(points.capture());
+		WorldMapPoint entrance = points.getAllValues().get(0);
+		WorldMapPoint spot = points.getAllValues().get(1);
+		assertEquals(new WorldPoint(2884, 3397, 0), entrance.getWorldPoint());
+		assertEquals("Arabique: entrance to Taverley Dungeon", entrance.getTooltip());
+		assertEquals(new WorldPoint(2816, 9824, 0), spot.getWorldPoint());
+		verify(worldMap).setWorldMapPositionTarget(new WorldPoint(2884, 3397, 0));
+	}
+
+	@Test
+	public void clearRemovesBothMarkers()
+	{
+		marker.show(underground("Arabique", 2816, 9824, 2884, 3397, "Taverley Dungeon"));
+		marker.clear();
+		verify(manager, org.mockito.Mockito.times(2)).remove(any(WorldMapPoint.class));
 	}
 
 	@Test

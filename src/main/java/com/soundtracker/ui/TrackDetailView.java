@@ -125,8 +125,9 @@ class TrackDetailView extends JPanel
 		JButton map = new JButton("Show on map");
 		map.setFocusable(false);
 		map.setEnabled(track.hasMap());
-		map.setToolTipText(track.hasMap() ? "Mark where this track plays on the world map"
-			: "No map location is known for this track");
+		map.setToolTipText(!track.hasMap() ? "No map location is known for this track"
+			: e.getEntrance() != null ? "Mark the entrance to " + e.getEntrance().getName() + " and where this track plays"
+			: "Mark where this track plays on the world map");
 		map.addActionListener(ev -> mapMarker.show(track));
 		JButton wiki = new JButton("Wiki");
 		wiki.setFocusable(false);

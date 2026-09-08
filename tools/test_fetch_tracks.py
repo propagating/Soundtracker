@@ -230,6 +230,48 @@ class DedupeCacheidsTest(unittest.TestCase):
         self.assertEqual(result[0]["location"], "Somewhere")
 
 
+ENTRANCES = [
+    {"name": "Taverley Dungeon", "x": 2884, "y": 3397, "plane": 0},
+    {"name": "Brimhaven Dungeon", "x": 2743, "y": 3154, "plane": 0},
+    {"name": "Brimhaven Dungeon", "x": 2759, "y": 3062, "plane": 0},
+    {"name": "Kraken (boss)", "x": 2279, "y": 10017, "plane": 0},
+]
+
+
+def _track_row(name, location, x, y):
+    return {"name": name, "location": location, "map": {"x": x, "y": y, "plane": 0} if x is not None else None}
+
+
+class EntranceTest(unittest.TestCase):
+    def test_surface_track_gets_no_entrance(self):
+        self.assertIsNone(ft.find_entrance(_track_row("Harmony", "Lumbridge", 3222, 3218), ENTRANCES))
+        self.assertIsNone(ft.find_entrance(_track_row("No map", "Nowhere", None, None), ENTRANCES))
+
+    def test_named_dungeon_in_location_wins_nearest_of_that_name(self):
+        # projected surface point (2759, 3062) sits on the southern Brimhaven entrance
+        e = ft.find_entrance(_track_row("7th Realm", "Brimhaven Dungeon", 2759, 9462), ENTRANCES)
+        self.assertEqual((e["x"], e["y"], e["name"]), (2759, 3062, "Brimhaven Dungeon"))
+
+    def test_name_match_is_case_insensitive_and_ignores_distance(self):
+        e = ft.find_entrance(_track_row("Arabique", "the taverley dungeon", 1000, 8000), ENTRANCES)
+        self.assertEqual(e["name"], "Taverley Dungeon")
+
+    def test_unnamed_track_uses_nearest_entrance_within_64_tiles(self):
+        e = ft.find_entrance(_track_row("Alone", "Ice Mountain", 2900, 9800), ENTRANCES)
+        self.assertEqual(e["name"], "Taverley Dungeon")
+        self.assertIsNone(ft.find_entrance(_track_row("Far", "Elsewhere", 2000, 9800), ENTRANCES))
+
+    def test_underground_entrances_are_never_used(self):
+        self.assertIsNone(ft.find_entrance(_track_row("Kraken", "Kraken Cove", 2279, 10017 + 6400), ENTRANCES))
+
+    def test_attach_entrances_adds_field_to_every_row(self):
+        rows = [_track_row("7th Realm", "Brimhaven Dungeon", 2759, 9462), _track_row("Harmony", "Lumbridge", 3222, 3218)]
+        out, matched = ft.attach_entrances(rows, ENTRANCES)
+        self.assertEqual(matched, 1)
+        self.assertEqual(out[0]["entrance"]["plane"], 0)
+        self.assertIsNone(out[1]["entrance"])
+
+
 if __name__ == "__main__":
     unittest.main()
 

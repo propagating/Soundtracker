@@ -8,6 +8,7 @@
     "unlockdetail": "Unlocked in Port Sarim.",
     "members": false,
     "map": {"x": 3035, "y": 3225, "plane": 0},
+    "entrance": {"x": 3040, "y": 3230, "plane": 0, "name": "Test Cave"},
     "wikiUrl": "https://oldschool.runescape.wiki/w/Sea_Shanty_2",
     "clueTier": "hard",
     "clueNote": "Requires completion of Bone Voyage."

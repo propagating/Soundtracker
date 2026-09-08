@@ -25,6 +25,8 @@
 package com.soundtracker.map;
 
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.coords.WorldPoint;
@@ -36,9 +38,10 @@ import com.soundtracker.catalog.Track;
 import com.soundtracker.catalog.TrackEnrichment;
 
 /**
- * Sole owner of this plugin's world-map state: one marker for the track the player is looking
- * at, and the pan target so opening the map centres on it. EDT-safe; the pan target crosses to
- * the client thread.
+ * Sole owner of this plugin's world-map state: the markers for the track the player is looking
+ * at, and the pan target so opening the map centres on them. A track that plays underground gets
+ * two markers, the surface entrance (which the map pans to) and the spot itself, which only shows
+ * once the player opens that dungeon's map. EDT-safe; the pan target crosses to the client thread.
  */
 @Slf4j
 public class TrackMapMarker
@@ -47,7 +50,7 @@ public class TrackMapMarker
 	private final ClientThread clientThread;
 	private final WorldMapPointManager manager;
 	private final BufferedImage icon;
-	private WorldMapPoint shown;
+	private final List<WorldMapPoint> shown = new ArrayList<>();
 
 	public TrackMapMarker(Client client, ClientThread clientThread, WorldMapPointManager manager,
 		BufferedImage icon)
@@ -58,7 +61,7 @@ public class TrackMapMarker
 		this.icon = icon;
 	}
 
-	/** Replaces any earlier marker with this track's, or just clears when it has no map point. */
+	/** Replaces any earlier markers with this track's, or just clears when it has no map point. */
 	public void show(Track track)
 	{
 		clear();
@@ -72,33 +75,46 @@ public class TrackMapMarker
 			log.warn("soundtracker: marker icon missing, not marking map");
 			return;
 		}
-		WorldPoint target = new WorldPoint(map.getX(), map.getY(), map.getPlane());
-		WorldMapPoint point = WorldMapPoint.builder()
-			.worldPoint(target)
-			.image(icon)
-			.snapToEdge(true)
-			.jumpOnClick(true)
-			.name(track.getName())
-			.tooltip(map.getPlane() > 0 ? track.getName() + " (floor " + map.getPlane() + ")" : track.getName())
-			.build();
-		manager.add(point);
-		shown = point;
+		WorldPoint spot = new WorldPoint(map.getX(), map.getY(), map.getPlane());
+		WorldPoint target = spot;
+		TrackEnrichment.Entrance entrance = track.getEnrichment().getEntrance();
+		if (entrance != null)
+		{
+			target = new WorldPoint(entrance.getX(), entrance.getY(), entrance.getPlane());
+			add(target, track.getName(), track.getName() + ": entrance to " + entrance.getName());
+		}
+		add(spot, track.getName(), map.getPlane() > 0 ? track.getName() + " (floor " + map.getPlane() + ")" : track.getName());
+		final WorldPoint panTo = target;
 		clientThread.invokeLater(() ->
 		{
 			WorldMap worldMap = client.getWorldMap();
 			if (worldMap != null)
 			{
-				worldMap.setWorldMapPositionTarget(target);
+				worldMap.setWorldMapPositionTarget(panTo);
 			}
 		});
 	}
 
+	private void add(WorldPoint where, String name, String tooltip)
+	{
+		WorldMapPoint point = WorldMapPoint.builder()
+			.worldPoint(where)
+			.image(icon)
+			.snapToEdge(true)
+			.jumpOnClick(true)
+			.name(name)
+			.tooltip(tooltip)
+			.build();
+		manager.add(point);
+		shown.add(point);
+	}
+
 	public void clear()
 	{
-		if (shown != null)
+		for (WorldMapPoint point : shown)
 		{
-			manager.remove(shown);
-			shown = null;
+			manager.remove(point);
 		}
+		shown.clear();
 	}
 }

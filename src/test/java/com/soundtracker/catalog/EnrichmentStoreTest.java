@@ -55,6 +55,8 @@ public class EnrichmentStoreTest
 		assertEquals("Sea Shanty 2", hit.getName());
 		assertEquals(3035, hit.getMap().getX());
 		assertEquals(0, hit.getMap().getPlane());
+		assertEquals("Test Cave", hit.getEntrance().getName());
+		assertEquals(3040, hit.getEntrance().getX());
 		assertEquals(Boolean.FALSE, hit.getMembers());
 		assertEquals("hard", hit.getClueTier());
 		assertEquals("Requires completion of Bone Voyage.", hit.getClueNote());
