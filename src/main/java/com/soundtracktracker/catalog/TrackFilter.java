@@ -37,7 +37,9 @@ public final class TrackFilter
 	{
 		ALL("All"),
 		LOCKED("Locked"),
-		UNLOCKED("Unlocked");
+		UNLOCKED("Unlocked"),
+		/** Still locked and counted toward the music cape: the player's to-do list. */
+		CAPE("Needed for cape");
 
 		private final String label;
 
@@ -109,6 +111,10 @@ public final class TrackFilter
 				continue;
 			}
 			if (lock == LockFilter.UNLOCKED && !t.isUnlocked())
+			{
+				continue;
+			}
+			if (lock == LockFilter.CAPE && (t.isUnlocked() || !t.countsForCape()))
 			{
 				continue;
 			}

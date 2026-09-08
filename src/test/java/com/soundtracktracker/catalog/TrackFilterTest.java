@@ -87,6 +87,14 @@ public class TrackFilterTest
 	}
 
 	@Test
+	public void neededForCapeKeepsLockedTracksThatCountForTheCape()
+	{
+		// Jungle Bells is locked but a holiday track, so it is never needed for the cape
+		assertEquals(Arrays.asList("Sea Shanty 2", "The Trade Parade"),
+			names(TrackFilter.apply(tracks, "", LockFilter.CAPE, SortMode.NAME, true, false)));
+	}
+
+	@Test
 	public void holidayTracksCanBeHidden()
 	{
 		List<Track> out = TrackFilter.apply(tracks, "", LockFilter.ALL, SortMode.NAME, false, false);

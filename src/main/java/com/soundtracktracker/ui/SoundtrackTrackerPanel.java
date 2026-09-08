@@ -89,6 +89,7 @@ public class SoundtrackTrackerPanel extends PluginPanel
 		JPanel combos = new JPanel(new GridLayout(1, 2, 4, 0));
 		combos.setOpaque(false);
 		combos.setBorder(new EmptyBorder(4, 0, 0, 0));
+		lockFilter.setToolTipText("All, locked or unlocked tracks, or just the locked ones the music cape still needs");
 		combos.add(lockFilter);
 		combos.add(sortMode);
 		controls.add(combos);

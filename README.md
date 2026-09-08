@@ -12,6 +12,9 @@ link.
   music tab to be open.
 - Locations, quests, map points and wiki links come from the OSRS Wiki, bundled
   as `src/main/resources/com/soundtracktracker/tracks.json`.
+- The filter beside the search box shows all, locked or unlocked tracks, or
+  "Needed for cape": the locked tracks that still count toward the music cape,
+  with holiday tracks left out.
 - The same file marks the tracks Cecilia in Falador Park can ask for during a
   Treasure Trails step (taken from her wiki page). Tick "Clue tracks only" to
   see just those, with their clue tier and any requirement note; the header
