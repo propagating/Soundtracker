@@ -235,6 +235,11 @@ public class TrackCatalog
 		return values != null && values.length > 0 && values[0] instanceof Integer ? (Integer) values[0] : -1;
 	}
 
+	/**
+	 * Flag columns arrive as Boolean on some rows and Integer on others. The holiday column is
+	 * really an integer holiday type (1 to 4) whose table default for an ordinary track is -1, so
+	 * only a positive value means "yes"; 0 and any negative "unset" default mean "no".
+	 */
 	private boolean bool(int row, int column)
 	{
 		Object[] values = field(row, column, 0);
@@ -247,7 +252,7 @@ public class TrackCatalog
 		{
 			return (Boolean) v;
 		}
-		return v instanceof Integer && (Integer) v != 0;
+		return v instanceof Integer && (Integer) v > 0;
 	}
 
 	// a row that lacks the column entirely can surface as an exception from the cache reader;

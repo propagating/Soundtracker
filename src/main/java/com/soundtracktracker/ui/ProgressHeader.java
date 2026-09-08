@@ -66,7 +66,8 @@ public class ProgressHeader extends JPanel
 	{
 		if (!loggedIn || progress.getRequired() == 0)
 		{
-			label.setText(!loggedIn ? LOGGED_OUT : "No clue tracks are known");
+			label.setText(!loggedIn ? LOGGED_OUT
+				: clueMode ? "No clue tracks are known" : "No tracks count toward the cape");
 			bar.setMaximum(1);
 			bar.setValue(0);
 			bar.setForeground(ColorScheme.PROGRESS_INPROGRESS_COLOR);

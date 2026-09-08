@@ -122,6 +122,22 @@ public class TrackCatalogTest
 		assertTrue(byName(tracks, "Scape Main").isAutomatic());
 	}
 
+	/**
+	 * The live table stores holiday as an integer holiday type (1 to 4) whose default for an
+	 * ordinary track is -1, not a boolean; -1 must not read as "is a holiday track".
+	 */
+	@Test
+	public void holidayTypeColumnTreatsTheMinusOneDefaultAsNotHoliday()
+	{
+		lenient().when(client.getDBTableField(1, DBTableID.Music.COL_HOLIDAY, 0)).thenReturn(new Object[]{-1});
+		lenient().when(client.getDBTableField(4, DBTableID.Music.COL_HOLIDAY, 0)).thenReturn(new Object[]{2});
+		catalog.load();
+		List<Track> tracks = catalog.snapshot();
+		assertFalse(byName(tracks, "Sea Shanty 2").isHoliday());
+		assertTrue(byName(tracks, "Sea Shanty 2").countsForCape());
+		assertTrue(byName(tracks, "Jungle Bells").isHoliday());
+	}
+
 	@Test
 	public void loadJoinsEnrichmentAndFillsDefaults()
 	{
