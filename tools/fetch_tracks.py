@@ -14,8 +14,8 @@ from pathlib import Path
 
 API = "https://oldschool.runescape.wiki/api.php"
 WIKI = "https://oldschool.runescape.wiki/w/"
-USER_AGENT = "SoundtrackTracker-RuneLite-plugin/1.0 (data refresh script; contact: propagating@protonmail.com)"
-DEFAULT_OUT = Path(__file__).resolve().parents[1] / "src/main/resources/com/soundtracktracker/tracks.json"
+USER_AGENT = "Soundtracker-RuneLite-plugin/1.0 (data refresh script; contact: propagating@protonmail.com)"
+DEFAULT_OUT = Path(__file__).resolve().parents[1] / "src/main/resources/com/soundtracker/tracks.json"
 ABSENT = {"", "no", "none", "n/a", "unknown"}
 
 

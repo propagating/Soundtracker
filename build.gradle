@@ -20,7 +20,7 @@ repositories {
 }
 
 def runeLiteVersion = 'latest.release'
-def pluginMainClass = 'com.soundtracktracker.SoundtrackTrackerPluginTest'
+def pluginMainClass = 'com.soundtracker.SoundtrackerPluginTest'
 
 dependencies {
 	compileOnly group: 'net.runelite', name:'client', version: runeLiteVersion
@@ -34,7 +34,7 @@ dependencies {
 	testImplementation group: 'net.runelite', name:'jshell', version: runeLiteVersion
 }
 
-group = 'com.soundtracktracker'
+group = 'com.soundtracker'
 
 tasks.withType(JavaCompile).configureEach {
 	options.encoding = 'UTF-8'

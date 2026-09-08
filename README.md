@@ -1,4 +1,4 @@
-# Soundtrack Tracker
+# Soundtracker
 
 A RuneLite plugin for chasing the music cape. It lists every music track, shows
 live which ones you have unlocked, and opens a guide page per track with the
@@ -11,7 +11,7 @@ link.
   itself, so new tracks appear the day they are released and nothing needs the
   music tab to be open.
 - Locations, quests, map points and wiki links come from the OSRS Wiki, bundled
-  as `src/main/resources/com/soundtracktracker/tracks.json`.
+  as `src/main/resources/com/soundtracker/tracks.json`.
 - The filter beside the search box shows all, locked or unlocked tracks, or
   "Needed for cape": the locked tracks that still count toward the music cape,
   with holiday tracks left out.

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Write src/main/resources/com/soundtracktracker/panel_icon.png: a 16x16 eighth note."""
+"""Write src/main/resources/com/soundtracker/panel_icon.png: a 16x16 eighth note."""
 import struct
 import zlib
 from pathlib import Path
 
-OUT = Path(__file__).resolve().parents[1] / "src/main/resources/com/soundtracktracker/panel_icon.png"
+OUT = Path(__file__).resolve().parents[1] / "src/main/resources/com/soundtracker/panel_icon.png"
 
 # '#' is an opaque pixel, '.' transparent
 GLYPH = [
