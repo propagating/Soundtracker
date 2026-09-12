@@ -43,6 +43,7 @@ panel's toolbar icon and the map marker.
 ```
 ./gradlew test      # unit tests
 ./gradlew run       # dev client with the plugin loaded
+./gradlew sideload  # build the jar and copy it to ~/.runelite/sideloaded-plugins
 ```
 
 ## Configuration
