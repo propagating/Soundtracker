@@ -24,49 +24,54 @@
  */
 package com.soundtracker.catalog;
 
-import lombok.Data;
+import lombok.Builder;
+import lombok.Value;
 
 /**
  * One row of tracks.json: what the wiki knows about a track that the game cache does not.
- * Field names match the JSON keys so Gson needs no adapters.
+ * Field names match the JSON keys so Gson needs no adapters; it fills the final fields by
+ * reflection. Immutable so that the shared {@link #EMPTY} cannot be altered through one track.
  */
-@Data
+@Value
+@Builder(toBuilder = true)
 public class TrackEnrichment
 {
 	/** Stands in for a track the wiki sweep did not cover; every getter returns null. */
-	public static final TrackEnrichment EMPTY = new TrackEnrichment();
+	public static final TrackEnrichment EMPTY = TrackEnrichment.builder().build();
 
-	private Integer cacheid;
-	private String name;
-	private String location;
-	private String region;
-	private String quest;
-	private String unlockdetail;
-	private Boolean members;
-	private MapPoint map;
+	Integer cacheid;
+	String name;
+	String location;
+	String region;
+	String quest;
+	String unlockdetail;
+	Boolean members;
+	MapPoint map;
 	/** Surface entrance to point at when {@link #map} lies underground; null otherwise. */
-	private Entrance entrance;
-	private String wikiUrl;
+	Entrance entrance;
+	String wikiUrl;
 	/** Clue tier (easy, medium, hard, elite) whose Cecilia step can ask for this track; null otherwise. */
-	private String clueTier;
+	String clueTier;
 	/** The wiki's note for that clue step, e.g. a quest requirement; null when there is none. */
-	private String clueNote;
+	String clueNote;
 
-	@Data
+	@Value
+	@Builder
 	public static class MapPoint
 	{
-		private int x;
-		private int y;
-		private int plane;
+		int x;
+		int y;
+		int plane;
 	}
 
 	/** A dungeon entrance on the surface map, named as RuneLite's world map names it. */
-	@Data
+	@Value
+	@Builder
 	public static class Entrance
 	{
-		private int x;
-		private int y;
-		private int plane;
-		private String name;
+		int x;
+		int y;
+		int plane;
+		String name;
 	}
 }

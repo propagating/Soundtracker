@@ -45,9 +45,7 @@ public class TrackListViewTest
 {
 	private static Track track(String name, String hint, String clueTier)
 	{
-		TrackEnrichment e = new TrackEnrichment();
-		e.setLocation("Somewhere");
-		e.setClueTier(clueTier);
+		TrackEnrichment e = TrackEnrichment.builder().location("Somewhere").clueTier(clueTier).build();
 		return Track.builder().name(name).sortName(name).hint(hint).midiId(1).varp(-1).bit(-1)
 			.unlocked(false).holiday(false).automatic(false).enrichment(e).build();
 	}

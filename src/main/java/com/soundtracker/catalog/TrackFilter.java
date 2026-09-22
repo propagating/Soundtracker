@@ -74,14 +74,16 @@ public final class TrackFilter
 		}
 	}
 
+	// a key comparator rather than a lower-cased key: the key extractor runs for both sides of
+	// every comparison, so lower-casing there allocates ~n log n strings per sort
 	private static final Comparator<Track> BY_NAME = Comparator
-		.comparing((Track t) -> lower(t.getSortName() == null ? t.getName() : t.getSortName()))
+		.comparing(Track::getSortName, String.CASE_INSENSITIVE_ORDER)
 		.thenComparing(Track::getName);
 
 	// tracks with no known region sink to the bottom rather than forming a blank group on top
 	private static final Comparator<Track> BY_LOCATION = Comparator
 		.comparing((Track t) -> t.getEnrichment().getRegion() == null)
-		.thenComparing(t -> lower(nullToEmpty(t.getEnrichment().getRegion())))
+		.thenComparing(t -> nullToEmpty(t.getEnrichment().getRegion()), String.CASE_INSENSITIVE_ORDER)
 		.thenComparing(BY_NAME);
 
 	private TrackFilter()

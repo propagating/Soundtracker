@@ -38,20 +38,6 @@ public final class ClueProgress
 
 	public static CapeProgress.Progress of(Collection<Track> tracks)
 	{
-		int required = 0;
-		int unlocked = 0;
-		for (Track t : tracks)
-		{
-			if (!t.isClueTrack())
-			{
-				continue;
-			}
-			required++;
-			if (t.isUnlocked())
-			{
-				unlocked++;
-			}
-		}
-		return new CapeProgress.Progress(unlocked, required);
+		return CapeProgress.Progress.of(tracks, Track::isClueTrack);
 	}
 }

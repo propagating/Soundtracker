@@ -203,6 +203,12 @@ public class TrackCatalog
 				log.warn("soundtracker: {} uses unlock varp slot {}, beyond the {} known", name, slot, MUSIC_VARPS.length);
 			}
 			int bit = integer(row, DBTableID.Music.COL_VARIABLE, 1);
+			if (bit >= Integer.SIZE)
+			{
+				// a varp holds 32 bits; the shift in isUnlocked() would wrap rather than read nothing
+				log.warn("soundtracker: {} uses unlock bit {}, beyond the varp width", name, bit);
+				bit = -1;
+			}
 			TrackEnrichment trackEnrichment = enrichment.find(midi, name);
 			if (!TrackEnrichment.EMPTY.equals(trackEnrichment))
 			{

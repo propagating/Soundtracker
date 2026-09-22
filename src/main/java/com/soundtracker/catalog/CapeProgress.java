@@ -25,6 +25,7 @@
 package com.soundtracker.catalog;
 
 import java.util.Collection;
+import java.util.function.Predicate;
 import lombok.Value;
 
 /** The music cape needs every non-holiday track; this counts how close the player is. */
@@ -40,6 +41,26 @@ public final class CapeProgress
 		{
 			return required > 0 && unlocked >= required;
 		}
+
+		/** Unlocked and required counts over just the tracks that {@code counts} accepts. */
+		public static Progress of(Collection<Track> tracks, Predicate<Track> counts)
+		{
+			int required = 0;
+			int unlocked = 0;
+			for (Track t : tracks)
+			{
+				if (!counts.test(t))
+				{
+					continue;
+				}
+				required++;
+				if (t.isUnlocked())
+				{
+					unlocked++;
+				}
+			}
+			return new Progress(unlocked, required);
+		}
 	}
 
 	private CapeProgress()
@@ -48,20 +69,6 @@ public final class CapeProgress
 
 	public static Progress of(Collection<Track> tracks)
 	{
-		int required = 0;
-		int unlocked = 0;
-		for (Track t : tracks)
-		{
-			if (!t.countsForCape())
-			{
-				continue;
-			}
-			required++;
-			if (t.isUnlocked())
-			{
-				unlocked++;
-			}
-		}
-		return new Progress(unlocked, required);
+		return Progress.of(tracks, Track::countsForCape);
 	}
 }

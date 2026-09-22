@@ -42,9 +42,7 @@ public class TrackFilterTest
 	private static Track track(String name, String sortName, boolean unlocked, boolean holiday, String region,
 		String clueTier)
 	{
-		TrackEnrichment e = new TrackEnrichment();
-		e.setRegion(region);
-		e.setClueTier(clueTier);
+		TrackEnrichment e = TrackEnrichment.builder().region(region).clueTier(clueTier).build();
 		return Track.builder()
 			.name(name).sortName(sortName).hint("").midiId(1).varp(-1).bit(-1)
 			.unlocked(unlocked).holiday(holiday).automatic(false).enrichment(e)
@@ -68,6 +66,19 @@ public class TrackFilterTest
 	{
 		List<Track> out = TrackFilter.apply(tracks, "", LockFilter.ALL, SortMode.NAME, true, false);
 		assertEquals(Arrays.asList("Adventure", "Jungle Bells", "Scape Main", "Sea Shanty 2", "The Trade Parade"), names(out));
+	}
+
+	@Test
+	public void sortIgnoresCase()
+	{
+		List<Track> mixed = Arrays.asList(
+			track("bob", "bob", false, false, "z"),
+			track("Alice", "Alice", false, false, "Y"),
+			track("carol", "carol", false, false, "x"));
+		assertEquals(Arrays.asList("Alice", "bob", "carol"),
+			names(TrackFilter.apply(mixed, "", LockFilter.ALL, SortMode.NAME, true, false)));
+		assertEquals(Arrays.asList("carol", "Alice", "bob"),
+			names(TrackFilter.apply(mixed, "", LockFilter.ALL, SortMode.LOCATION, true, false)));
 	}
 
 	@Test

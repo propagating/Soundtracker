@@ -272,10 +272,6 @@ class EntranceTest(unittest.TestCase):
         self.assertIsNone(out[1]["entrance"])
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 CECILIA = """Cecilia is a bard in [[Falador Park]].
 
 ==Music challenges==
@@ -357,3 +353,7 @@ class CeciliaTest(unittest.TestCase):
         self.assertIn("clueTier", rec)
         self.assertIsNone(rec["clueTier"])
         self.assertIsNone(rec["clueNote"])
+
+
+if __name__ == "__main__":
+    unittest.main()

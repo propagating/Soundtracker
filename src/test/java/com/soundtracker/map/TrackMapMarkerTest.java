@@ -62,29 +62,21 @@ public class TrackMapMarkerTest
 
 	private static Track track(String name, Integer x, Integer y, int plane)
 	{
-		TrackEnrichment e = new TrackEnrichment();
+		TrackEnrichment.TrackEnrichmentBuilder e = TrackEnrichment.builder();
 		if (x != null)
 		{
-			TrackEnrichment.MapPoint p = new TrackEnrichment.MapPoint();
-			p.setX(x);
-			p.setY(y);
-			p.setPlane(plane);
-			e.setMap(p);
+			e.map(TrackEnrichment.MapPoint.builder().x(x).y(y).plane(plane).build());
 		}
 		return Track.builder().name(name).sortName(name).hint("").midiId(1).varp(-1).bit(-1)
-			.unlocked(false).holiday(false).automatic(false).enrichment(e).build();
+			.unlocked(false).holiday(false).automatic(false).enrichment(e.build()).build();
 	}
 
 	private static Track underground(String name, int x, int y, int ex, int ey, String entranceName)
 	{
 		Track t = track(name, x, y, 0);
-		TrackEnrichment.Entrance entrance = new TrackEnrichment.Entrance();
-		entrance.setX(ex);
-		entrance.setY(ey);
-		entrance.setPlane(0);
-		entrance.setName(entranceName);
-		t.getEnrichment().setEntrance(entrance);
-		return t;
+		TrackEnrichment.Entrance entrance = TrackEnrichment.Entrance.builder()
+			.x(ex).y(ey).plane(0).name(entranceName).build();
+		return t.toBuilder().enrichment(t.getEnrichment().toBuilder().entrance(entrance).build()).build();
 	}
 
 	@Before

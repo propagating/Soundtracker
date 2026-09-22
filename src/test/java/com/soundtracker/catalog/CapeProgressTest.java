@@ -77,8 +77,8 @@ public class CapeProgressTest
 	@Test
 	public void trackKnowsWhetherItHasAMapPoint()
 	{
-		TrackEnrichment withMap = new TrackEnrichment();
-		withMap.setMap(new TrackEnrichment.MapPoint());
+		TrackEnrichment withMap = TrackEnrichment.builder()
+			.map(TrackEnrichment.MapPoint.builder().build()).build();
 		assertTrue(track("A", false, false).toBuilder().enrichment(withMap).build().hasMap());
 		assertFalse(track("A", false, false).hasMap());
 	}

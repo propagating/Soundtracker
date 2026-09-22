@@ -108,6 +108,8 @@ public class SoundtrackerPlugin extends Plugin
 		catalog = new TrackCatalog(client, enrichmentStore);
 		catalog.addListener(toPanel);
 
+		// the map marker is optional (the marker class copes with a null icon); the panel icon is
+		// not, since the toolbar needs one, so a missing panel icon is left to fail startUp loudly
 		BufferedImage markerIcon;
 		try
 		{

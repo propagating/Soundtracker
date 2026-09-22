@@ -167,6 +167,21 @@ public class TrackCatalogTest
 		assertFalse(shanty.isUnlocked());
 	}
 
+	/**
+	 * A varp holds 32 bits; Java's shift masks the count to 5 bits, so bit 32 would silently read
+	 * bit 0 instead of being treated like a row with no unlock bit at all.
+	 */
+	@Test
+	public void bitBeyondTheVarpWidthReadsAsLocked()
+	{
+		lenient().when(client.getDBTableField(1, DBTableID.Music.COL_VARIABLE, 1)).thenReturn(new Object[]{32});
+		lenient().when(client.getVarpValue(VARP_A)).thenReturn(1);
+		catalog.load();
+		Track shanty = byName(catalog.snapshot(), "Sea Shanty 2");
+		assertFalse(shanty.isUnlocked());
+		assertEquals(-1, shanty.getBit());
+	}
+
 	@Test
 	public void loadJoinsEnrichmentAndFillsDefaults()
 	{

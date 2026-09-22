@@ -59,12 +59,12 @@ public class Track
 
 	public boolean hasMap()
 	{
-		return enrichment != null && enrichment.getMap() != null;
+		return enrichment.getMap() != null;
 	}
 
 	/** True when a Treasure Trails step (Cecilia in Falador Park) can ask the player to play this track. */
 	public boolean isClueTrack()
 	{
-		return enrichment != null && enrichment.getClueTier() != null;
+		return enrichment.getClueTier() != null;
 	}
 }

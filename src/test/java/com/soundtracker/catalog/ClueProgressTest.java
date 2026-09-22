@@ -35,8 +35,7 @@ public class ClueProgressTest
 {
 	static Track track(String name, boolean unlocked, String clueTier)
 	{
-		TrackEnrichment e = new TrackEnrichment();
-		e.setClueTier(clueTier);
+		TrackEnrichment e = TrackEnrichment.builder().clueTier(clueTier).build();
 		return Track.builder()
 			.name(name).sortName(name).hint("").midiId(1).varp(-1).bit(-1)
 			.unlocked(unlocked).holiday(false).automatic(false)

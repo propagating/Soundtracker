@@ -69,8 +69,11 @@ public class SoundtrackerPanel extends PluginPanel
 	private final Timer debounce;
 
 	private List<Track> tracks = Collections.emptyList();
-	// the track whose detail page is open, so a new snapshot (e.g. it just unlocked) redraws it
+	// the track whose detail page is open, so a new snapshot (e.g. it just unlocked) redraws it,
+	// and the list offset Back returns to; the hidden list's own scroll bar is not reliable after
+	// a rebuild has changed its row count
 	private Track detailTrack;
+	private int detailScroll;
 
 	public SoundtrackerPanel(SoundtrackerConfig config, TrackMapMarker mapMarker)
 	{
@@ -168,7 +171,7 @@ public class SoundtrackerPanel extends PluginPanel
 			}
 			else if (fresh.isUnlocked() != detailTrack.isUnlocked())
 			{
-				showDetail(fresh);
+				showDetail(fresh, detailScroll);
 			}
 		}
 	}
@@ -201,10 +204,16 @@ public class SoundtrackerPanel extends PluginPanel
 		list.setTracks(filtered, emptyMessage);
 	}
 
+	/** Opens the detail page from the list; Back returns to where the list is scrolled now. */
 	void showDetail(Track track)
 	{
+		showDetail(track, listScrollValue());
+	}
+
+	private void showDetail(Track track, int scroll)
+	{
 		detailTrack = track;
-		final int scroll = listScrollValue();
+		detailScroll = scroll;
 		removeAll();
 		add(new TrackDetailView(track, mapMarker, () -> showList(scroll)), BorderLayout.CENTER);
 		revalidate();
