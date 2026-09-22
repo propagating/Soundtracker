@@ -262,7 +262,16 @@ def find_map_ref(value):
 
 
 def parse_music_track_map(text):
-    """{x, y, plane} from a transcluded {{Music track map}} page's top-level params, or None."""
+    """{x, y, plane} for a transcluded map page: its own {{Map}} pin when it has one, else the
+    {{Music track map}} top-level x/y.
+
+    The top-level x/y is the view centre of every polygon on the page, so for a track that
+    plays both above and below ground (Varrock and its sewers) it can land underground even
+    though the track is a surface one; the pin is placed by hand at the spot that matters.
+    """
+    pin = parse_map(text)
+    if pin is not None:
+        return pin
     body = find_template(text, "Music track map")
     if body is None:
         return None
@@ -313,8 +322,10 @@ def build_record(title, wikitext, map_pages=None):
 # The surface world map never shows a point that sits underground (y >= 6400), so a track that
 # plays in a dungeon gets a second point: the entrance RuneLite's own world map marks for that
 # dungeon (tools/dungeon_entrances.json, dumped by tools/DumpDungeonEntrances.java). A dungeon
-# named in the track's location text wins outright; otherwise the entrance nearest the point's
-# surface projection is used when it is within ENTRANCE_RADIUS tiles.
+# named in the track's location text wins, then one named in its unlock text, and only then
+# the entrance nearest the point's surface projection, when that is within ENTRANCE_RADIUS
+# tiles. When a tier names several dungeons the nearest of them wins. Names match as whole
+# words, so the Shayzien entrance called "Tunnel" is not found in "Tunnels under Mort Myre".
 
 ENTRANCES_FILE = Path(__file__).resolve().parent / "dungeon_entrances.json"
 UNDERGROUND_Y = 6400
@@ -325,27 +336,34 @@ def _tile_distance(ax, ay, bx, by):
     return max(abs(ax - bx), abs(ay - by))
 
 
+def _names_entrance(text, name):
+    """Whether `name` appears in `text` as whole words; \\b would fail on names ending in ')'."""
+    return re.search(r"(?<![a-z0-9])" + re.escape(name.lower()) + r"(?![a-z0-9])", text) is not None
+
+
 def find_entrance(row, entrances):
     """{x, y, plane, name} of the surface entrance for an underground track, else None."""
     m = row.get("map")
     if not m or m["y"] < UNDERGROUND_Y:
         return None
-    surface = [e for e in entrances if e["y"] < UNDERGROUND_Y]
     sx, sy = m["x"], m["y"] - UNDERGROUND_Y
     location = (row.get("location") or "").lower()
-    named = None
-    for e in surface:
-        if e["name"].lower() in location and (named is None or len(e["name"]) > len(named)):
-            named = e["name"]
-    candidates = [e for e in surface if e["name"] == named] if named else surface
-    best = None
-    for e in candidates:
+    unlock = (row.get("unlockdetail") or "").lower()
+    in_location, in_unlock, nearby = [], [], []
+    for e in entrances:
+        if e["y"] >= UNDERGROUND_Y:
+            continue
         d = _tile_distance(sx, sy, e["x"], e["y"])
-        if best is None or d < best[0]:
-            best = (d, e)
-    if best is None or (named is None and best[0] > ENTRANCE_RADIUS):
+        if _names_entrance(location, e["name"]):
+            in_location.append((d, e))
+        elif _names_entrance(unlock, e["name"]):
+            in_unlock.append((d, e))
+        if d <= ENTRANCE_RADIUS:
+            nearby.append((d, e))
+    candidates = in_location or in_unlock or nearby
+    if not candidates:
         return None
-    e = best[1]
+    e = min(candidates, key=lambda c: c[0])[1]
     return {"x": e["x"], "y": e["y"], "plane": e["plane"], "name": e["name"]}
 
 

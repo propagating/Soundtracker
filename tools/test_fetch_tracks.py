@@ -171,6 +171,14 @@ class MapReferenceTest(unittest.TestCase):
         self.assertIsNone(ft.parse_music_track_map("no template here"))
         self.assertIsNone(ft.parse_music_track_map("{{Music track map\n|zoom=1}}"))
 
+    def test_parse_music_track_map_prefers_the_pages_own_map_pin(self):
+        # Map:Varrock 1 music: the top-level x/y is the view centre of three polygons, one of
+        # them the sewers, so it lands underground; the page's {{Map}} pin is the real spot
+        page = ("{{Map|plane=0|x=3214|y=3440|mapID=-1|zoom=0|group=1\n}}"
+                "{{Music track map|[ [ [3200,3506],[3191,3497] ], [ [3228,9760],[3256,9810] ] ]\n"
+                "|plane=0|x=3242|y=9786|height=150|mapID=-1|zoom=1|bucket=yes\n|link = Varrock}}")
+        self.assertEqual(ft.parse_music_track_map(page), {"x": 3214, "y": 3440, "plane": 0})
+
     def test_build_record_resolves_map_via_transcluded_map_page(self):
         rec = ft.build_record("7th Realm", SEVENTH_REALM, map_pages={"Map:Brimhaven Dungeon": MAP_PAGE})
         self.assertEqual(rec["map"], {"x": 2688, "y": 9504, "plane": 0})
@@ -235,11 +243,19 @@ ENTRANCES = [
     {"name": "Brimhaven Dungeon", "x": 2743, "y": 3154, "plane": 0},
     {"name": "Brimhaven Dungeon", "x": 2759, "y": 3062, "plane": 0},
     {"name": "Kraken (boss)", "x": 2279, "y": 10017, "plane": 0},
+    {"name": "Clock Tower Dungeon", "x": 2568, "y": 3230, "plane": 0},
+    {"name": "Ardougne Sewers", "x": 2586, "y": 3235, "plane": 0},
+    {"name": "Tunnel", "x": 1622, "y": 3165, "plane": 0},
+    {"name": "Underwater", "x": 2680, "y": 3161, "plane": 0},
+    {"name": "Asgarnian Ice Dungeon", "x": 3008, "y": 3150, "plane": 0},
+    {"name": "Kalphite Lair", "x": 3227, "y": 3108, "plane": 0},
+    {"name": "Kalphite Cave", "x": 3320, "y": 3122, "plane": 0},
 ]
 
 
-def _track_row(name, location, x, y):
-    return {"name": name, "location": location, "map": {"x": x, "y": y, "plane": 0} if x is not None else None}
+def _track_row(name, location, x, y, unlockdetail=None):
+    return {"name": name, "location": location, "unlockdetail": unlockdetail,
+            "map": {"x": x, "y": y, "plane": 0} if x is not None else None}
 
 
 class EntranceTest(unittest.TestCase):
@@ -260,6 +276,31 @@ class EntranceTest(unittest.TestCase):
         e = ft.find_entrance(_track_row("Alone", "Ice Mountain", 2900, 9800), ENTRANCES)
         self.assertEqual(e["name"], "Taverley Dungeon")
         self.assertIsNone(ft.find_entrance(_track_row("Far", "Elsewhere", 2000, 9800), ENTRANCES))
+
+    def test_dungeon_named_only_in_unlockdetail_beats_the_nearest_entrance(self):
+        # Alone: the location text names Ice Mountain, but the map point is the Clock Tower
+        # dungeon and only the unlock text says so; the sewers happen to be a few tiles nearer
+        e = ft.find_entrance(_track_row("Alone", "Ice Mountain north of Falador.", 2592, 9632,
+                                        "Unlocked at Ice Mountain, or in the Clock Tower dungeon."), ENTRANCES)
+        self.assertEqual(e["name"], "Clock Tower Dungeon")
+
+    def test_entrance_names_match_whole_words_only(self):
+        # Stillness: "Tunnels under Mort Myre" must not pick the Shayzien entrance called "Tunnel"
+        self.assertIsNone(ft.find_entrance(_track_row("Stillness", "Tunnels under Mort Myre", 3470, 9849), ENTRANCES))
+
+    def test_named_entrance_wins_however_far_even_when_its_name_is_one_word(self):
+        # Davy Jones' Locker: the Mogre Camp projects next to the Asgarnian Ice Dungeon, but
+        # the way in is the Port Khazard dive, 800 tiles away, and the location text says so
+        e = ft.find_entrance(_track_row("Davy Jones' Locker", "Underwater near Port Khazard", 2976, 9504,
+                                        "Unlocked in the Mogre Camp."), ENTRANCES)
+        self.assertEqual(e["name"], "Underwater")
+
+    def test_dungeon_named_in_location_beats_one_named_only_in_unlockdetail(self):
+        # Insect Queen: the point is in the Kalphite Lair, whose entrance is further west than
+        # the Kalphite Cave's; the location field names the lair, the unlock text names both
+        e = ft.find_entrance(_track_row("Insect Queen", "Kalphite lair", 3488, 9504,
+                                        "Unlocked in the Kalphite lair and the Kalphite cave."), ENTRANCES)
+        self.assertEqual(e["name"], "Kalphite Lair")
 
     def test_underground_entrances_are_never_used(self):
         self.assertIsNone(ft.find_entrance(_track_row("Kraken", "Kraken Cove", 2279, 10017 + 6400), ENTRANCES))

@@ -53,10 +53,10 @@
   "clueTier": null,
   "clueNote": null,
   "entrance": {
-   "x": 3292,
-   "y": 3746,
+   "x": 3320,
+   "y": 3798,
    "plane": 0,
-   "name": "Wilderness Slayer Cave"
+   "name": "Silk Chasm"
   }
  },
  {
@@ -489,19 +489,14 @@
   "unlockdetail": "Unlocked inside Varrock city walls, excluding the Grand Exchange, or only in Varrock Palace when on Classic mode.",
   "members": false,
   "map": {
-   "x": 3242,
-   "y": 9786,
+   "x": 3214,
+   "y": 3440,
    "plane": 0
   },
   "wikiUrl": "https://oldschool.runescape.wiki/w/Adventure",
   "clueTier": null,
   "clueNote": null,
-  "entrance": {
-   "x": 3243,
-   "y": 3383,
-   "plane": 0,
-   "name": "VTAM Corporation"
-  }
+  "entrance": null
  },
  {
   "cacheid": null,
@@ -713,10 +708,10 @@
   "clueTier": "easy",
   "clueNote": null,
   "entrance": {
-   "x": 2586,
-   "y": 3235,
+   "x": 2568,
+   "y": 3229,
    "plane": 0,
-   "name": "Ardougne Sewers"
+   "name": "Clock Tower Dungeon"
   }
  },
  {
@@ -1279,10 +1274,10 @@
   "clueTier": null,
   "clueNote": null,
   "entrance": {
-   "x": 2833,
-   "y": 3256,
+   "x": 2855,
+   "y": 3168,
    "plane": 0,
-   "name": "Crandor Dungeon"
+   "name": "Karamja Dungeon"
   }
  },
  {
@@ -1989,10 +1984,10 @@
   "clueTier": null,
   "clueNote": null,
   "entrance": {
-   "x": 2832,
-   "y": 3542,
+   "x": 2856,
+   "y": 3519,
    "plane": 0,
-   "name": "Warriors' Guild basement"
+   "name": "Ice Queen's Lair"
   }
  },
  {
@@ -2805,10 +2800,10 @@
   "clueTier": "medium",
   "clueNote": "Requires partial completion of Ratcatchers.",
   "entrance": {
-   "x": 2649,
-   "y": 3213,
+   "x": 2560,
+   "y": 3320,
    "plane": 0,
-   "name": "Tower of Life dungeon"
+   "name": "Ardougne Rat Pits"
   }
  },
  {
@@ -6330,19 +6325,14 @@
   "unlockdetail": "Unlocked inside Varrock city walls, excluding the Grand Exchange.",
   "members": false,
   "map": {
-   "x": 3242,
-   "y": 9786,
+   "x": 3214,
+   "y": 3440,
    "plane": 0
   },
   "wikiUrl": "https://oldschool.runescape.wiki/w/Garden_%28music_track%29",
   "clueTier": null,
   "clueNote": null,
-  "entrance": {
-   "x": 3243,
-   "y": 3383,
-   "plane": 0,
-   "name": "VTAM Corporation"
-  }
+  "entrance": null
  },
  {
   "cacheid": 228,
@@ -9992,19 +9982,14 @@
   "unlockdetail": "Unlocked inside Varrock city walls, excluding the Grand Exchange.",
   "members": false,
   "map": {
-   "x": 3242,
-   "y": 9786,
+   "x": 3214,
+   "y": 3440,
    "plane": 0
   },
   "wikiUrl": "https://oldschool.runescape.wiki/w/Medieval",
   "clueTier": null,
   "clueNote": null,
-  "entrance": {
-   "x": 3243,
-   "y": 3383,
-   "plane": 0,
-   "name": "VTAM Corporation"
-  }
+  "entrance": null
  },
  {
   "cacheid": null,
@@ -12925,7 +12910,11 @@
   "quest": null,
   "unlockdetail": "Unlocked at several locations throughout Great Kourend, specifically: Between Kourend Castle and Shayzien/Lovakengj, The path leading to The Forsaken Tower, The path south of the Lizardman Settlement leading to Mount Quidamortem, Next to the Jellies in the Catacombs of Kourend",
   "members": true,
-  "map": null,
+  "map": {
+   "x": 1582,
+   "y": 3709,
+   "plane": 0
+  },
   "wikiUrl": "https://oldschool.runescape.wiki/w/Rugged_Terrain",
   "clueTier": "easy",
   "clueNote": null,
@@ -14179,13 +14168,13 @@
  {
   "cacheid": null,
   "name": "Sleepy...",
-  "location": "Harmony island",
-  "region": "Harmony island",
-  "quest": "Great Brain Robbery",
+  "location": "Harmony Island",
+  "region": "Harmony Island",
+  "quest": "The Great Brain Robbery",
   "unlockdetail": null,
   "members": true,
   "map": null,
-  "wikiUrl": "https://oldschool.runescape.wiki/w/Sleepy..._%28Great_Brain_Robbery%29",
+  "wikiUrl": "https://oldschool.runescape.wiki/w/Sleepy..._%28The_Great_Brain_Robbery%29",
   "clueTier": null,
   "clueNote": null,
   "entrance": null
@@ -14421,14 +14410,14 @@
  },
  {
   "cacheid": null,
-  "name": "Soothing Kitten Music (Great Brain Robbery)",
+  "name": "Soothing Kitten Music (The Great Brain Robbery)",
   "location": "Harmony Island",
   "region": "Harmony Island",
-  "quest": "Great Brain Robbery",
+  "quest": "The Great Brain Robbery",
   "unlockdetail": null,
   "members": true,
   "map": null,
-  "wikiUrl": "https://oldschool.runescape.wiki/w/Soothing_Kitten_Music_%28Great_Brain_Robbery%29",
+  "wikiUrl": "https://oldschool.runescape.wiki/w/Soothing_Kitten_Music_%28The_Great_Brain_Robbery%29",
   "clueTier": null,
   "clueNote": null,
   "entrance": null
@@ -14528,19 +14517,14 @@
   "unlockdetail": "Unlocked inside Varrock city walls, excluding the Grand Exchange.",
   "members": false,
   "map": {
-   "x": 3242,
-   "y": 9786,
+   "x": 3214,
+   "y": 3440,
    "plane": 0
   },
   "wikiUrl": "https://oldschool.runescape.wiki/w/Spirit_%28music_track%29",
   "clueTier": null,
   "clueNote": null,
-  "entrance": {
-   "x": 3243,
-   "y": 3383,
-   "plane": 0,
-   "name": "VTAM Corporation"
-  }
+  "entrance": null
  },
  {
   "cacheid": 829,
@@ -14865,10 +14849,10 @@
   "clueTier": null,
   "clueNote": null,
   "entrance": {
-   "x": 1622,
-   "y": 3165,
+   "x": 3494,
+   "y": 3464,
    "plane": 0,
-   "name": "Tunnel"
+   "name": "Myreque Hideout"
   }
  },
  {
@@ -15906,10 +15890,10 @@
   "clueTier": null,
   "clueNote": null,
   "entrance": {
-   "x": 2569,
-   "y": 3296,
+   "x": 2528,
+   "y": 3303,
    "plane": 0,
-   "name": "Ardougne Castle basement"
+   "name": "Ardougne Sewers"
   }
  },
  {
@@ -18193,10 +18177,10 @@
   "clueTier": null,
   "clueNote": null,
   "entrance": {
-   "x": 3149,
-   "y": 3347,
+   "x": 3188,
+   "y": 3355,
    "plane": 0,
-   "name": "Sourhog Cave"
+   "name": "Champions' Challenge"
   }
  },
  {
@@ -18524,7 +18508,7 @@
   "name": "Tribal Background",
   "location": "Kharazi Jungle",
   "region": "Kharazi Jungle",
-  "quest": "None or Legends' Quest",
+  "quest": null,
   "unlockdetail": "Unlocked in Tai Bwo Wannai",
   "members": true,
   "map": {
@@ -18778,10 +18762,10 @@
   "clueTier": null,
   "clueNote": null,
   "entrance": {
-   "x": 2883,
-   "y": 3397,
+   "x": 2819,
+   "y": 3374,
    "plane": 0,
-   "name": "Taverley Dungeon"
+   "name": "Entrana Dungeon"
   }
  },
  {
@@ -19551,7 +19535,7 @@
   "name": "Welcome to the Theatre",
   "location": "Theatre of Blood",
   "region": "Theatre of Blood",
-  "quest": "Priest in Peril",
+  "quest": null,
   "unlockdetail": "Unlocked upon entering Ver Sinhaza.",
   "members": true,
   "map": {
@@ -20213,14 +20197,14 @@
  },
  {
   "cacheid": null,
-  "name": "Zamorkian Lie (Enakhra's Lament)",
+  "name": "Zamorakian Lie (Enakhra's Lament)",
   "location": "Enakhra's Temple",
   "region": "Enakhra's Temple",
   "quest": "Enakhra's Lament",
   "unlockdetail": null,
   "members": true,
   "map": null,
-  "wikiUrl": "https://oldschool.runescape.wiki/w/Zamorkian_Lie_%28Enakhra%27s_Lament%29",
+  "wikiUrl": "https://oldschool.runescape.wiki/w/Zamorakian_Lie_%28Enakhra%27s_Lament%29",
   "clueTier": null,
   "clueNote": null,
   "entrance": null
